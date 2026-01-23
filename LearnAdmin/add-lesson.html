@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدروس</title>
+  <!-- Stylesheets -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div id="main-wrapper" class="d-flex">
+    <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="sidebar-header">
+        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
+        <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
+      </div>
+      <div class="sidebar-body  custom-scrollbar">
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class=" sidebar-link"><i class="fa-solid fa-house"></i>
+              <p>لوحة التحكم</p>
+            </a></li>
+          <li><a href="course.html" class="sidebar-link"><i class="fa-brands fa-discourse"></i>
+              <p>الدروس</p>
+            </a></li>
+          <li><a href="students.html" class=" sidebar-link"><i class="fa-solid fa-user"></i>
+              <p>الطلاب</p>
+            </a></li>
+          <li><a href="teacher.html" class=" sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+              <p>المعلمون</p>
+            </a></li>
+          <li><a href="library.html" class=" sidebar-link"><i class="fa-solid fa-book"></i>
+              <p>المكتبة</p>
+            </a></li>
+          <li><a href="department.html" class=" sidebar-link"><i class="fa-solid fa-building"></i>
+              <p>القسم</p>
+            </a></li>
+          <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+              <p>الموظفون</p>
+            </a></li>
+          <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+              <p>الرسوم</p>
+            </a></li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">تسجيل الدخول</p>
+                </a></li>
+              <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">تسجيل</p>
+                </a></li>
+              <li><a href="forgot-password.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">نسيت كلمة المرور</p>
+                </a></li>
+              <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">صفحة 404</p>
+                </a></li>
+              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">صفحة 500</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="table-bootstrap.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">بوتستراب</p>
+                </a></li>
+              <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">جدول البيانات</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">عنصر النموذج</p>
+                </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      <div class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="d-none d-md-block d-lg-block">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text bg-white " id="addon-wrapping"><i
+                  class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+              <input type="text" class="form-control search-input border-l-none ps-0" placeholder="ابحث عن أي شيء"
+                aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          <ul class="nav d-flex align-items-center">
+            <!-- Messages Dropdown -->
+            <li class="nav-item me-2-5">
+              <a href="#" class="text-color-1 position-relative" role="button" data-bs-toggle="dropdown"
+                data-bs-offset="0,0" aria-expanded="false">
+                <i class="fa-regular fa-message font-size-24"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <!-- Chat Timeline -->
+                  <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">تحدثنا عن مشروع...</h6>
+                          <small class="d-block"><i class="fa-solid fa-clock"></i> منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a class="all-notification" href="#">شاهد كل الرسائل <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </li>
+            <!-- Notifications Dropdown -->
+            <li class="nav-item me-2-5">
+              <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" data-bs-offset="0,0"
+                aria-expanded="false">
+                <i class="fa-regular fa-bell font-size-24"></i>
+                <div class="marker"></div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <!-- Notifications Timeline -->
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/profile.png">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+
+                </div>
+                <a class="all-notification" href="#">شاهد كل الإشعارات <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </li>
+            <!-- User Profile -->
+            <li class="nav-item dropdown user-profile">
+              <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="user-avatar me-0 me-lg-3">A</span>
+                <div>
+                  <a href="#" class="d-none d-lg-block">
+                    <span class="d-block auth-role">مسؤول</span>
+                    <span class="auth-name">أدين لورين</span>
+                    <span class="ms-2 text-color-1 text-size-sm"><i class="fa-solid fa-angle-down"></i></span>
+                  </a>
+                  <ul class="dropdown-menu mt-3">
+                    <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+                    <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex align-items-lg-center  flex-column flex-md-row flex-lg-row mt-3">
+              <div class="flex-grow-1">
+                <h3 class="mb-2 text-color-2">إضافة درس</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <form class="row g-3">
+                <div class="col-12">
+                  <label for="courseName" class="form-label text-color-2 text-normal">اسم الدرس</label>
+                  <input type="text" class="form-control" id="courseName" placeholder="مثال:  تعلم الحرف أ">
+                </div>
+                <div class="col-md-6">
+                  <label for="courseCategory" class="form-label text-color-2 text-normal">الحروف </label>
+                  <select id="courseCategory" class="form-select text-normal">
+                    <option value="">إختر الحرف</option>
+                    <option value="Arabic">أ</option>
+                    <option value="Math">ب</option>
+                    <option value="Science">ت</option>
+                    <option value="English">ث</option>
+                    <option value="Arts">ج</option>
+
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="ageGroup" class="form-label text-color-2 text-normal">الفئة العمرية</label>
+                  <select id="ageGroup" class="form-select text-normal">
+                    <option value="">اختر الفئة العمرية</option>
+                    <option value="3-5">3 - 5 سنوات (روضة)</option>
+                    <option value="6-9">6 - 9 سنوات (ابتدائي)</option>
+                    <option value="10-12">10 - 12 سنة (يافعين)</option>
+                    <option value="10-12">كبار السن</option>
+
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="lessonVideo" class="form-label text-color-2 text-normal">فيديو الدرس</label>
+                  <div class="file-input-container">
+                    <input type="file" id="lessonVideo" class="file-input" accept="video/*">
+                    <label for="lessonVideo" class="file-label">
+                      <span class="file-name">اختر فيديو</span>
+                      <span class="file-button">تصفح</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <label for="lessonAudio" class="form-label text-color-2 text-normal">ملف الصوت</label>
+                  <div class="file-input-container">
+                    <input type="file" id="lessonVideo" class="file-input" accept="audio/*">
+                    <label for="lessonVideo" class="file-label">
+                      <span class="file-name">اختر ملف صوتي</span>
+                      <span class="file-button">تصفح</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <label for="lessonThumbnail" class="form-label text-color-2 text-normal">صورة مصغرة</label>
+                  <div class="file-input-container">
+                    <input type="file" id="lessonThumbnail" class="file-input">
+                    <label for="lessonThumbnail" class="file-label">
+                      <span class="file-name">اختر ملف</span>
+                      <span class="file-button">تصفح</span>
+                    </label>
+                  </div>
+
+                </div>
+
+                <div class="col-md-6">
+                  <label for="courseDificulties" class="form-label text-color-2 text-normal">صعوبة الدورة</label>
+                  <select id="courseDificulties" class="form-select text-normal">
+                    <option value="">اختر الصعوبة</option>
+                    <option value="Beginners">مبتدئ</option>
+                    <option value="Intermediate">متوسط</option>
+                    <option value="Advanced">متقدم</option>
+                    <option value="Expert">خبير</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label for="lessonDuration" class="form-label text-color-2 text-normal">المدة</label>
+                  <input type="text" class="form-control" id="lessonDuration" placeholder="مثال: 10:00">
+                </div>
+
+                <div class="col-12">
+                  <label for="lessonDescription" class="form-label text-color-2 text-normal">وصف الدرس</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+                <div class="col-12 mt-10">
+                  <label class="form-label text-color-2 text-normal">الحالة</label>
+                  <div class="status-container">
+                    <label class="custom-radio">
+                      <input type="radio" name="status" value="active" checked>
+                      <span class="radio-circle"></span>
+                      <span class="radio-label">نشط</span>
+                    </label>
+                    <label class="custom-radio">
+                      <input type="radio" name="status" value="pending">
+                      <span class="radio-circle"></span>
+                      <span class="radio-label">مسودة</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 mt-5">
+                  <button type="submit"
+                    class="btn bg-white bg-primary text-white d-flex align-items-center px-4 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">حفظ
+                    المعلومات</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-12">
+        <label for="newWords" class="form-label text-color-2 text-normal">الكلمات الجديدة</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="الكلمة" aria-label="Word">
+          <input type="text" class="form-control" placeholder="المعنى" aria-label="Meaning">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">إضافة</button>
+        </div>
+        <small class="text-muted">أضف الكلمات الجديدة مع معانيها لمساعدة الطفل على الفهم.</small>
+        <ul class="list-group mt-2">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            كلمة 1
+            <span class="badge bg-primary rounded-pill">معنى 1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            كلمة 2
+            <span class="badge bg-primary rounded-pill">معنى 2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            كلمة 3
+            <span class="badge bg-primary rounded-pill">معنى 3</span>
+          </li>
+        </ul>
+      </div> -->
+      <!-- Footer -->
+      <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+        <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/"
+            class="text-primary" target="_blank">قوالب بواسطة TemplateRise</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/plugin/chart/chart.js"></script>
+  <script src="./assets/js/chart.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

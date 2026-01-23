@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fees</title>
+    <!-- Stylesheets -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/plugin/quill/quill.snow.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+                <!-- Sidebar -->
+                <div class="sidebar-header">
+                    <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
+                    <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
+                 </div>
+               <div class="sidebar-body  custom-scrollbar">
+                    <ul class="sidebar-menu">
+                      <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
+                      <li><a href="course.html" class="sidebar-link"><i class="fa-brands fa-discourse"></i><p>Courses</p></a></li>
+                      <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i><p>Students</p></a></li>
+                      <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i><p>Teachers</p></a></li>
+                      <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i><p>Library</p></a></li>
+                      <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i><p>Department</p></a></li>
+                      <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i><p>Staff</p></a></li>
+                      <li><a href="fees.html" class="sidebar-link active"><i class="fa-solid fa-dollar-sign"></i><p>Fees</p></a></li>
+                      <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Pages <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Login</p></a></li>
+                            <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Register</p></a></li>
+                            <li><a href="forgot-password.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Forgot password</p></a></li>
+                            <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">404 page</p></a></li>
+                            <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">500 page</p></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Table <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="table-bootstrap.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Bootstrap</p></a></li>
+                            <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">DataTable</p></a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Components <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Form Element</p></a></li>
+                        </ul>
+                    </li>
+                    </ul>
+               </div>
+        </div>
+       <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Header -->
+            <div class="header d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+                    <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+                    <div class="d-none d-md-block d-lg-block">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text bg-white " id="addon-wrapping"><i class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+                            <input type="text" class="form-control search-input border-l-none ps-0" placeholder="Search anything" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <ul class="nav d-flex align-items-center">
+                        <!-- Messages Dropdown -->
+                        <li class="nav-item me-2-5">
+                            <a href="#" class="text-color-1 position-relative"  role="button" 
+                            data-bs-toggle="dropdown" 
+                            data-bs-offset="0,0" 
+                            aria-expanded="false">
+                            <i class="fa-regular fa-message font-size-24"></i>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-end mt-4">
+                                <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                                    <!-- Chat Timeline -->
+                                    <ul class="timeline">
+                                        <!-- Item 1 -->
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">We talked about a project...</h6>
+                                                    <small class="d-block"><i class="fa-solid fa-clock"></i> 30 min ago</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Item 2 -->
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/avatar-2.jpg">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">You sent an email to the client...</h6>
+                                                    <small class="d-block"><i class="fa-solid fa-clock"></i> 1 hour ago</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Item 3 -->
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/avatar-3.jpg">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Meeting with the design team...</h6>
+                                                    <small class="d-block"><i class="fa-solid fa-clock"></i> 2 hours ago</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Item 4 -->
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/avatar-4.jpg">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Reviewed the project documents...</h6>
+                                                    <small class="d-block"><i class="fa-solid fa-clock"></i> Yesterday</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- Item 5 -->
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/avatar-5.jpg">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Finalized the project timeline...</h6>
+                                                    <small class="d-block"><i class="fa-solid fa-clock"></i> 2 days ago</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="all-notification" href="#">See all message <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </li>
+                        <!-- Notifications Dropdown -->
+                        <li class="nav-item me-2-5">
+                            <a href="#" class="text-color-1 notification" 
+                                role="button" 
+                                data-bs-toggle="dropdown" 
+                                data-bs-offset="0,0" 
+                                aria-expanded="false">
+                                <i class="fa-regular fa-bell font-size-24"></i>
+                                <div class="marker"></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end mt-4">
+                                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                                    <!-- Notifications Timeline -->
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/profile.png">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Dr Smith uploaded a new report</h6>
+                                                    <small class="d-block">10 December 2023 - 08:15 AM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2 media-info">
+                                                    AP
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">New Appointment Scheduled</h6>
+                                                    <small class="d-block">10 December 2023 - 09:45 AM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2 media-success">
+                                                    <i class="fa fa-check-circle"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Patient checked in at reception</h6>
+                                                    <small class="d-block">10 December 2023 - 10:20 AM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2">
+                                                    <img alt="image" width="50" src="./assets/images/profile.png">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Dr Alice shared a prescription</h6>
+                                                    <small class="d-block">10 December 2023 - 11:00 AM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2 media-danger">
+                                                    EM
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Emergency Alert: Critical Patient</h6>
+                                                    <small class="d-block">10 December 2023 - 11:30 AM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media me-2 media-primary">
+                                                    <i class="fa fa-calendar-alt"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h6 class="mb-1">Next Appointment Reminder</h6>
+                                                    <small class="d-block">10 December 2023 - 12:00 PM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    
+                                </div>
+                                <a class="all-notification" href="#">See all notifications <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </li>
+                         <!-- User Profile -->
+                        <li class="nav-item dropdown user-profile">
+                            <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="user-avatar me-0 me-lg-3">A</span>
+                                <div>
+                                    <a href="#" class="d-none d-lg-block">
+                                        <span class="d-block auth-role">Adminitator</span>
+                                        <span class="auth-name">Adin Lauren</span>
+                                        <span class="ms-2 text-color-1 text-size-sm"><i class="fa-solid fa-angle-down"></i></span>
+                                    </a>
+                                    <ul class="dropdown-menu mt-3">
+                                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-lg-center  flex-column flex-md-row flex-lg-row mt-3">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-2 text-size-26 text-color-2">Fees</h3>
+                            </div>
+                            <div class="mt-3 mt-lg-0">
+                                <div class="d-flex align-items-center">
+                                  <!-- Date Range Button -->
+                                  <div class="cursor-pointer bg-white d-flex align-items-center text-color-1 px-3 py-2 rounded-2 text-normal fw-bolder letter-spacing-26 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <i class="fa-solid fa-filter me-3"></i>
+                                      Filter by
+                                    <i class="fa-solid fa-chevron-right ms-3 text-size-sm"></i>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Active</a></li>
+                                      <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                   </ul>
+                                  </div>
+                                  <!-- Reports Button -->
+                                   <a href="#" data-bs-toggle="modal" data-bs-target="#CreateModal" class="cursor-pointer ms-4 bg-white bg-primary text-white d-flex align-items-center px-3 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">
+                                      <i class="fa-solid fa-plus me-3"></i>
+                                      Add Fees
+                                   </a>
+                                </div>
+                            </div>
+                        </div><!-- end card header -->
+                    </div>
+                    <!--end col-->
+                </div>
+                <div class="mt-4">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-body p-0">
+                        <div class="table-responsive table-rounded-top">
+                            <table class="table align-middle">
+                                <thead>
+                                  <tr>
+                                    <th>Student Name</th>
+                                    <th>Roll no.</th>
+                                    <th>Class</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Mode</th>
+                                    <th>Status</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Roger</td>
+                                    <td>01</td>
+                                    <td>V</td>
+                                    <td>$98</td>
+                                    <td>10-01-2024</td>
+                                    <td>cash</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Emily</td>
+                                    <td>02</td>
+                                    <td>V</td>
+                                    <td>$105</td>
+                                    <td>11-01-2024</td>
+                                    <td>credit</td>
+                                    <td><span class="badge bg-warning">Pending</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>John</td>
+                                    <td>03</td>
+                                    <td>VI</td>
+                                    <td>$150</td>
+                                    <td>12-01-2024</td>
+                                    <td>cash</td>
+                                    <td><span class="badge bg-danger">Inactive</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Alice</td>
+                                    <td>04</td>
+                                    <td>VI</td>
+                                    <td>$120</td>
+                                    <td>13-01-2024</td>
+                                    <td>credit</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Michael</td>
+                                    <td>05</td>
+                                    <td>VII</td>
+                                    <td>$80</td>
+                                    <td>14-01-2024</td>
+                                    <td>cash</td>
+                                    <td><span class="badge bg-warning">Pending</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Sarah</td>
+                                    <td>06</td>
+                                    <td>VII</td>
+                                    <td>$110</td>
+                                    <td>15-01-2024</td>
+                                    <td>credit</td>
+                                    <td><span class="badge bg-danger">Inactive</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>David</td>
+                                    <td>07</td>
+                                    <td>VIII</td>
+                                    <td>$90</td>
+                                    <td>16-01-2024</td>
+                                    <td>cash</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Olivia</td>
+                                    <td>08</td>
+                                    <td>VIII</td>
+                                    <td>$130</td>
+                                    <td>17-01-2024</td>
+                                    <td>credit</td>
+                                    <td><span class="badge bg-warning">Pending</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>James</td>
+                                    <td>09</td>
+                                    <td>IX</td>
+                                    <td>$95</td>
+                                    <td>18-01-2024</td>
+                                    <td>cash</td>
+                                    <td><span class="badge bg-danger">Inactive</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>Grace</td>
+                                    <td>10</td>
+                                    <td>IX</td>
+                                    <td>$105</td>
+                                    <td>19-01-2024</td>
+                                    <td>credit</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                  </tr>
+                                </tbody>
+                              </table>                              
+                        </div>
+
+                        <div class="pb-3 ps-3 mt-3 d-flex justify-content-center justify-content-md-between justify-content-lg-between flex-wrap flex-md-nowrap">
+                            <nav aria-label="Page navigation" class="mb-3 mb-md-0 mb-lg-0">
+                                <ul class="pagination">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous"><i class="fa-solid fa-chevron-left text-size-12"></i></a>
+                                  </li>
+                                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#"><i class="fas fa-ellipsis-h"></i></a></li>
+                                  <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next"><i class="fa-solid fa-chevron-right text-size-12"></i></a>
+                                  </li>
+                                </ul>
+                            </nav>
+                            <div class="d-flex justify-content-end">
+                                <div class="page-selector">
+                                  <span>PAGE</span>
+                                  <select class="form-select" aria-label="Select page">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                  </select>
+                                  <span>OF 102</span>
+                                </div>
+                            </div>
+                        </div>
+                </div> 
+                </div> 
+           </div>
+        </div>
+         <!-- Footer -->
+         <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+            <p class="m-0">Copyright © 2024. All Rights Reserved. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >Themes By TemplateRise</a></p>
+        </div>
+    </div>
+
+    <!--Create  Modal -->
+    <div class="modal fade" id="CreateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content rounded-0">
+            <div class="modal-body p-4 position-relative">
+              <button type="button" class="btn position-absolute end-1" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+              <h2 class="h5 text-color-2 py-2">Create Fees</h2>
+              <form class="row g-3">
+                <div class="col-12">
+                    <label for="UserName" class="form-label text-color-2 text-normal">Student name</label>
+                    <input type="text" class="form-control" id="UserName" placeholder="Enter name">
+                  </div>
+                <div class="col-6">
+                  <label for="UserRoll" class="form-label text-color-2 text-normal">Roll no.</label>
+                  <input type="text" class="form-control" id="UserRoll" placeholder="Enter roll no.">
+                </div>
+                <div class="col-6">
+                  <label for="UserClass" class="form-label text-color-2 text-normal">Class</label>
+                  <input type="number" class="form-control" id="UserClass" placeholder="Enter class">
+                </div>
+                <div class="col-6">
+                    <label for="fees" class="form-label text-color-2 text-normal">Amount</label>
+                    <input type="text" class="form-control" id="fees" placeholder="Enter fees">
+                </div>
+                <div class="col-6">
+                <label for="UserMode" class="form-label text-color-2 text-normal">Payment mode</label>
+                <select id="UserMode" class="form-select text-normal">
+                    <option value="">Choose mode</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Online">Online</option>
+                </select>
+                </div>
+                <div class="col-12 mt-5">
+                  <button type="submit" class="btn bg-white bg-primary text-white d-flex align-items-center px-4 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- Scripts -->
+<script  src="./assets/js/jquery-3.6.0.min.js"></script>
+<script  src="./assets/js/bootstrap.bundle.min.js"></script>
+<script  src="./assets/plugin/chart/chart.js"></script>
+<script  src="./assets/plugin/quill/quill.js"></script>
+<script  src="./assets/js/chart.js"></script>
+<script  src="./assets/js/main.js"></script>
+</body>
+</html>
