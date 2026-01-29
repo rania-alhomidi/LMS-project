@@ -15,92 +15,133 @@
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
-  <!-- Main Wrapper -->
-  <div id="main-wrapper" class="d-flex">
-    <div class="sidebar">
-      <!-- Sidebar -->
-      <div class="sidebar-header">
-        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
-        <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
-      </div>
-      <div class="sidebar-body  custom-scrollbar">
-        <ul class="sidebar-menu">
-          <li><a href="index.html" class=" sidebar-link"><i class="fa-solid fa-house"></i>
-              <p>لوحة التحكم</p>
-            </a></li>
-          <li><a href="course.html" class="sidebar-link"><i class="fa-brands fa-discourse"></i>
-              <p>الدروس</p>
-            </a></li>
-          <li><a href="students.html" class=" sidebar-link"><i class="fa-solid fa-user"></i>
-              <p>الطلاب</p>
-            </a></li>
-          <li><a href="teacher.html" class=" sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
-              <p>المعلمون</p>
-            </a></li>
-          <li><a href="library.html" class=" sidebar-link"><i class="fa-solid fa-book"></i>
-              <p>المكتبة</p>
-            </a></li>
-          <li><a href="department.html" class=" sidebar-link"><i class="fa-solid fa-building"></i>
-              <p>القسم</p>
-            </a></li>
-          <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
-              <p>الموظفون</p>
-            </a></li>
-          <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
-              <p>الرسوم</p>
-            </a></li>
-          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-              <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
-            </a>
-            <ul class="sidebar-submenu">
-              <li><a href="login.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">تسجيل الدخول</p>
-                </a></li>
-              <li><a href="signup.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">تسجيل</p>
-                </a></li>
-              <li><a href="forgot-password.html" class="submenu-link"><i
-                    class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">نسيت كلمة المرور</p>
-                </a></li>
-              <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">صفحة 404</p>
-                </a></li>
-              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">صفحة 500</p>
-                </a></li>
-            </ul>
-          </li>
-          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-              <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
-            </a>
-            <ul class="sidebar-submenu">
-              <li><a href="table-bootstrap.html" class="submenu-link"><i
-                    class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">بوتستراب</p>
-                </a></li>
-              <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">جدول البيانات</p>
-                </a></li>
-            </ul>
-          </li>
-          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-              <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
-            </a>
-            <ul class="sidebar-submenu">
-              <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">عنصر النموذج</p>
-                </a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
     </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+            <!-- Sidebar -->
+            <div class="sidebar-header">
+                <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
+                </div>
+                <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png"
+                            alt="logo small"></a></div>
+            </div>
+            <div class="sidebar-body  custom-scrollbar">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+                            <p>لوحة التحكم</p>
+                        </a></li>
+                    <li>
+                        <a href="#" class="sidebar-link submenu-parent">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="add-lesson.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إضافة درس</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="add-word.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إضافة كلمة</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-solid fa-book-open"></i>
+              <p>القصص <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="manage-stories.html" class="submenu-link active"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة القصص</p>
+                </a></li>
+              <li><a href="add-story.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إضافة قصة</p>
+                </a></li>
+            </ul>
+          </li>
+                    <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i>
+                            <p>الطلاب</p>
+                        </a></li>
+                    <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+                            <p>المعلمون</p>
+                        </a></li>
+                    <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
+                            <p>المكتبة</p>
+                        </a></li>
+                    <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
+                            <p>القسم</p>
+                        </a></li>
+                    <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+                            <p>الموظفون</p>
+                        </a></li>
+                    <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+                            <p>الرسوم</p>
+                        </a></li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="login.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل الدخول</p>
+                                </a></li>
+                            <li><a href="signup.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل</p>
+                                </a></li>
+                            <li><a href="forgot-password.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">نسيت كلمة المرور</p>
+                                </a></li>
+                            <li><a href="404.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 404</p>
+                                </a></li>
+                            <li><a href="500.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 500</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="table-bootstrap.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">بوتستراب</p>
+                                </a></li>
+                            <li><a href="data-table.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">جدول البيانات</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="form.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">عنصر النموذج</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+        
     <!-- Content Wrapper -->
     <div class="content-wrapper">
       <!-- Header -->
@@ -258,8 +299,8 @@
                 <div class="col-6">
                   <label for="lessonAudio" class="form-label text-color-2 text-normal">ملف الصوت</label>
                   <div class="file-input-container">
-                    <input type="file" id="lessonVideo" class="file-input" accept="audio/*">
-                    <label for="lessonVideo" class="file-label">
+                    <input type="file" id="lessonAudio" class="file-input" accept="audio/*">
+                    <label for="lessonAudio" class="file-label">
                       <span class="file-name">اختر ملف صوتي</span>
                       <span class="file-button">تصفح</span>
                     </label>
@@ -304,12 +345,12 @@
 
 <div class="col-12 mt-2">
   <div class="form-check form-switch">
-    <input class="form-check-switch input" type="checkbox" id="autoTranscribe">
+    <input class="form-check-input" type="checkbox" id="autoTranscribe" role="switch">
     <label class="form-check-label small text-muted" for="autoTranscribe">استخراج النص من الفيديو تلقائياً (AI Transcription)</label>
   </div>
 </div>
 
-                <div class="col-12 mt-10">
+                <div class="col-12 mt-4">
                   <label class="form-label text-color-2 text-normal">الحالة</label>
                   <div class="status-container">
                     <label class="custom-radio">
@@ -372,6 +413,108 @@
   <script src="./assets/plugin/chart/chart.js"></script>
   <script src="./assets/js/chart.js"></script>
   <script src="./assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get elements
+      const courseNameInput = document.getElementById('courseName');
+      const letterSelect = document.getElementById('courseCategory');
+      const ageGroupSelect = document.getElementById('ageGroup');
+      const difficultySelect = document.getElementById('courseDificulties');
+      const descriptionTextarea = document.getElementById('lessonDescription');
+      const generateDescBtn = document.getElementById('generateDescription');
+      const videoInput = document.getElementById('lessonVideo');
+      const durationInput = document.getElementById('lessonDuration');
+      const autoTranscribeSwitch = document.getElementById('autoTranscribe');
+
+      // 1. Suggest lesson name and other fields based on selected letter
+      letterSelect.addEventListener('change', function () {
+        const selectedLetter = this.options[this.selectedIndex].text;
+        if (this.value) {
+          courseNameInput.value = `درس تعلم الحرف '${selectedLetter}'`;
+          // Also suggest age group and difficulty
+          ageGroupSelect.value = '3-5'; // Default to kindergarten
+          difficultySelect.value = 'Beginners'; // Default to beginner
+        } else {
+          courseNameInput.value = '';
+          ageGroupSelect.value = '';
+          difficultySelect.value = '';
+        }
+      });
+
+      // 2. Generate smart description
+      generateDescBtn.addEventListener('click', function () {
+        const courseName = courseNameInput.value;
+        const selectedLetter = letterSelect.options[letterSelect.selectedIndex].text;
+
+        if (!courseName) {
+          descriptionTextarea.placeholder = "الرجاء إدخال اسم الدرس أولاً لتوليد وصف دقيق.";
+          return;
+        }
+
+        // Simulate AI thinking
+        const originalBtnText = generateDescBtn.innerHTML;
+        generateDescBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> جاري التوليد...';
+        generateDescBtn.disabled = true;
+
+        setTimeout(() => {
+          const generatedDescription = `هذا الدرس مصمم لتعليم الأطفال الحرف '${selectedLetter}' بطريقة ممتعة وتفاعلية. من خلال الفيديو والأنشطة، سيتعلم الطفل شكل الحرف، كيفية نطقه، وكلمات تبدأ به. يهدف الدرس إلى بناء أساس قوي للغة العربية لدى الأطفال في مرحلة مبكرة.`;
+          descriptionTextarea.value = generatedDescription;
+
+          // Restore button
+          generateDescBtn.innerHTML = originalBtnText;
+          generateDescBtn.disabled = false;
+        }, 1500); // Simulate API call delay
+      });
+
+      // 3. Handle file inputs and video duration
+      const fileInputs = document.querySelectorAll('.file-input');
+      fileInputs.forEach(input => {
+        input.addEventListener('change', function (e) {
+          const label = this.nextElementSibling;
+          const fileNameSpan = label.querySelector('.file-name');
+          
+          if (!label.dataset.defaultText) {
+              label.dataset.defaultText = fileNameSpan.textContent;
+          }
+          fileNameSpan.textContent = e.target.files[0] ? e.target.files[0].name : label.dataset.defaultText;
+
+          // If it's the video input, simulate getting duration
+          if (this.id === 'lessonVideo' && e.target.files[0]) {
+            setTimeout(() => {
+              const randomMinutes = Math.floor(Math.random() * 10) + 1; // 1-10
+              const randomSeconds = Math.floor(Math.random() * 59);
+              const formattedDuration = `${String(randomMinutes).padStart(2, '0')}:${String(randomSeconds).padStart(2, '0')}`;
+              durationInput.value = formattedDuration;
+
+              if (autoTranscribeSwitch.checked) {
+                transcribeVideo();
+              }
+            }, 500);
+          }
+        });
+      });
+
+      // 4. Handle auto-transcription
+      autoTranscribeSwitch.addEventListener('change', function () {
+        if (this.checked && videoInput.files.length > 0) {
+          transcribeVideo();
+        }
+      });
+
+      function transcribeVideo() {
+        const originalDesc = descriptionTextarea.value;
+        descriptionTextarea.value = "جاري استخراج النص من الفيديو بواسطة الذكاء الاصطناعي...";
+        setTimeout(() => {
+          const selectedLetter = letterSelect.options[letterSelect.selectedIndex].text;
+          const transcription = `(موسيقى بداية)\nالمعلم/ة: مرحباً يا أصدقائي الصغار! اليوم سنتعلم حرفاً جديداً وجميلاً. هل أنتم مستعدون؟\nالأطفال: نعم!\nالمعلم/ة: حرفنا اليوم هو حرف... '${selectedLetter}'! رددوا معي... '${selectedLetter}'.\n(يتم عرض الحرف على الشاشة مع رسوم متحركة)\nالمعلم/ة: رائع! الآن لنتعلم بعض الكلمات التي تبدأ بحرف '${selectedLetter}'.\n(يتم عرض صور وكلمات)\n(موسيقى نهاية)`;
+          const transcriptionHeader = '\n\n--- النص المستخرج من الفيديو ---';
+          const existingTranscriptionIndex = originalDesc.indexOf(transcriptionHeader);
+          const baseDescription = existingTranscriptionIndex !== -1 ? originalDesc.substring(0, existingTranscriptionIndex).trim() : originalDesc.trim();
+          descriptionTextarea.value = (baseDescription ? `${baseDescription}${transcriptionHeader}\n` : '') + transcription;
+        }, 2500);
+      }
+    });
+  </script>
 </body>
 
 </html>

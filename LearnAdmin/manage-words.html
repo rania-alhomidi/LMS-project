@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>إدارة الكلمات</title>
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+  <style>
+    /* إضافة بسيطة لضمان اتساق الألوان مع تصميمك */
+    .bg-light-primary { background-color: #f0f7ff; }
+    .text-color-1 { color: #5a5a5a; }
+    .text-color-2 { color: #2d2d2d; }
+  </style>
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="main-wrapper" class="d-flex">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
+      </div>
+      <div class="sidebar-body custom-scrollbar">
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i><p>لوحة التحكم</p></a></li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-brands fa-discourse"></i>
+              <p>الدروس <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="manage-words.html" class="submenu-link active"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إدارة الكلمات</p></a></li>
+              <li><a href="add-word.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إضافة كلمة</p></a></li>
+            </ul>
+          </li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="d-none d-md-block">
+            <h5 class="m-0 fw-bold">إدارة كلمات الأحرف</h5>
+          </div>
+        </div>
+        <div class="user-profile">
+            <span class="user-avatar">A</span>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="container-fluid">
+          
+          <div class="card border-0 shadow-sm p-4 mb-4">
+            <div class="row g-3 align-items-end">
+              <div class="col-md-4">
+                <label class="form-label small text-muted">بحث عن كلمة</label>
+                <input type="text" class="form-control" id="searchWord" placeholder="اكتب الكلمة هنا...">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label small text-muted">تصفية حسب الحرف</label>
+                <select class="form-select" id="filterLetter">
+                  <option value="all">جميع الأحرف</option>
+                  <option value="أ">أ</option><option value="ب">ب</option>
+                  </select>
+              </div>
+              <div class="col-md-2">
+                <button class="btn btn-primary w-100" id="filterBtn">
+                  <i class="fa-solid fa-filter me-2"></i> تصفية
+                </button>
+              </div>
+              <div class="col-md-3 text-md-end">
+                <a href="add-word.html" class="btn btn-success w-100">
+                  <i class="fa-solid fa-plus me-2"></i> إضافة كلمة جديدة
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="bg-light">
+                    <tr>
+                      <th class="ps-4" style="width: 100px;">الحرف</th>
+                      <th>الكلمة</th>
+                      <th>المعنى / الوصف</th>
+                      <th>تاريخ الإضافة</th>
+                      <th class="text-center" style="width: 150px;">العمليات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="manageWordsTable">
+                    <tr>
+                      <td class="ps-4"><span class="badge bg-primary rounded-pill">أ</span></td>
+                      <td><strong>أسد</strong></td>
+                      <td class="text-muted">ملك الغابة، حيوان مفترس</td>
+                      <td class="small">2024-05-20</td>
+                      <td class="text-center">
+                        <button class="btn btn-sm btn-light text-primary me-2" title="تعديل"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-sm btn-light text-danger" title="حذف"><i class="fa-solid fa-trash-can"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4"><span class="badge bg-primary rounded-pill">ب</span></td>
+                      <td><strong>بطة</strong></td>
+                      <td class="text-muted">طائر مائي جميل</td>
+                      <td class="small">2024-05-21</td>
+                      <td class="text-center">
+                        <button class="btn btn-sm btn-light text-primary me-2"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-sm btn-light text-danger"><i class="fa-solid fa-trash-can"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer bg-white border-0 py-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <p class="m-0 small text-muted">عرض 1 إلى 10 من أصل 50 كلمة</p>
+                <nav>
+                  <ul class="pagination pagination-sm m-0">
+                    <li class="page-item disabled"><a class="page-link" href="#">السابق</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">التالي</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer text-center bg-white py-3 mt-auto border-top">
+        <p class="m-0 text-muted small">حقوق النشر © 2024. إدارة المحتوى التعليمي.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

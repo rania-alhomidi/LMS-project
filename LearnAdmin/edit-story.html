@@ -141,9 +141,9 @@
             </div>
         </div>
 
-
+        
     <!-- Content Wrapper -->
-    <div class="content-wrapper">
+    <div class="content-wrapper pt-5">
       <!-- Header -->
       <div class="header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -160,6 +160,7 @@
             </div>
           </div>
         </div>
+        
         <div class="d-flex align-items-center">
           <ul class="nav d-flex align-items-center">
             <!-- Messages Dropdown -->
@@ -242,152 +243,90 @@
         </div>
       </div>
 
- <div class="main-content">
-        <div class="container-fluid">
-          <div class="card border-0 shadow-sm p-4">
-            <h6 class="form-label text-color-2 mb-4">إضافة كلمات مرتبطة بالحرف (دعم الذكاء الاصطناعي)</h6>
-            
-            <div class="bg-light p-4 rounded-3 border">
-              <div class="row g-3">
-                <div class="col-md-2">
-                  <label class="small text-muted mb-1">اختر الحرف</label>
-                  <select class="form-select" id="alphabetSelect">
-                    <option value="أ">أ</option><option value="ب">ب</option><option value="ت">ت</option>
-                    <option value="ث">ث</option><option value="ج">ج</option><option value="ح">ح</option>
-                    <option value="خ">خ</option><option value="د">د</option><option value="ذ">ذ</option>
-                    <option value="ر">ر</option><option value="ز">ز</option><option value="س">س</option>
-                    <option value="ش">ش</option><option value="ص">ص</option><option value="ض">ض</option>
-                    <option value="ط">ط</option><option value="ظ">ظ</option><option value="ع">ع</option>
-                    <option value="غ">غ</option><option value="ف">ف</option><option value="ق">ق</option>
-                    <option value="ك">ك</option><option value="ل">ل</option><option value="م">م</option>
-                    <option value="ن">ن</option><option value="هـ">هـ</option><option value="و">و</option>
-                    <option value="ي">ي</option>
-                  </select>
-                </div>
 
-                <div class="col-md-4">
-                  <label class="small text-muted mb-1">الكلمة</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="wordInput" placeholder="مثال: أسد">
-                    <button class="btn btn-outline-secondary btn-ai" type="button" id="aiGenBtn" title="اقتراح ذكي">
-                      <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </button>
-                  </div>
-                </div>
 
-                <div class="col-md-4">
-                  <label class="small text-muted mb-1">المعنى أو الوصف</label>
-                  <input type="text" class="form-control" id="meaningInput" placeholder="وصف الكلمة">
-                </div>
-
-                <div class="col-md-2 d-flex align-items-end">
-                  <button class="btn btn-primary w-100" type="button" id="addWordBtn">إضافة للدرس</button>
-                </div>
-              </div>
-
-              <div class="mt-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="m-0 text-primary">كلمات حرف (<span id="currentLetter">أ</span>):</h6>
-                  <span class="badge bg-primary rounded-pill" id="wordCount">0 كلمات</span>
-                </div>
-                
-                <ul class="list-group shadow-sm" id="wordsList">
-                  </ul>
-                
-                <div class="alert alert-info mt-4 border-0 bg-light-primary text-primary small">
-                  <i class="fa-solid fa-circle-info me-2"></i>
-                  ملاحظة: أيقونة <strong>العصا السحرية</strong> ستستخدم لاحقاً لربط النظام بـ ChatGPT لتوليد الكلمات تلقائياً.
-                </div>
-              </div>
-            </div>
-          </div>
+    <main class="pt-4">
+        <div class="text-center mt-5">
+            <h2 class="fw-bold">تعديل "عنوان القصة هنا" ✨</h2>
+            <p class="text-muted">يمكنك تغيير المحتوى أو تحويل نوع القصة من هنا</p>
         </div>
 
-        <div class="footer text-center bg-white py-3 mt-auto border-top">
-          <p class="m-0 text-muted small">حقوق النشر © 2024. تصميم متوافق مع معايير الذكاء الاصطناعي.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <ul class="nav nav-pills mb-4 justify-content-center" id="editStoryTabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#textTab">✍️ نصية</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#audioTab">🎵 صوتية</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#videoTab">🎥 فيديو</button>
+                    </li>
+                </ul>
 
-  <script src="./assets/js/jquery-3.6.0.min.js"></script>
-  <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const alphabet = ["أ","ب","ت","ث","ج","ح","خ","د","ذ","ر","ز","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ك","ل","م","ن","هـ","و","ي"];
-        let wordsData = {};
-        alphabet.forEach(char => { wordsData[char] = []; });
-
-        const alphabetSelect = document.getElementById('alphabetSelect');
-        const wordInput = document.getElementById('wordInput');
-        const meaningInput = document.getElementById('meaningInput');
-        const addWordBtn = document.getElementById('addWordBtn');
-        const wordsList = document.getElementById('wordsList');
-        const currentLetterSpan = document.getElementById('currentLetter');
-        const wordCountSpan = document.getElementById('wordCount');
-
-        function updateDisplay() {
-            const selectedLetter = alphabetSelect.value;
-            currentLetterSpan.innerText = selectedLetter;
-            wordsList.innerHTML = ''; 
-
-            const currentWords = wordsData[selectedLetter];
-            wordCountSpan.innerText = `${currentWords.length} كلمات`;
-
-            if (currentWords.length === 0) {
-                wordsList.innerHTML = '<li class="list-group-item text-center text-muted py-4">لا يوجد كلمات لهذا الحرف، جرب إضافة واحدة أو استخدم الاقتراح الذكي</li>';
-                return;
-            }
-
-            currentWords.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.className = "list-group-item d-flex justify-content-between align-items-center animation-fade-in";
-                li.innerHTML = `
-                    <div class="d-flex align-items-center">
-                      <button class="btn btn-sm btn-light me-3 text-primary" title="نطق الكلمة">
-                        <i class="fa-solid fa-volume-high"></i>
-                      </button>
-                      <div>
-                        <strong class="d-block text-dark">${item.word}</strong>
-                        <small class="text-muted">${item.meaning}</small>
-                      </div>
+                <div class="tab-content pt-3">
+                    <div class="tab-pane fade show active" id="textTab">
+                        <div class="card p-4 border-0 shadow-sm">
+                            <input type="text" class="form-control mb-3 p-3 fw-bold" value="العنوان القديم للقصة">
+                            <textarea class="form-control p-3" rows="10">هنا يظهر نص القصة الذي كتبه الطفل سابقاً ليقوم بتعديله...</textarea>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-sm text-danger btn-light" onclick="deleteWord('${selectedLetter}', ${index})">
-                        <i class="fa-solid fa-trash-can"></i>
+
+                    <div class="tab-pane fade" id="audioTab">
+                        <div class="card p-4 text-center border-0 shadow-sm">
+                            <div class="mb-3 text-start">
+                                <label class="fw-bold">الملف الحالي:</label>
+                                <audio controls class="w-100 mt-2">
+                                    <source src="old-audio-file.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                            <div class="upload-card p-4 border-dashed" onclick="document.getElementById('editAudioInput').click()">
+                                <i class="fas fa-sync-alt fa-2x text-primary mb-2"></i>
+                                <h6>رفع ملف صوتي جديد (اختياري)</h6>
+                                <input type="file" id="editAudioInput" class="d-none" accept="audio/*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="videoTab">
+                        <div class="card p-4 text-center border-0 shadow-sm">
+                             <div class="mb-3">
+                                <video controls class="w-100 rounded shadow-sm mb-3">
+                                    <source src="old-video-file.mp4" type="video/mp4">
+                                </video>
+                             </div>
+                             <button class="btn btn-sm btn-outline-info" onclick="document.getElementById('editVidInput').click()">
+                                <i class="fas fa-video me-1"></i> استبدال الفيديو
+                             </button>
+                             <input type="file" id="editVidInput" class="d-none" accept="video/*">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <button class="btn btn-success btn-lg rounded-pill px-5 shadow">
+                        <i class="fas fa-check me-2"></i> قبول التغييرات
                     </button>
-                `;
-                wordsList.appendChild(li);
-            });
-        }
+                </div>
+            </div>
+        </div>
+    </main>
 
-        addWordBtn.addEventListener('click', function() {
-            const letter = alphabetSelect.value;
-            const word = wordInput.value.trim();
-            const meaning = meaningInput.value.trim();
+<!-- </div> -->
 
-            if (word && meaning) {
-                wordsData[letter].push({ word, meaning });
-                wordInput.value = '';
-                meaningInput.value = '';
-                updateDisplay();
-            }
-        });
 
-        // زر التوليد الذكي (محاكاة حالياً)
-        document.getElementById('aiGenBtn').addEventListener('click', function() {
-            alert("سيتم ربط هذا الزر بـ API الذكاء الاصطناعي لجلب كلمات تبدأ بحرف (" + alphabetSelect.value + ") تلقائياً.");
-        });
 
-        window.deleteWord = function(letter, index) {
-            wordsData[letter].splice(index, 1);
-            updateDisplay();
-        };
-
-        alphabetSelect.addEventListener('change', updateDisplay);
-        updateDisplay();
-    });
-  </script>
+             <!-- Footer -->
+             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
+            </div>
+    </div>
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
 </body>
 </html>

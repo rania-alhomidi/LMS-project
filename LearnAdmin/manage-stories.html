@@ -141,9 +141,9 @@
             </div>
         </div>
 
-
+        
     <!-- Content Wrapper -->
-    <div class="content-wrapper">
+    <div class="content-wrapper mt-5">
       <!-- Header -->
       <div class="header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -242,152 +242,129 @@
         </div>
       </div>
 
- <div class="main-content">
-        <div class="container-fluid">
-          <div class="card border-0 shadow-sm p-4">
-            <h6 class="form-label text-color-2 mb-4">إضافة كلمات مرتبطة بالحرف (دعم الذكاء الاصطناعي)</h6>
-            
-            <div class="bg-light p-4 rounded-3 border">
-              <div class="row g-3">
-                <div class="col-md-2">
-                  <label class="small text-muted mb-1">اختر الحرف</label>
-                  <select class="form-select" id="alphabetSelect">
-                    <option value="أ">أ</option><option value="ب">ب</option><option value="ت">ت</option>
-                    <option value="ث">ث</option><option value="ج">ج</option><option value="ح">ح</option>
-                    <option value="خ">خ</option><option value="د">د</option><option value="ذ">ذ</option>
-                    <option value="ر">ر</option><option value="ز">ز</option><option value="س">س</option>
-                    <option value="ش">ش</option><option value="ص">ص</option><option value="ض">ض</option>
-                    <option value="ط">ط</option><option value="ظ">ظ</option><option value="ع">ع</option>
-                    <option value="غ">غ</option><option value="ف">ف</option><option value="ق">ق</option>
-                    <option value="ك">ك</option><option value="ل">ل</option><option value="م">م</option>
-                    <option value="ن">ن</option><option value="هـ">هـ</option><option value="و">و</option>
-                    <option value="ي">ي</option>
-                  </select>
-                </div>
 
-                <div class="col-md-4">
-                  <label class="small text-muted mb-1">الكلمة</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="wordInput" placeholder="مثال: أسد">
-                    <button class="btn btn-outline-secondary btn-ai" type="button" id="aiGenBtn" title="اقتراح ذكي">
-                      <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </button>
-                  </div>
-                </div>
 
-                <div class="col-md-4">
-                  <label class="small text-muted mb-1">المعنى أو الوصف</label>
-                  <input type="text" class="form-control" id="meaningInput" placeholder="وصف الكلمة">
-                </div>
-
-                <div class="col-md-2 d-flex align-items-end">
-                  <button class="btn btn-primary w-100" type="button" id="addWordBtn">إضافة للدرس</button>
-                </div>
-              </div>
-
-              <div class="mt-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="m-0 text-primary">كلمات حرف (<span id="currentLetter">أ</span>):</h6>
-                  <span class="badge bg-primary rounded-pill" id="wordCount">0 كلمات</span>
-                </div>
-                
-                <ul class="list-group shadow-sm" id="wordsList">
-                  </ul>
-                
-                <div class="alert alert-info mt-4 border-0 bg-light-primary text-primary small">
-                  <i class="fa-solid fa-circle-info me-2"></i>
-                  ملاحظة: أيقونة <strong>العصا السحرية</strong> ستستخدم لاحقاً لربط النظام بـ ChatGPT لتوليد الكلمات تلقائياً.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer text-center bg-white py-3 mt-auto border-top">
-          <p class="m-0 text-muted small">حقوق النشر © 2024. تصميم متوافق مع معايير الذكاء الاصطناعي.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="./assets/js/jquery-3.6.0.min.js"></script>
-  <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const alphabet = ["أ","ب","ت","ث","ج","ح","خ","د","ذ","ر","ز","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ك","ل","م","ن","هـ","و","ي"];
-        let wordsData = {};
-        alphabet.forEach(char => { wordsData[char] = []; });
-
-        const alphabetSelect = document.getElementById('alphabetSelect');
-        const wordInput = document.getElementById('wordInput');
-        const meaningInput = document.getElementById('meaningInput');
-        const addWordBtn = document.getElementById('addWordBtn');
-        const wordsList = document.getElementById('wordsList');
-        const currentLetterSpan = document.getElementById('currentLetter');
-        const wordCountSpan = document.getElementById('wordCount');
-
-        function updateDisplay() {
-            const selectedLetter = alphabetSelect.value;
-            currentLetterSpan.innerText = selectedLetter;
-            wordsList.innerHTML = ''; 
-
-            const currentWords = wordsData[selectedLetter];
-            wordCountSpan.innerText = `${currentWords.length} كلمات`;
-
-            if (currentWords.length === 0) {
-                wordsList.innerHTML = '<li class="list-group-item text-center text-muted py-4">لا يوجد كلمات لهذا الحرف، جرب إضافة واحدة أو استخدم الاقتراح الذكي</li>';
-                return;
-            }
-
-            currentWords.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.className = "list-group-item d-flex justify-content-between align-items-center animation-fade-in";
-                li.innerHTML = `
-                    <div class="d-flex align-items-center">
-                      <button class="btn btn-sm btn-light me-3 text-primary" title="نطق الكلمة">
-                        <i class="fa-solid fa-volume-high"></i>
-                      </button>
-                      <div>
-                        <strong class="d-block text-dark">${item.word}</strong>
-                        <small class="text-muted">${item.meaning}</small>
-                      </div>
+    <main class="p-4 mt-5">
+        <div class="card border-0 shadow-sm mb-4 p-3" style="border-radius: 15px;">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="fas fa-search"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="ابحث عن عنوان القصة أو الكود...">
                     </div>
-                    <button type="button" class="btn btn-sm text-danger btn-light" onclick="deleteWord('${selectedLetter}', ${index})">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                `;
-                wordsList.appendChild(li);
-            });
-        }
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select border-0 bg-light">
+                        <option selected>نوع القصة (الكل)</option>
+                        <option>نصية</option>
+                        <option>صوتية</option>
+                    </select>
+                </div>
+                <div class="col-md-3 text-end">
+                    <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-filter"></i> تصفية متقدمة</button>
+                </div>
+            </div>
+        </div>
 
-        addWordBtn.addEventListener('click', function() {
-            const letter = alphabetSelect.value;
-            const word = wordInput.value.trim();
-            const meaning = meaningInput.value.trim();
+        <div class="card border-0 shadow-sm" style="border-radius: 15px; overflow: hidden;">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="bg-light text-secondary">
+                            <tr>
+                                <th class="ps-4 py-3" style="width: 80px;">ID</th>
+                                <th>القصة</th>
+                                <th>النوع</th>
+                                <th>تاريخ النشر</th>
+                                <th>الحالة</th>
+                                <th class="text-center">العمليات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-4 text-muted fw-bold">#8821</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://via.placeholder.com/45" class="rounded-3 shadow-sm me-3" alt="cover">
+                                        <div>
+                                            <span class="d-block fw-bold text-dark">مغامرة في كوكب الحلوى</span>
+                                            <small class="text-muted">قصة للأطفال</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-info-subtle text-info rounded-pill px-3"><i class="fas fa-pen-nib me-1"></i> نصية</span></td>
+                                <td class="text-muted">2026-01-28</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" checked id="status1">
+                                        <label class="form-check-label text-success" for="status1 small">منشور</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <a href="#" class="btn btn-light btn-sm text-primary shadow-sm" title="عرض القصة"><i class="fas fa-eye"></i></a>
+                                        <a href="edit-story.html" class="btn btn-light btn-sm text-warning shadow-sm" title="تعديل"><i class="fas fa-edit"></i></a>
+                                        <a href="#" class="btn btn-light btn-sm text-success shadow-sm" title="قبول"><i class="fas fa-check"></i></a>
+                                        <a href="#" class="btn btn-light btn-sm text-info shadow-sm" title="مشاركة القصة"><i class="fas fa-share-alt"></i></a> <a href="#" class="btn btn-light btn-sm text-danger shadow-sm" title="حذف"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="ps-4 text-muted fw-bold">#8822</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-primary-subtle rounded-3 me-3 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-microphone text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <span class="d-block fw-bold text-dark">سر القطة الشجاعة</span>
+                                            <small class="text-muted">حكايات قبل النوم</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-warning-subtle text-warning rounded-pill px-3"><i class="fas fa-volume-up me-1"></i> صوتية</span></td>
+                                <td class="text-muted">2026-01-25</td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="status2">
+                                        <label class="form-check-label text-muted" for="status2 small">مسودة</label>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <button class="btn btn-light btn-sm text-primary" title="عرض"><i class="fas fa-eye"></i></button>
+                                        <a href="edit-story.html" class="btn btn-light btn-sm text-warning shadow-sm" title="تعديل"><i class="fas fa-edit"></i></a>
+                                        <button class="btn btn-light btn-sm text-success" title="قبول"><i class="fas fa-check"></i></button>
+                                        <button class="btn btn-light btn-sm text-secondary" title="تنزيل PDF"><i class="fas fa-download"></i></button> <button class="btn btn-light btn-sm text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0 py-3">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center m-0">
+                        <li class="page-item disabled"><a class="page-link" href="#">السابق</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">التالي</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </main>
 
-            if (word && meaning) {
-                wordsData[letter].push({ word, meaning });
-                wordInput.value = '';
-                meaningInput.value = '';
-                updateDisplay();
-            }
-        });
-
-        // زر التوليد الذكي (محاكاة حالياً)
-        document.getElementById('aiGenBtn').addEventListener('click', function() {
-            alert("سيتم ربط هذا الزر بـ API الذكاء الاصطناعي لجلب كلمات تبدأ بحرف (" + alphabetSelect.value + ") تلقائياً.");
-        });
-
-        window.deleteWord = function(letter, index) {
-            wordsData[letter].splice(index, 1);
-            updateDisplay();
-        };
-
-        alphabetSelect.addEventListener('change', updateDisplay);
-        updateDisplay();
-    });
-  </script>
+    <div class="footer text-center bg-white shadow-sm py-3 mt-auto">
+        <p class="m-0">حقوق النشر © 2026. جميع الحقوق محفوظة.</p>
+    </div>
+</div>
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
 </body>
 </html>
