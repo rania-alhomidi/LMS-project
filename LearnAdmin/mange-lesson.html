@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>الدروس</title>
+    <!-- Stylesheets -->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="./assets/plugin/quill/quill.snow.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+            <!-- Sidebar -->
+            <div class="sidebar-header">
+                <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
+                </div>
+                <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png"
+                            alt="logo small"></a></div>
+            </div>
+            <div class="sidebar-body  custom-scrollbar">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+                            <p>لوحة التحكم</p>
+                        </a></li>
+                    <li>
+                        <a href="#" class="sidebar-link submenu-parent">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="add-lesson.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إضافة درس</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-words.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">ادارة الكلمات</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-link submenu-parent active">
+                            <i class="fa-solid fa-book-open"></i>
+                            <p>القصص <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu open">
+                            <li><a href="manage-stories.html" class="submenu-link active"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إدارة القصص</p>
+                                </a></li>
+                            <li><a href="add-story.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إضافة قصة</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i>
+                            <p>الطلاب</p>
+                        </a></li>
+                    <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+                            <p>المعلمون</p>
+                        </a></li>
+                    <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
+                            <p>المكتبة</p>
+                        </a></li>
+                    <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
+                            <p>القسم</p>
+                        </a></li>
+                    <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+                            <p>الموظفون</p>
+                        </a></li>
+                    <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+                            <p>الرسوم</p>
+                        </a></li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="login.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل الدخول</p>
+                                </a></li>
+                            <li><a href="signup.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل</p>
+                                </a></li>
+                            <li><a href="forgot-password.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">نسيت كلمة المرور</p>
+                                </a></li>
+                            <li><a href="404.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 404</p>
+                                </a></li>
+                            <li><a href="500.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 500</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="table-bootstrap.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">بوتستراب</p>
+                                </a></li>
+                            <li><a href="data-table.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">جدول البيانات</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="form.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">عنصر النموذج</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="content-wrapper">
+            <div class="header d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i
+                                class="fa-solid fa-bars font-size-24"></i></span></div>
+                    <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i
+                                class="fa-solid fa-bars font-size-24"></i></span></div>
+                    <div class="d-none d-md-block d-lg-block">
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text bg-white" id="addon-wrapping"><i
+                                    class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+                            <input type="text" class="form-control search-input border-l-none ps-0"
+                                placeholder="ابحث عن أي شيء">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <ul class="nav d-flex align-items-center">
+                        <li class="nav-item me-2-5 dropdown"> <a href="#" class="text-color-1 position-relative"
+                                role="button" data-bs-toggle="dropdown">
+                                <i class="fa-regular fa-message font-size-24"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end mt-4">
+                                <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-panel">
+                                                <div class="media-body">
+                                                    <h6>رسالة تجريبية</h6>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="all-notification" href="#">شاهد كل الرسائل <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-content p-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center justify-content-between mt-3 mb-4">
+                            <div>
+                                <h3 class="text-color-2">قائمة الدروس</h3>
+                                <p class="text-muted small">يمكنك عرض، تعديل أو حذف الدروس التعليمية من هنا.</p>
+                            </div>
+                            <a href="add-lesson.html" class="btn btn-primary px-4">
+                                <i class="fa-solid fa-plus me-2"></i> إضافة درس جديد
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4"><input type="text" class="form-control"
+                                    placeholder="بحث باسم الدرس..."></div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option value="">كل الحروف</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <select class="form-select">
+                                    <option value="">الحالة</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2"><button class="btn btn-outline-secondary w-100">تصفية</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 overflow-hidden">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0 text-nowrap text-center">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th class="">الرقم</th>
+                                        <th class="">الصورة</th>
+                                        <th>اسم الدرس</th>
+                                        <th>الوصف</th>
+                                        <th>الحرف</th>
+                                        <th>الصعوبة</th>
+                                        <th>الوسائط</th>
+                                        <th>الفئة</th>
+                                        <th>العمليات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4 fw-bold">1</td>
+                                        <td>
+                                            <img src="./assets/images/lesson-thumb.jpg" class="rounded" width="45"
+                                                onerror="this.src='https://via.placeholder.com/45'">
+                                        </td>
+                                         <td>
+                                            <h6 class="m-0 small fw-bold">تعلم الحرف أ</h6>
+                                        </td>
+                                        <td><small class="text-muted  fw-bold">شرح مبسط للحرف أ..</small></td>
+                                        <td><span class="  fw-bold">أ</span></td>
+                                        <td><span
+                                                class="badge border border-info text-info fw-normal small">مبتدئ</span>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex gap-2 justify-content-center">
+                                                <i class="fa-solid fa-video text-danger small"></i>
+                                                <i class="fa-solid fa-volume-high text-success small"></i>
+                                            </div>
+                                        </td>
+                                        <td class="small  fw-bold">3-5 سنوات</td>
+                                        <td class="text-center">
+                                          <div class="btn-group">
+    <a href="view-lesson.html" class="btn btn-sm btn-outline-info border-0">
+        <i class="fa-solid fa-eye"></i>
+    </a>
+
+    <a href="edit-lesson.html" class="btn btn-sm btn-outline-primary border-0">
+        <i class="fa-solid fa-pen"></i>
+    </a>
+
+    <button type="button" class="btn btn-sm btn-outline-danger border-0" onclick="confirmDelete()">
+        <i class="fa-solid fa-trash"></i>
+    </button>
+</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer text-center bg-white shadow-sm py-3 mt-auto">
+                <p class="m-0 small text-muted">حقوق النشر © 2024. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="./assets/js/jquery-3.6.0.min.js"></script>
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+        <script src="./assets/plugin/chart/chart.js"></script>
+        <script src="./assets/plugin/quill/quill.js"></script>
+        <script src="./assets/js/chart.js"></script>
+        <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

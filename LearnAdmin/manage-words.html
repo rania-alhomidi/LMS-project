@@ -1,64 +1,248 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>إدارة الكلمات</title>
+  <title>الدروس</title>
+  <!-- Stylesheets -->
   <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
   <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
   <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
   <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
-  <style>
-    /* إضافة بسيطة لضمان اتساق الألوان مع تصميمك */
-    .bg-light-primary { background-color: #f0f7ff; }
-    .text-color-1 { color: #5a5a5a; }
-    .text-color-2 { color: #2d2d2d; }
-  </style>
 </head>
 
 <body>
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
-
-  <div id="main-wrapper" class="d-flex">
-    <div class="sidebar">
-      <div class="sidebar-header">
-        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
-      </div>
-      <div class="sidebar-body custom-scrollbar">
-        <ul class="sidebar-menu">
-          <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i><p>لوحة التحكم</p></a></li>
-          <li>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper" class="d-flex">
+        <div class="sidebar">
+            <!-- Sidebar -->
+            <div class="sidebar-header">
+                <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
+                </div>
+                <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png"
+                            alt="logo small"></a></div>
+            </div>
+            <div class="sidebar-body  custom-scrollbar">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+                            <p>لوحة التحكم</p>
+                        </a></li>
+                    <li>
+                        <a href="#" class="sidebar-link submenu-parent">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                             <li>
+                                <a href="mange-lesson.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">إدارة الدروس</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="manage-words.html" class="submenu-link">
+                                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">ادارة الكلمات</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
             <a href="#" class="sidebar-link submenu-parent active">
-              <i class="fa-brands fa-discourse"></i>
-              <p>الدروس <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+              <i class="fa-solid fa-book-open"></i>
+              <p>القصص <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
             </a>
             <ul class="sidebar-submenu open">
-              <li><a href="manage-words.html" class="submenu-link active"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إدارة الكلمات</p></a></li>
-              <li><a href="add-word.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إضافة كلمة</p></a></li>
+              <li><a href="manage-stories.html" class="submenu-link active"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة القصص</p>
+                </a></li>
+              <li><a href="add-story.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إضافة قصة</p>
+                </a></li>
             </ul>
           </li>
-          </ul>
-      </div>
-    </div>
+                    <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i>
+                            <p>الطلاب</p>
+                        </a></li>
+                    <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+                            <p>المعلمون</p>
+                        </a></li>
+                    <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
+                            <p>المكتبة</p>
+                        </a></li>
+                    <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
+                            <p>القسم</p>
+                        </a></li>
+                    <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+                            <p>الموظفون</p>
+                        </a></li>
+                    <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+                            <p>الرسوم</p>
+                        </a></li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="login.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل الدخول</p>
+                                </a></li>
+                            <li><a href="signup.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل</p>
+                                </a></li>
+                            <li><a href="forgot-password.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">نسيت كلمة المرور</p>
+                                </a></li>
+                            <li><a href="404.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 404</p>
+                                </a></li>
+                            <li><a href="500.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">صفحة 500</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="table-bootstrap.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">بوتستراب</p>
+                                </a></li>
+                            <li><a href="data-table.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">جدول البيانات</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="form.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">عنصر النموذج</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
+        
+    <!-- Content Wrapper -->
     <div class="content-wrapper">
+      <!-- Header -->
       <div class="header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
-          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
-          <div class="d-none d-md-block">
-            <h5 class="m-0 fw-bold">إدارة كلمات الأحرف</h5>
+          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="d-none d-md-block d-lg-block">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text bg-white " id="addon-wrapping"><i
+                  class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+              <input type="text" class="form-control search-input border-l-none ps-0" placeholder="ابحث عن أي شيء"
+                aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
           </div>
         </div>
-        <div class="user-profile">
-            <span class="user-avatar">A</span>
+
+        <div class="d-flex align-items-center">
+          <ul class="nav d-flex align-items-center">
+            <!-- Messages Dropdown -->
+            <li class="nav-item me-2-5">
+              <a href="#" class="text-color-1 position-relative" role="button" data-bs-toggle="dropdown"
+                data-bs-offset="0,0" aria-expanded="false">
+                <i class="fa-regular fa-message font-size-24"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <!-- Chat Timeline -->
+                  <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">تحدثنا عن مشروع...</h6>
+                          <small class="d-block"><i class="fa-solid fa-clock"></i> منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a class="all-notification" href="#">شاهد كل الرسائل <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </li>
+            <!-- Notifications Dropdown -->
+            <li class="nav-item me-2-5">
+              <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" data-bs-offset="0,0"
+                aria-expanded="false">
+                <i class="fa-regular fa-bell font-size-24"></i>
+                <div class="marker"></div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <!-- Notifications Timeline -->
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/profile.png">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+
+                </div>
+                <a class="all-notification" href="#">شاهد كل الإشعارات <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </li>
+            <!-- User Profile -->
+            <li class="nav-item dropdown user-profile">
+              <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="user-avatar me-0 me-lg-3">A</span>
+                <div>
+                  <a href="#" class="d-none d-lg-block">
+                    <span class="d-block auth-role">مسؤول</span>
+                    <span class="auth-name">أدين لورين</span>
+                    <span class="ms-2 text-color-1 text-size-sm"><i class="fa-solid fa-angle-down"></i></span>
+                  </a>
+                  <ul class="dropdown-menu mt-3">
+                    <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+                    <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
+
 
       <div class="main-content">
         <div class="container-fluid">

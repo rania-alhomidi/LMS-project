@@ -772,7 +772,7 @@ table tr th {
 table tr td {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
-  color: var(--text-color-3) !important;
+  color: var(--text-color-2) !important;
 }
 
 table tr th:first-child, table tr td:first-child {
