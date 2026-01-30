@@ -69,9 +69,19 @@
                 </a></li>
             </ul>
           </li>
-                    <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i>
-                            <p>الطلاب</p>
-                        </a></li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-solid fa-book-open"></i>
+              <p>الطلاب <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+                  <ul class="sidebar-submenu open">
+              <li><a href="students.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0"> إدارة الطلاب</p>
+                </a></li>
+                 <li><a href="student_progress.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0"> تقارير الطلاب</p>
+                </a></li>
+            </ul>
+          </li>
                     <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
                             <p>المعلمون</p>
                         </a></li>
@@ -88,7 +98,7 @@
                             <p>الرسوم</p>
                         </a></li>
                     <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>الصفحات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+                            <p>التسجيل<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
                         <ul class="sidebar-submenu">
                             <li><a href="login.html" class="submenu-link"><i
@@ -103,9 +113,9 @@
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">نسيت كلمة المرور</p>
                                 </a></li>
-                            <li><a href="404.html" class="submenu-link"><i
+                            <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">صفحة 404</p>
+                                    <p class="m-0">الاعدادات</p>
                                 </a></li>
                             <li><a href="500.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
@@ -141,9 +151,9 @@
             </div>
         </div>
 
-
+        
     <!-- Content Wrapper -->
-    <div class="content-wrapper">
+    <div class="content-wrapper ">
       <!-- Header -->
       <div class="header d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
@@ -160,6 +170,7 @@
             </div>
           </div>
         </div>
+
         <div class="d-flex align-items-center">
           <ul class="nav d-flex align-items-center">
             <!-- Messages Dropdown -->
@@ -190,33 +201,33 @@
               </div>
             </li>
             <!-- Notifications Dropdown -->
-            <li class="nav-item me-2-5">
-              <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" data-bs-offset="0,0"
-                aria-expanded="false">
-                <i class="fa-regular fa-bell font-size-24"></i>
-                <div class="marker"></div>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end mt-4">
-                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
-                  <!-- Notifications Timeline -->
-                  <ul class="timeline">
-                    <li>
-                      <div class="timeline-panel">
+          <li class="nav-item dropdown me-2-5">
+    <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-regular fa-bell font-size-24"></i>
+        <div class="marker"></div>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-end mt-4">
+        <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-panel">
                         <div class="media me-2">
-                          <img alt="image" width="50" src="./assets/images/profile.png">
+                            <img alt="image" width="50" src="./assets/images/profile.png">
                         </div>
                         <div class="media-body">
-                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
-                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                            <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                            <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
                         </div>
-                      </div>
-                    </li>
-                  </ul>
-
-                </div>
-                <a class="all-notification" href="#">شاهد كل الإشعارات <i class="fas fa-arrow-right"></i></a>
-              </div>
-            </li>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a class="all-notification" href="notifications.html">
+            شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</li>
             <!-- User Profile -->
             <li class="nav-item dropdown user-profile">
               <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

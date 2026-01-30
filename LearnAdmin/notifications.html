@@ -253,160 +253,168 @@
         </div>
       </div>
 
-            <div class="main-content px-4">
-                <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
-                    <h3 class="text-color-2">إدارة الطلاب</h3>
-                    <div class="d-flex">
-                        <div class="dropdown me-2">
-                            <button class="btn btn-white dropdown-toggle shadow-sm" data-bs-toggle="dropdown">
-                                <i class="fa-solid fa-filter me-2"></i> تصفية
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">نشط</a></li>
-                                <li><a class="dropdown-item" href="#">غير نشط</a></li>
-                            </ul>
+
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-lg-center flex-column flex-md-row flex-lg-row mt-3">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-2 text-size-26 text-color-2">الإشعارات</h3>
+                            </div>
                         </div>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CreateModal">
-                            <i class="fa-solid fa-plus me-2"></i> إضافة طالب
-                        </button>
+                    </div>
+                </div>
+                
+                <!-- منطقة المحتوى -->
+                <div class="mt-4">
+                    <div class="row">
+                        <!-- نموذج إرسال الإشعار -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-white pt-3 border-0">
+                                    <h5 class="mb-0 text-color-2">إرسال إشعار جديد</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="notificationTitle" class="form-label text-color-2">عنوان الإشعار</label>
+                                            <input type="text" class="form-control" id="notificationTitle" placeholder="أدخل عنوان الإشعار">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="targetAudience" class="form-label text-color-2">الفئة المستهدفة</label>
+                                            <select class="form-select" id="targetAudience">
+                                                <option selected disabled>اختر الفئة...</option>
+                                                <option value="all">الجميع</option>
+                                                <option value="students">الطلاب</option>
+                                                <option value="staff">الموظفون</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <label for="notificationMessage" class="form-label text-color-2 m-0">نص الرسالة</label>
+                                                <button type="button" id="btnAiGenerate" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                                                    <i class="fa-solid fa-wand-magic-sparkles me-1"></i> إنشاء بالذكاء الاصطناعي
+                                                </button>
+                                            </div>
+                                            <textarea class="form-control" id="notificationMessage" rows="5" placeholder="اكتب نص الإشعار هنا..."></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 py-2">
+                                            <i class="fa-regular fa-paper-plane me-2"></i> إرسال الإشعار
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- سجل الإشعارات -->
+                        <div class="col-lg-8">
+                            <div class="card shadow-sm border-0 h-100">
+                                <div class="card-header bg-white pt-3 border-0 d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0 text-color-2">سجل الإشعارات</h5>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fa-solid fa-trash me-1"></i> مسح السجل
+                                    </button>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th class="ps-4">العنوان</th>
+                                                    <th>الفئة</th>
+                                                    <th>التاريخ</th>
+                                                    <th>الحالة</th>
+                                                    <th class="text-center">إجراءات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="fw-bold text-color-2">تحديث النظام</div>
+                                                        <small class="text-muted">سيتم إجراء صيانة دورية...</small>
+                                                    </td>
+                                                    <td><span class="badge bg-info bg-opacity-10 text-info">الجميع</span></td>
+                                                    <td>2023-10-25</td>
+                                                    <td><span class="badge bg-success">تم الإرسال</span></td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-light text-danger"><i class="fa-solid fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="ps-4">
+                                                        <div class="fw-bold text-color-2">تذكير بالامتحانات</div>
+                                                        <small class="text-muted">يرجى مراجعة الجدول...</small>
+                                                    </td>
+                                                    <td><span class="badge bg-primary bg-opacity-10 text-primary">الطلاب</span></td>
+                                                    <td>2023-10-24</td>
+                                                    <td><span class="badge bg-success">تم الإرسال</span></td>
+                                                    <td class="text-center">
+                                                        <button class="btn btn-sm btn-light text-danger"><i class="fa-solid fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-               <div class="card border-0 shadow-sm mt-4">
-    <div class="card-body p-0">
-        <div class="table-responsive">
-            <table class="table align-middle mb-0">
-                <thead>
-                    <tr class="text-center bg-light">
-                        <th style="width: 50px;" class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </th>
-                        <th>العمليات</th>
-                        <th>الحالة</th>
-                        <th>الجوال</th>
-                        <th class="text-end pe-4">الاسم</th>
-                    </tr>
-                </thead>
-                <tbody id="studentsTableBody">
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456789</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">ساجدة محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">بشار محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+            </div>
+            <!-- Footer -->
+            <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank">قوالب بواسطة TemplateRise</a></p>
             </div>
         </div>
     </div>
-
-
-    <!-- add student -->
-    <div class="modal fade" id="CreateModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">إضافة طالب جديد</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="addStudentForm">
-                    <div class="modal-body row g-3">
-                        <div class="col-12">
-                            <label class="form-label">الاسم الكامل</label>
-                            <input type="text" class="form-control" id="CreateUserName" required>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">الجنس</label>
-                            <select class="form-select" id="CreateUserGender">
-                                <option value="ذكر">ذكر</option>
-                                <option value="أنثى">أنثى</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">العمر</label>
-                            <input type="number" class="form-control" id="CreateUserAge" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">رقم الجوال</label>
-                            <input type="text" class="form-control" id="CreateUserMobile" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100">حفظ البيانات</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/plugin/chart/chart.js"></script>
+    <script src="./assets/plugin/quill/quill.js"></script>
+    <script src="./assets/js/chart.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        document.getElementById('btnAiGenerate').addEventListener('click', function() {
+            const titleInput = document.getElementById('notificationTitle');
+            const messageBox = document.getElementById('notificationMessage');
+            const title = titleInput.value.trim();
+            
+            if (!title) {
+                alert('يرجى كتابة عنوان الإشعار أولاً ليتمكن الذكاء الاصطناعي من صياغة الرسالة.');
+                titleInput.focus();
+                return;
+            }
 
- 
+            // محاكاة لتوليد النص (في التطبيق الحقيقي يتم استدعاء API)
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-1"></i> جاري الكتابة...';
+            this.disabled = true;
+            messageBox.setAttribute('placeholder', 'جاري صياغة الرسالة بأسلوب احترافي...');
+
+            setTimeout(() => {
+                // نماذج ردود جاهزة للمحاكاة بناءً على الكلمات المفتاحية في العنوان
+                let aiResponse = "";
+                if (title.match(/اجتماع|لقاء/)) {
+                    aiResponse = "الزملاء الأعزاء،\n\nنود دعوتكم لحضور " + title + " الهام لمناقشة المستجدات والخطط القادمة. حضوركم ومشاركتكم ضرورية لنا.\n\nالمكان: قاعة الاجتماعات الرئيسية\nالوقت: يحدد لاحقاً\n\nمع التحية.";
+                } else if (title.match(/عطلة|إجازة|عيد/)) {
+                    aiResponse = "أسرة المدرسة الكريمة،\n\nبمناسبة " + title + "، يسرنا أن نعلن عن تعطيل الدوام الرسمي. نتمنى لكم أوقاتاً سعيدة وممتعة.\n\nكل عام وأنتم بخير.";
+                } else if (title.match(/امتحان|اختبار|درجات/)) {
+                    aiResponse = "أعزائي الطلاب،\n\nنلفت انتباهكم بخصوص " + title + ". يرجى الاستعداد جيداً ومراجعة المواد المقررة. نتمنى لكم دوام التوفيق والنجاح.\n\nإدارة المدرسة";
+                } else if (title.match(/صيانة|تحديث|نظام/)) {
+                    aiResponse = "تنبيه هام،\n\nنود إعلامكم بأنه سيتم إجراء " + title + " للنظام الإلكتروني لتحسين الأداء. قد تتوقف الخدمة مؤقتاً خلال هذه الفترة.\n\nشكراً لتفهمكم.";
+                } else {
+                    aiResponse = "تحية طيبة،\n\nإشارة إلى الموضوع أعلاه (" + title + ")، نود إفادتكم بالتفاصيل الهامة المتعلقة به. يرجى الاطلاع والالتزام بالتعليمات الواردة.\n\nشاكرين تعاونكم.";
+                }
+                
+                messageBox.value = aiResponse;
+                this.innerHTML = originalText;
+                this.disabled = false;
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

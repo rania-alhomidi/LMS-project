@@ -253,160 +253,132 @@
         </div>
       </div>
 
-            <div class="main-content px-4">
-                <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
-                    <h3 class="text-color-2">إدارة الطلاب</h3>
-                    <div class="d-flex">
-                        <div class="dropdown me-2">
-                            <button class="btn btn-white dropdown-toggle shadow-sm" data-bs-toggle="dropdown">
-                                <i class="fa-solid fa-filter me-2"></i> تصفية
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">نشط</a></li>
-                                <li><a class="dropdown-item" href="#">غير نشط</a></li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CreateModal">
-                            <i class="fa-solid fa-plus me-2"></i> إضافة طالب
-                        </button>
-                    </div>
-                </div>
 
-               <div class="card border-0 shadow-sm mt-4">
-    <div class="card-body p-0">
-        <div class="table-responsive">
-            <table class="table align-middle mb-0">
-                <thead>
-                    <tr class="text-center bg-light">
-                        <th style="width: 50px;" class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </th>
-                        <th>العمليات</th>
-                        <th>الحالة</th>
-                        <th>الجوال</th>
-                        <th class="text-end pe-4">الاسم</th>
-                    </tr>
-                </thead>
-                <tbody id="studentsTableBody">
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
+
+
+
+            <div class="main-content mt-100">
+                <div class="container-fluid">
+                    
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4 class="fw-bold text-color-2">تقارير تقدم الطالب</h4>
+                            <p class="text-color-3">نظرة عامة على الأداء والإنجازات التعليمية للطلاب</p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="stat-icon bg-primary bg-opacity-10 text-primary">📊</div>
+                                    <h6 class="mb-0 text-color-2">نسبة التقدم</h6>
+                                </div>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;"></div>
+                                </div>
+                                <small class="text-color-3">75% مكتمل</small>
                             </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456789</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">ساجدة محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="stat-icon bg-success bg-opacity-10 text-success">📚</div>
+                                    <h6 class="mb-0 text-color-2">الدروس المكتملة</h6>
+                                </div>
+                                <h2 class="fw-bold text-color-2 mb-0">24</h2>
+                                <small class="text-color-3">درس تعليمي</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="stat-icon bg-warning bg-opacity-10 text-warning">⭐</div>
+                                    <h6 class="mb-0 text-color-2">مستوى الأداء</h6>
+                                </div>
+                                <h2 class="fw-bold text-color-2 mb-0">متميز</h2>
+                                <small class="text-success">▲ أعلى من المعدل</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card shadow-sm border-0 p-3 h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="stat-icon bg-info bg-opacity-10 text-info">🕒</div>
+                                    <h6 class="mb-0 text-color-2">آخر نشاط</h6>
+                                </div>
+                                <h5 class="fw-bold text-color-2 mt-2">28 يناير 2026</h5>
+                                <small class="text-color-3">منذ 3 ساعات</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card shadow-sm border-0 p-4">
+                                <h5 class="text-color-2 mb-4">تحليل التقدم الزمني للأسبوع الحالي</h5>
+                                <div style="height: 350px;">
+                                    <canvas id="progressChart"></canvas>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
-
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">بشار محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- add student -->
-    <div class="modal fade" id="CreateModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">إضافة طالب جديد</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="addStudentForm">
-                    <div class="modal-body row g-3">
-                        <div class="col-12">
-                            <label class="form-label">الاسم الكامل</label>
-                            <input type="text" class="form-control" id="CreateUserName" required>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">الجنس</label>
-                            <select class="form-select" id="CreateUserGender">
-                                <option value="ذكر">ذكر</option>
-                                <option value="أنثى">أنثى</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">العمر</label>
-                            <input type="number" class="form-control" id="CreateUserAge" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">رقم الجوال</label>
-                            <input type="text" class="form-control" id="CreateUserMobile" required>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100">حفظ البيانات</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+                </div> </div> </div> </div> <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/custom.js"></script> 
 
- 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // إخفاء الـ Preloader بعد التحميل
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('main-wrapper').style.display = 'flex';
+            }, 500);
+
+            // إعداد الرسم البياني
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            
+            // تدرج لوني أخضر متوافق مع متغيراتك --primary (#41A141)
+            let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(65, 161, 65, 0.4)');
+            gradient.addColorStop(1, 'rgba(65, 161, 65, 0.0)');
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['الأسبوع 1', 'الأسبوع 2', 'الأسبوع 3', 'الأسبوع 4'],
+                    datasets: [{
+                        label: 'نسبة الإنجاز %',
+                        data: [20, 50, 65, 85],
+                        borderColor: '#41A141',
+                        backgroundColor: gradient,
+                        borderWidth: 3,
+                        pointBackgroundColor: '#ffffff',
+                        pointBorderColor: '#41A141',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { callback: function(value) { return value + '%' } }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

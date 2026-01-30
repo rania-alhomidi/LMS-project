@@ -253,160 +253,80 @@
         </div>
       </div>
 
-            <div class="main-content px-4">
-                <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
-                    <h3 class="text-color-2">إدارة الطلاب</h3>
-                    <div class="d-flex">
-                        <div class="dropdown me-2">
-                            <button class="btn btn-white dropdown-toggle shadow-sm" data-bs-toggle="dropdown">
-                                <i class="fa-solid fa-filter me-2"></i> تصفية
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">نشط</a></li>
-                                <li><a class="dropdown-item" href="#">غير نشط</a></li>
-                            </ul>
-                        </div>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CreateModal">
-                            <i class="fa-solid fa-plus me-2"></i> إضافة طالب
-                        </button>
-                    </div>
-                </div>
 
-               <div class="card border-0 shadow-sm mt-4">
-    <div class="card-body p-0">
-        <div class="table-responsive">
-            <table class="table align-middle mb-0">
-                <thead>
-                    <tr class="text-center bg-light">
-                        <th style="width: 50px;" class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </th>
-                        <th>العمليات</th>
-                        <th>الحالة</th>
-                        <th>الجوال</th>
-                        <th class="text-end pe-4">الاسم</th>
-                    </tr>
-                </thead>
-                <tbody id="studentsTableBody">
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456789</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">ساجدة محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+
+            <!-- Main Content -->
+            <div class="main-content">
+
+                <h3 class="mt-4 mb-4 text-size-26 text-color-2">الإعدادات العامة</h3>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+
+                        <form>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">اسم النظام</label>
+                                    <input type="text" class="form-control" value="نظام إدارة التعلم">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">لغة النظام</label>
+                                    <select class="form-select">
+                                        <option selected>العربية</option>
+                                        <option>English</option>
+                                    </select>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
 
-                    <tr class="text-center">
-                        <td class="ps-4">
-                            <input type="checkbox" class="form-check-input">
-                        </td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
-                                    <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
-                        </td>
-                        <td class="text-muted">123456</td>
-                        <td class="text-end pe-4">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <span class="fw-bold text-dark">بشار محمد السراري</span>
-                                <div class="ms-3" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background-color: #f0f0f0;">
-                                    <img src="./assets/images/profile.png" alt="avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="mb-4">
+                                <label class="fw-bold d-block mb-3">إعدادات العرض</label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" checked>
+                                        <label class="form-check-label">
+                                            <i class="fa-solid fa-sun text-warning"></i>
+                                            الوضع الفاتح
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio">
+                                        <label class="form-check-label">
+                                            <i class="fa-solid fa-moon text-secondary"></i>
+                                            الوضع الداكن
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-            </div>
-        </div>
-    </div>
 
+                            <hr>
 
-    <!-- add student -->
-    <div class="modal fade" id="CreateModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">إضافة طالب جديد</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            <div class="text-end">
+                                <button class="btn btn-primary fw-bold">
+                                    <i class="fa-solid fa-save"></i>
+                                    حفظ التغييرات
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-                <form id="addStudentForm">
-                    <div class="modal-body row g-3">
-                        <div class="col-12">
-                            <label class="form-label">الاسم الكامل</label>
-                            <input type="text" class="form-control" id="CreateUserName" required>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">الجنس</label>
-                            <select class="form-select" id="CreateUserGender">
-                                <option value="ذكر">ذكر</option>
-                                <option value="أنثى">أنثى</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">العمر</label>
-                            <input type="number" class="form-control" id="CreateUserAge" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">رقم الجوال</label>
-                            <input type="text" class="form-control" id="CreateUserMobile" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100">حفظ البيانات</button>
-                    </div>
-                </form>
             </div>
+
+            <!-- Footer -->
+            <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">
+                    حقوق النشر © 2024. جميع الحقوق محفوظة.
+                </p>
+            </div>
+
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
 
- 
 </body>
+
 </html>
