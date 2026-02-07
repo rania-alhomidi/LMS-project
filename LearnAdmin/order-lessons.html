@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ترتيب الدروس</title>
+  <!-- Stylesheets -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="preloader"><div class="spinner"></div></div>
+    <div id="main-wrapper" class="d-flex">
+    <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
+          </div>
+          <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png"
+                alt="logo small"></a></div>
+        </div>
+        <div class="sidebar-body  custom-scrollbar">
+          <ul class="sidebar-menu">
+            <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+                <p>لوحة التحكم</p>
+              </a></li>
+            <li>
+              <a href="#" class="sidebar-link submenu-parent">
+                <i class="fa-brands fa-discourse"></i>
+                <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+              </a>
+              <ul class="sidebar-submenu">
+                 <li>
+                  <a href="mange-lesson.html" class="submenu-link">
+                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                    <p class="m-0">إدارة الدروس</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="manage-units.html" class="submenu-link">
+                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                    <p class="m-0">إدارة الوحدات</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="order-lessons.html" class="submenu-link">
+                    <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                    <p class="m-0">ترتيب الدروس</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="content-wrapper">
+      <div class="main-content p-3">
+        <div class="row mb-3">
+          <div class="col-8">
+            <h3 class="mb-2">ترتيب الدروس داخل الوحدة</h3>
+          </div>
+          <div class="col-4 text-end">
+            <a href="mange-lesson.html" class="btn btn-outline-secondary">العودة</a>
+          </div>
+        </div>
+
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <p class="text-muted">هنا ستتمكن من سحب وإفلات الدروس لإعادة ترتيبها. (تحتاج إلى إضافة سكربت JS لاحقًا لحفظ الترتيب عبر API.)</p>
+            <ul class="list-group">
+              <li class="list-group-item">الدرس الأول</li>
+              <li class="list-group-item">الدرس الثاني</li>
+              <li class="list-group-item">الدرس الثالث</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+        <p class="m-0">Copyright © 2024. All Rights Reserved.</p>
+      </div>
+    </div>
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </div>
+
+  </body>
+
+</html>

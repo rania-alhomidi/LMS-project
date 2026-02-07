@@ -97,10 +97,22 @@
                     <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
                             <p>الرسوم</p>
                         </a></li>
-                            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
+                        <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                          <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
-                            <ul class="sidebar-submenu">
+                        <ul class="sidebar-submenu">
+                            <li><a href="login.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل الدخول</p>
+                                </a></li>
+                            <li><a href="signup.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">تسجيل</p>
+                                </a></li>
+                            <li><a href="forgot-password.html" class="submenu-link"><i
+                                        class="fa-solid fa-circle me-4 font-size-12"></i>
+                                    <p class="m-0">نسيت كلمة المرور</p>
+                                </a></li>
                             <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">الاعدادات</p>
@@ -226,13 +238,12 @@
                     <span class="auth-name">أدين لورين</span>
                     <span class="ms-2 text-color-1 text-size-sm"><i class="fa-solid fa-angle-down"></i></span>
                   </a>
-                  <ul class="dropdown-menu mt-3">
+                            <ul class="dropdown-menu mt-3">
                     <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
                     <li><a class="dropdown-item" href="#">الإعدادات</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
                   </ul>
                 </div>
               </div>
@@ -242,118 +253,159 @@
       </div>
 
 
-
-      <div class="main-content mt-100">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-                <h4 class="text-color-2 fw-bold mb-1">تعديل الدرس</h4>
-                <p class="text-color-3 text-size-14 mb-0">يمكنك تحديث معلومات الدرس وتغيير الوسائط المرتبطة به</p>
-            </div>
-            <a href="mange-lesson.html" class="btn btn-outline-primary shadow-sm">
-                <i class="fa-solid fa-arrow-right me-1"></i> العودة للقائمة
-            </a>
-        </div>
-
-        <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-                <form id="editLessonForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">اسم الدرس</label>
-                            <input type="text" class="form-control" value="تعلم الحرف أ" placeholder="أدخل اسم الدرس">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">الحرف المرتبط</label>
-                            <select class="form-select">
-                                <option selected>أ</option>
-                                <option value="1">ب</option>
-                                <option value="2">ت</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="form-label text-color-2 fw-semibold">وصف الدرس</label>
-                            <textarea class="form-control" rows="3">هذا الدرس يشرح نطق الحرف أ مع أمثلة مصورة..</textarea>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الفئة العمرية</label>
-                            <select class="form-select">
-                                <option selected>3-5 سنوات</option>
-                                <option>6-8 سنوات</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">مستوى الصعوبة</label>
-                            <div class="d-flex gap-3 mt-2">
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="easy" checked>
-                                    <label class="form-check-label text-color-1" for="easy">مبتدئ</label>
-                                </div>
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="medium">
-                                    <label class="form-check-label text-color-1" for="medium">متوسط</label>
-                                </div>
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex align-items-lg-center  flex-column flex-md-row flex-lg-row mt-3">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-2 text-size-26 text-color-2">ملخص الوحدات والدروس</h3>
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الحالة</label>
-                            <div class="form-check form-switch custom-switch mt-2">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label text-color-1">نشط</label>
+                            <div class="mt-3 mt-lg-0">
+                                <button id="refreshBtn" class="btn btn-sm btn-outline-primary">تحديث</button>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">صورة الدرس الحالية</label>
-                            <div class="dropzone rounded mb-2">
-                                <div class="preview-item m-auto" style="width: 80px; height: 80px;">
-                                    <img src="./assets/images/lesson-thumb.jpg" class="rounded shadow-sm w-100 h-100 object-fit-cover">
-                                </div>
-                                <p class="text-size-13 text-color-3 mt-2">اسحب صورة جديدة لتغيير الحالية</p>
-                                <button type="button" class="btn btn-sm btn-primary">تغيير الصورة</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">ملف الفيديو/الصوت</label>
-                            <div class="file-input-container">
-                                <div class="file-label">
-                                    <span class="file-name">lesson_video_01.mp4</span>
-                                    <span class="file-button">تصفح</span>
-                                </div>
-                                <input type="file" class="file-input">
-                            </div>
-                            <small class="text-color-3 d-block mt-2">الحد الأقصى لحجم الملف 20 ميجابايت</small>
-                        </div>
-
-                        <div class="col-12 text-end mt-5">
-                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
-                            <button type="submit" class="btn btn-primary px-5 shadow">حفظ التعديلات</button>
-                        </div>
+                        </div><!-- end card header -->
                     </div>
-                </form>
-            </div>
+                    <!--end col-->
+                </div>
+                <div class="mt-4">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white pt-3">
+                        <h4 class="h3">الملخّص العام</h4>
+                    </div>
+                    <div class="card-body">
+                      <!-- Filters -->
+                      <div class="row mb-3 g-2">
+                        <div class="col-auto">
+                          <select id="filterState" class="form-select">
+                            <option value="all">كل الحالات</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="inprogress">قيد التقدّم</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <input id="search" class="form-control" placeholder="بحث عن اسم الوحدة أو الدرس...">
+                        </div>
+                      </div>
+
+                      <!-- Summary cards -->
+                      <div class="d-flex gap-3 mb-3 flex-wrap">
+                        <div class="card p-3 card-summary text-center">
+                          <div>إجمالي الوحدات</div>
+                          <strong id="totalUnits">0</strong>
+                        </div>
+                        <div class="card p-3 card-summary text-center">
+                          <div>إجمالي الدروس</div>
+                          <strong id="totalLessons">0</strong>
+                        </div>
+                        <div class="card p-3 card-summary text-center">
+                          <div>دروس مكتملة</div>
+                          <strong id="completedLessons">0</strong>
+                        </div>
+                        <div class="card p-3 card-summary text-center">
+                          <div>دروس قيد التقدّم</div>
+                          <strong id="inprogressLessons">0</strong>
+                        </div>
+                      </div>
+
+                      <!-- Units list -->
+                      <div id="unitsContainer" class="list-group"></div>
+
+                    </div>
+                    </div>
+                </div>
+        </div>
+         <!-- Footer -->
+         <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+            <p class="m-0">Copyright © 2024. All Rights Reserved. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >Themes By TemplateRise</a></p>
         </div>
     </div>
-</div>
 
 
-
-             <!-- Footer -->
-             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
-                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
-            </div>
-    </div>
      <!-- Scripts -->
     <script  src="./assets/js/jquery-3.6.0.min.js"></script>
     <script  src="./assets/js/bootstrap.bundle.min.js"></script>
     <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/plugin/quill/quill.js"></script>
     <script  src="./assets/js/chart.js"></script>
     <script  src="./assets/js/main.js"></script>
+
+    <script>
+    // خفيف: تحميل البيانات من JSON محلي عند عدم وجود API
+    async function fetchLocal(){
+      const res = await fetch('assets/data/report-data.json');
+      return res.ok ? res.json() : {units:[]};
+    }
+
+    function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];}); }
+
+    function render(data){
+      const units = data.units || [];
+      $('#totalUnits').text(units.length);
+      let totalLessons = 0, completed=0, inprogress=0;
+      units.forEach(u => { const ls = u.lessons||[]; totalLessons += ls.length; ls.forEach(l=>{ if(l.status==='completed') completed++; else inprogress++; }); });
+      $('#totalLessons').text(totalLessons);
+      $('#completedLessons').text(completed);
+      $('#inprogressLessons').text(inprogress);
+
+      const $container = $('#unitsContainer').empty();
+      units.forEach((u, idx)=>{
+        const lessons = u.lessons||[];
+        const done = lessons.filter(l=>l.status==='completed').length;
+        const pct = lessons.length? Math.round(done/lessons.length*100):0;
+        const collapseId = 'lessons-'+idx;
+        const $item = $(
+          `<div class="list-group-item mb-2 shadow-sm">
+             <div class="d-flex justify-content-between align-items-center unit-head unit-item" data-bs-toggle="collapse" data-bs-target="#${collapseId}">
+               <div>
+                 <strong>${escapeHtml(u.name||'--')}</strong>
+                 <div class="text-muted small">${lessons.length} درس</div>
+               </div>
+               <div style="min-width:220px;max-width:320px">
+                 <div class="d-flex align-items-center gap-2">
+                   <div class="w-100">
+                     <div class="progress">
+                       <div class="progress-bar bg-success" role="progressbar" style="width:${pct}%">${pct}%</div>
+                     </div>
+                   </div>
+                   <div class="small text-muted">${pct}%</div>
+                 </div>
+               </div>
+             </div>
+             <div class="collapse mt-2" id="${collapseId}">
+               <div class="card card-body p-2">
+                 <div class="list-group lessons-list"></div>
+               </div>
+             </div>
+           </div>`);
+        const $lessons = $item.find('.lessons-list');
+        lessons.forEach(l=>{
+          const badge = l.status==='completed' ? 'badge bg-success' : 'badge bg-warning text-dark';
+          $lessons.append(`<div class="d-flex justify-content-between align-items-center py-1 border-top">
+            <div><div><strong>${escapeHtml(l.title||'--')}</strong></div><div class="small text-muted">${escapeHtml(l.duration||'--')}</div></div>
+            <div class="text-end"><span class="${badge}">${escapeHtml(l.status||'--')}</span> <a class="btn btn-sm btn-link ms-2" href="${escapeHtml(l.url||'#')}">فتح</a></div>
+          </div>`);
+        });
+        $container.append($item);
+      });
+    }
+
+    $(function(){
+      $('#refreshBtn').on('click', ()=>{ fetchLocal().then(render); });
+      $('#search, #filterState').on('input change', function(){
+        const q = $('#search').val().trim().toLowerCase();
+        const state = $('#filterState').val();
+        fetchLocal().then(data=>{
+          let units = data.units||[];
+          if(q){ units = units.map(u=>({ ...u, lessons:(u.lessons||[]).filter(l=> (u.name||'').toLowerCase().includes(q) || (l.title||'').toLowerCase().includes(q)) })).filter(u=> (u.lessons||[]).length>0); }
+          if(state==='completed'){ units = units.filter(u=> (u.lessons||[]).length && (u.lessons||[]).every(l=>l.status==='completed')); }
+          else if(state==='inprogress'){ units = units.filter(u=> (u.lessons||[]).some(l=>l.status!=='completed')); }
+          render({units});
+        });
+      });
+      // initial load
+      fetchLocal().then(render);
+    });
+    </script>
 </body>
 </html>
