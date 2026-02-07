@@ -1,0 +1,29 @@
+{
+  "students": 10689,
+  "students_history": [9800, 10200, 10450, 10689],
+  "lessons": 405,
+  "lessons_history": [360, 380, 395, 405],
+  "stories": 24,
+  "stories_history": [18, 20, 22, 24],
+  "words": 540,
+  "words_history": [480, 510, 530, 540],
+  "courses": 10,
+  "courses_history": [8,9,9,10],
+  "teachers": 8,
+  "teachers_history": [6,7,8,8],
+  "notifications": 5,
+  "notifications_history": [3,4,5,5],
+
+  "traffic": {
+    "labels": ["بحث عضوي", "إحالات", "وسائل التواصل الاجتماعي"],
+    "values": [4305, 482, 859]
+  },
+
+  "conversions": {
+    "labels": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct"],
+    "datasets": [
+      { "label": "Segment 1", "data": [35, 28, 34, 32, 40, 20, 45, 25, 30, 35], "backgroundColor": "#7256C5" },
+      { "label": "Segment 2", "data": [45, 35, 45, 48, 50, 40, 55, 42, 35, 40], "backgroundColor": "#68D137" }
+    ]
+  }
+}

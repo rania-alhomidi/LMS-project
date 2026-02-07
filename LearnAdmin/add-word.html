@@ -97,22 +97,10 @@
                     <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
                             <p>الرسوم</p>
                         </a></li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>التسجيل<i class="fa-solid fa-chevron-right right-icon"></i></p>
+                            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="login.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل الدخول</p>
-                                </a></li>
-                            <li><a href="signup.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل</p>
-                                </a></li>
-                            <li><a href="forgot-password.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">نسيت كلمة المرور</p>
-                                </a></li>
                             <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">الاعدادات</p>
@@ -256,7 +244,7 @@
  <div class="main-content">
         <div class="container-fluid">
           <div class="card border-0 shadow-sm p-4">
-            <h6 class="form-label text-color-2 mb-4">إضافة كلمات مرتبطة بالحرف (دعم الذكاء الاصطناعي)</h6>
+            <h6 class="form-label text-color-2 mb-4">إضافة كلمات مرتبطة بالحرف</h6>
             
             <div class="bg-light p-4 rounded-3 border">
               <div class="row g-3">
@@ -278,12 +266,7 @@
 
                 <div class="col-md-4">
                   <label class="small text-muted mb-1">الكلمة</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="wordInput" placeholder="مثال: أسد">
-                    <button class="btn btn-outline-secondary btn-ai" type="button" id="aiGenBtn" title="اقتراح ذكي">
-                      <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </button>
-                  </div>
+                  <input type="text" class="form-control" id="wordInput" placeholder="مثال: أسد">
                 </div>
 
                 <div class="col-md-4">
@@ -307,7 +290,7 @@
                 
                 <div class="alert alert-info mt-4 border-0 bg-light-primary text-primary small">
                   <i class="fa-solid fa-circle-info me-2"></i>
-                  ملاحظة: أيقونة <strong>العصا السحرية</strong> ستستخدم لاحقاً لربط النظام بـ ChatGPT لتوليد الكلمات تلقائياً.
+                  ملاحظة: يمكن إضافة الكلمات يدويًا باستخدام حقل الإدخال أعلاه.
                 </div>
               </div>
             </div>
@@ -315,7 +298,7 @@
         </div>
 
         <div class="footer text-center bg-white py-3 mt-auto border-top">
-          <p class="m-0 text-muted small">حقوق النشر © 2024. تصميم متوافق مع معايير الذكاء الاصطناعي.</p>
+          <p class="m-0 text-muted small">حقوق النشر © 2024. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </div>
@@ -386,10 +369,7 @@
             }
         });
 
-        // زر التوليد الذكي (محاكاة حالياً)
-        document.getElementById('aiGenBtn').addEventListener('click', function() {
-            alert("سيتم ربط هذا الزر بـ API الذكاء الاصطناعي لجلب كلمات تبدأ بحرف (" + alphabetSelect.value + ") تلقائياً.");
-        });
+        // تم إزالة وظيفة الاقتراح الآلي؛ الإدخال يدوي الآن
 
         window.deleteWord = function(letter, index) {
             wordsData[letter].splice(index, 1);

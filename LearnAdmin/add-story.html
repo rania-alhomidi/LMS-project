@@ -97,22 +97,10 @@
                     <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
                             <p>الرسوم</p>
                         </a></li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>التسجيل<i class="fa-solid fa-chevron-right right-icon"></i></p>
+                            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="login.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل الدخول</p>
-                                </a></li>
-                            <li><a href="signup.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل</p>
-                                </a></li>
-                            <li><a href="forgot-password.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">نسيت كلمة المرور</p>
-                                </a></li>
                             <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">الاعدادات</p>
@@ -261,8 +249,8 @@
                         <small class="text-success">مستوى المغامر</small>
                     </div>
                 <div class="text-center mb-5">
-                    <h1 class="fw-bold display-6">🎨 مختبر القصص العجيب ✨</h1>
-                    <p class="text-muted">يا بطل، كيف تريد أن تبهر أصدقاءك اليوم؟</p>
+                    <h1 class="fw-bold display-6">🎨 إضافة القصص  ✨</h1>
+                    <p class="text-muted">قم بإضافة اي قصه نص او فديو او صوت</p>
                 </div>
 
                 <div class="row justify-content-center">
@@ -283,12 +271,8 @@
                             <div class="tab-pane fade show active" id="textTab">
                                 <div class="card p-4 border-0 shadow-sm">
                                     <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <button class="btn-signin ai-magic-btn shadow-sm" onclick="generateIdea()">
-                                            <i class="fas fa-robot me-1"></i> فكرة سحرية من الذكاء الاصطناعي
-                                        </button>
-                                        <button class="btn btn-outline-primary rounded-pill btn-sm" onclick="speakText()">
-                                            <i class="fas fa-volume-up me-1"></i> اسمعني يا روبوت
-                                        </button>
+                                        <div></div>
+                                        
                                     </div>
                                     <input type="text" class="form-control mb-3 border-2 p-3 rounded-3" placeholder="ما هو عنوان مغامرتك اليوم؟">
                                     <textarea id="storyText" class="form-control border-2 p-3 rounded-3" rows="8" placeholder="كان يا ما كان في قديم الزمان..."></textarea>
@@ -299,7 +283,7 @@
                                 <div class="card p-5 text-center border-0 shadow-sm">
                                     <div class="upload-card p-4" onclick="document.getElementById('audioInput').click()">
                                         <i class="fas fa-cloud-upload-alt fa-4x text-primary mb-3"></i>
-                                        <h4 class="fw-bold">ارفع صوتك الجميل 🎶</h4>
+                                        <h4 class="fw-bold">ارفع صوت القصه 🎶</h4>
                                         <p class="text-muted">اضغط هنا لاختيار ملف (MP3) لقصتك</p>
                                         <input type="file" id="audioInput" accept="audio/*" class="d-none">
                                     </div>
@@ -314,8 +298,8 @@
                                 <div class="card p-5 text-center border-0 shadow-sm">
                                     <div class="upload-card p-4" onclick="document.getElementById('vidInput').click()">
                                         <i class="fas fa-film fa-4x text-info mb-3"></i>
-                                        <h4 class="fw-bold">فيديو مغامرتك 🎥</h4>
-                                        <p class="text-muted">شاركنا تمثيلك أو رسمك في فيديو</p>
+                                        <h4 class="fw-bold">فيديو القصص 🎥</h4>
+                                        <p class="text-muted">شارك اي فيديو عن قصتك  </p>
                                         <input type="file" id="vidInput" accept="video/*" class="d-none">
                                     </div>
                                     <video id="vidPreview" controls class="w-100 d-none mt-3 rounded shadow"></video>
@@ -325,7 +309,7 @@
 
                         <div class="text-center mt-5">
                             <button class="btn-signin btn-publish rounded-pill shadow-lg">
-                                <i class="fas fa-paper-plane me-2"></i> انشر إبداعي للعالم! 🚀
+                                <i class="fas fa-paper-plane me-2"></i> نشر القصة   🚀
                             </button>
                         </div>
                     </div>
@@ -346,17 +330,7 @@
                 $('#sidebar').toggleClass('sidebar-collapsed');
             });
 
-            // AI Logic
-            window.generateIdea = function() {
-                const ideas = [
-                    "قصة عن رائد فضاء صغير اكتشف كوكباً من الحلوى! ✨",
-                    "سر القطة الشجاعة التي تنقذ الغابة من الأشرار 🐱",
-                    "ماذا لو استيقظت ووجدت أنك تستطيع الطيران؟ ☁️",
-                    "رحلة سحرية داخل كتاب قديم في مكتبة جدتي 📚"
-                ];
-                const pick = ideas[Math.floor(Math.random() * ideas.length)];
-                $('#storyText').val(pick + "\n\nابدأ بكتابة قصتك هنا يا بطل...");
-            };
+            // تم إزالة وظيفة التوليد الآلي للفكرة؛ يُرجى كتابة العنوان والنص يدويًا
 
             // Text to Speech
             window.speakText = function() {

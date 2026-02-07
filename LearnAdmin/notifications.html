@@ -97,22 +97,10 @@
                     <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
                             <p>الرسوم</p>
                         </a></li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>التسجيل<i class="fa-solid fa-chevron-right right-icon"></i></p>
+                            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="login.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل الدخول</p>
-                                </a></li>
-                            <li><a href="signup.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل</p>
-                                </a></li>
-                            <li><a href="forgot-password.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">نسيت كلمة المرور</p>
-                                </a></li>
                             <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">الاعدادات</p>
@@ -292,12 +280,7 @@
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                                <label for="notificationMessage" class="form-label text-color-2 m-0">نص الرسالة</label>
-                                                <button type="button" id="btnAiGenerate" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                                                    <i class="fa-solid fa-wand-magic-sparkles me-1"></i> إنشاء بالذكاء الاصطناعي
-                                                </button>
-                                            </div>
+                                            <label for="notificationMessage" class="form-label text-color-2">نص الرسالة</label>
                                             <textarea class="form-control" id="notificationMessage" rows="5" placeholder="اكتب نص الإشعار هنا..."></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-primary w-100 py-2">
@@ -377,44 +360,6 @@
     <script src="./assets/plugin/quill/quill.js"></script>
     <script src="./assets/js/chart.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script>
-        document.getElementById('btnAiGenerate').addEventListener('click', function() {
-            const titleInput = document.getElementById('notificationTitle');
-            const messageBox = document.getElementById('notificationMessage');
-            const title = titleInput.value.trim();
-            
-            if (!title) {
-                alert('يرجى كتابة عنوان الإشعار أولاً ليتمكن الذكاء الاصطناعي من صياغة الرسالة.');
-                titleInput.focus();
-                return;
-            }
-
-            // محاكاة لتوليد النص (في التطبيق الحقيقي يتم استدعاء API)
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-1"></i> جاري الكتابة...';
-            this.disabled = true;
-            messageBox.setAttribute('placeholder', 'جاري صياغة الرسالة بأسلوب احترافي...');
-
-            setTimeout(() => {
-                // نماذج ردود جاهزة للمحاكاة بناءً على الكلمات المفتاحية في العنوان
-                let aiResponse = "";
-                if (title.match(/اجتماع|لقاء/)) {
-                    aiResponse = "الزملاء الأعزاء،\n\nنود دعوتكم لحضور " + title + " الهام لمناقشة المستجدات والخطط القادمة. حضوركم ومشاركتكم ضرورية لنا.\n\nالمكان: قاعة الاجتماعات الرئيسية\nالوقت: يحدد لاحقاً\n\nمع التحية.";
-                } else if (title.match(/عطلة|إجازة|عيد/)) {
-                    aiResponse = "أسرة المدرسة الكريمة،\n\nبمناسبة " + title + "، يسرنا أن نعلن عن تعطيل الدوام الرسمي. نتمنى لكم أوقاتاً سعيدة وممتعة.\n\nكل عام وأنتم بخير.";
-                } else if (title.match(/امتحان|اختبار|درجات/)) {
-                    aiResponse = "أعزائي الطلاب،\n\nنلفت انتباهكم بخصوص " + title + ". يرجى الاستعداد جيداً ومراجعة المواد المقررة. نتمنى لكم دوام التوفيق والنجاح.\n\nإدارة المدرسة";
-                } else if (title.match(/صيانة|تحديث|نظام/)) {
-                    aiResponse = "تنبيه هام،\n\nنود إعلامكم بأنه سيتم إجراء " + title + " للنظام الإلكتروني لتحسين الأداء. قد تتوقف الخدمة مؤقتاً خلال هذه الفترة.\n\nشكراً لتفهمكم.";
-                } else {
-                    aiResponse = "تحية طيبة،\n\nإشارة إلى الموضوع أعلاه (" + title + ")، نود إفادتكم بالتفاصيل الهامة المتعلقة به. يرجى الاطلاع والالتزام بالتعليمات الواردة.\n\nشاكرين تعاونكم.";
-                }
-                
-                messageBox.value = aiResponse;
-                this.innerHTML = originalText;
-                this.disabled = false;
-            }, 1500);
-        });
-    </script>
+    <!-- تم إزالة زر التوليد الآلي وكود المحاكاة؛ الإدخال الآن يدوي فقط -->
 </body>
 </html>

@@ -97,22 +97,10 @@
                     <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
                             <p>الرسوم</p>
                         </a></li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-                            <p>التسجيل<i class="fa-solid fa-chevron-right right-icon"></i></p>
+                            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+                            <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
                         </a>
                         <ul class="sidebar-submenu">
-                            <li><a href="login.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل الدخول</p>
-                                </a></li>
-                            <li><a href="signup.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">تسجيل</p>
-                                </a></li>
-                            <li><a href="forgot-password.html" class="submenu-link"><i
-                                        class="fa-solid fa-circle me-4 font-size-12"></i>
-                                    <p class="m-0">نسيت كلمة المرور</p>
-                                </a></li>
                             <li><a href="settings.html" class="submenu-link"><i
                                         class="fa-solid fa-circle me-4 font-size-12"></i>
                                     <p class="m-0">الاعدادات</p>
@@ -255,137 +243,128 @@
 
       
       <!-- Main Content -->
-      <div class="main-content">
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex align-items-lg-center  flex-column flex-md-row flex-lg-row mt-3">
-              <div class="flex-grow-1">
-                <h3 class="mb-2 text-color-2">إضافة درس</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mt-4">
-          <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-              <form class="row g-3">
-                <div class="col-12">
-                  <label for="courseName" class="form-label text-color-2 text-normal">اسم الدرس</label>
-                  <input type="text" class="form-control" id="courseName" placeholder="مثال:  تعلم الحرف أ">
-                </div>
-                <div class="col-md-6">
-                  <label for="courseCategory" class="form-label text-color-2 text-normal">الحروف </label>
-                  <select id="courseCategory" class="form-select text-normal">
-                    <option value="">إختر الحرف</option>
-                    <option value="Arabic">أ</option>
-                    <option value="Math">ب</option>
-                    <option value="Science">ت</option>
-                    <option value="English">ث</option>
-                    <option value="Arts">ج</option>
-
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label for="ageGroup" class="form-label text-color-2 text-normal">الفئة العمرية</label>
-                  <select id="ageGroup" class="form-select text-normal">
-                    <option value="">اختر الفئة العمرية</option>
-                    <option value="3-5">3 - 5 سنوات (روضة)</option>
-                    <option value="6-9">6 - 9 سنوات (ابتدائي)</option>
-                    <option value="10-12">10 - 12 سنة (يافعين)</option>
-                    <option value="10-12">كبار السن</option>
-
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label for="lessonVideo" class="form-label text-color-2 text-normal">فيديو الدرس</label>
-                  <div class="file-input-container">
-                    <input type="file" id="lessonVideo" class="file-input" accept="video/*">
-                    <label for="lessonVideo" class="file-label">
-                      <span class="file-name">اختر فيديو</span>
-                      <span class="file-button">تصفح</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <label for="lessonAudio" class="form-label text-color-2 text-normal">ملف الصوت</label>
-                  <div class="file-input-container">
-                    <input type="file" id="lessonAudio" class="file-input" accept="audio/*">
-                    <label for="lessonAudio" class="file-label">
-                      <span class="file-name">اختر ملف صوتي</span>
-                      <span class="file-button">تصفح</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <label for="lessonThumbnail" class="form-label text-color-2 text-normal">صورة مصغرة</label>
-                  <div class="file-input-container">
-                    <input type="file" id="lessonThumbnail" class="file-input">
-                    <label for="lessonThumbnail" class="file-label">
-                      <span class="file-name">اختر ملف</span>
-                      <span class="file-button">تصفح</span>
-                    </label>
-                  </div>
-
-                </div>
-
-                <div class="col-md-6">
-                  <label for="courseDificulties" class="form-label text-color-2 text-normal">صعوبة الدورة</label>
-                  <select id="courseDificulties" class="form-select text-normal">
-                    <option value="">اختر الصعوبة</option>
-                    <option value="Beginners">مبتدئ</option>
-                    <option value="Intermediate">متوسط</option>
-                    <option value="Advanced">متقدم</option>
-                    <option value="Expert">خبير</option>
-                  </select>
-                </div>
-                <div class="col-6">
-                  <label for="lessonDuration" class="form-label text-color-2 text-normal">المدة</label>
-                  <input type="text" class="form-control" id="lessonDuration" placeholder="مثال: 10:00">
-                </div>
-
-                <div class="col-12">
-  <div class="d-flex justify-content-between align-items-center mb-2">
-    <label for="lessonDescription" class="form-label text-color-2 text-normal m-0">وصف الدرس</label>
-    <button type="button" class="btn btn-sm btn-outline-purple" id="generateDescription">
-      <i class="fa-solid fa-wand-magic-sparkles"></i> توليد وصف ذكي
-    </button>
-  </div>
-  <textarea class="form-control" id="lessonDescription" rows="3" placeholder="اكتب الوصف أو دع الذكاء الاصطناعي يساعدك..."></textarea>
-</div>
-
-<div class="col-12 mt-2">
-  <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" id="autoTranscribe" role="switch">
-    <label class="form-check-label small text-muted" for="autoTranscribe">استخراج النص من الفيديو تلقائياً (AI Transcription)</label>
-  </div>
-</div>
-
-                <div class="col-12 mt-4">
-                  <label class="form-label text-color-2 text-normal">الحالة</label>
-                  <div class="status-container">
-                    <label class="custom-radio">
-                      <input type="radio" name="status" value="active" checked>
-                      <span class="radio-circle"></span>
-                      <span class="radio-label">نشط</span>
-                    </label>
-                    <label class="custom-radio">
-                      <input type="radio" name="status" value="pending">
-                      <span class="radio-circle"></span>
-                      <span class="radio-label">مسودة</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-12 mt-5">
-                  <button type="submit"
-                    class="btn bg-white bg-primary text-white d-flex align-items-center px-4 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">حفظ
-                    المعلومات</button>
-                </div>
-              </form>
-            </div>
-          </div>
+     <div class="main-content">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex align-items-lg-center flex-column flex-md-row flex-lg-row mt-3">
+        <div class="flex-grow-1">
+          <h3 class="mb-2 text-color-2">إضافة درس</h3>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="courseName" class="form-label text-color-2 text-normal">اسم الدرس</label>
+            <input type="text" class="form-control" id="courseName" placeholder="مثال: تعلم الحرف أ">
+          </div>
 
+          <div class="col-md-6">
+            <label for="courseCategory" class="form-label text-color-2 text-normal">الحروف</label>
+            <select id="courseCategory" class="form-select text-normal">
+              <option value="">إختر الحرف</option>
+              <option value="A">أ</option>
+              <option value="B">ب</option>
+              <option value="T">ت</option>
+              <option value="TH">ث</option>
+              <option value="J">ج</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="ageGroup" class="form-label text-color-2 text-normal">الفئة العمرية</label>
+            <select id="ageGroup" class="form-select text-normal">
+              <option value="">اختر الفئة العمرية</option>
+              <option value="3-5">3 - 5 سنوات (روضة)</option>
+              <option value="6-9">6 - 9 سنوات (ابتدائي)</option>
+              <option value="10-12">10 - 12 سنة (يافعين)</option>
+              <option value="elderly">كبار السن</option>
+            </select>
+          </div>
+
+          <div class="col-12">
+            <label for="lessonVideo" class="form-label text-color-2 text-normal">فيديو الدرس</label>
+            <div class="file-input-container">
+              <input type="file" id="lessonVideo" class="file-input" accept="video/*">
+              <label for="lessonVideo" class="file-label">
+                <span class="file-name">اختر فيديو</span>
+                <span class="file-button">تصفح</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <label for="lessonAudio" class="form-label text-color-2 text-normal">ملف الصوت</label>
+            <div class="file-input-container">
+              <input type="file" id="lessonAudio" class="file-input" accept="audio/*">
+              <label for="lessonAudio" class="file-label">
+                <span class="file-name">اختر ملف صوتي</span>
+                <span class="file-button">تصفح</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <label for="lessonThumbnail" class="form-label text-color-2 text-normal">صورة مصغرة</label>
+            <div class="file-input-container">
+              <input type="file" id="lessonThumbnail" class="file-input" accept="image/*">
+              <label for="lessonThumbnail" class="file-label">
+                <span class="file-name">اختر ملف</span>
+                <span class="file-button">تصفح</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="courseDificulties" class="form-label text-color-2 text-normal">صعوبة الدورة</label>
+            <select id="courseDificulties" class="form-select text-normal">
+              <option value="">اختر الصعوبة</option>
+              <option value="Beginners">مبتدئ</option>
+              <option value="Intermediate">متوسط</option>
+              <option value="Advanced">متقدم</option>
+              <option value="Expert">خبير</option>
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="lessonDuration" class="form-label text-color-2 text-normal">المدة</label>
+            <input type="text" class="form-control" id="lessonDuration" placeholder="مثال: 10:00">
+          </div>
+
+          <div class="col-12">
+            <label for="lessonDescription" class="form-label text-color-2 text-normal">وصف الدرس</label>
+            <textarea class="form-control" id="lessonDescription" rows="4" placeholder="اكتب وصفاً تفصيلياً للدرس هنا..."></textarea>
+          </div>
+
+          <div class="col-12 mt-4">
+            <label class="form-label text-color-2 text-normal">الحالة</label>
+            <div class="status-container">
+              <label class="custom-radio">
+                <input type="radio" name="status" value="active" checked>
+                <span class="radio-circle"></span>
+                <span class="radio-label">نشط</span>
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="status" value="pending">
+                <span class="radio-circle"></span>
+                <span class="radio-label">مسودة</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="col-12 mt-5">
+            <button type="submit" class="btn bg-primary text-white d-flex align-items-center px-4 py-2 rounded-2 text-normal fw-bolder letter-spacing-26">
+              حفظ المعلومات
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- <div class="col-12">
         <label for="newWords" class="form-label text-color-2 text-normal">الكلمات الجديدة</label>
         <div class="input-group mb-3">
@@ -431,7 +410,6 @@
       const ageGroupSelect = document.getElementById('ageGroup');
       const difficultySelect = document.getElementById('courseDificulties');
       const descriptionTextarea = document.getElementById('lessonDescription');
-      const generateDescBtn = document.getElementById('generateDescription');
       const videoInput = document.getElementById('lessonVideo');
       const durationInput = document.getElementById('lessonDuration');
       const autoTranscribeSwitch = document.getElementById('autoTranscribe');
@@ -451,30 +429,7 @@
         }
       });
 
-      // 2. Generate smart description
-      generateDescBtn.addEventListener('click', function () {
-        const courseName = courseNameInput.value;
-        const selectedLetter = letterSelect.options[letterSelect.selectedIndex].text;
-
-        if (!courseName) {
-          descriptionTextarea.placeholder = "الرجاء إدخال اسم الدرس أولاً لتوليد وصف دقيق.";
-          return;
-        }
-
-        // Simulate AI thinking
-        const originalBtnText = generateDescBtn.innerHTML;
-        generateDescBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> جاري التوليد...';
-        generateDescBtn.disabled = true;
-
-        setTimeout(() => {
-          const generatedDescription = `هذا الدرس مصمم لتعليم الأطفال الحرف '${selectedLetter}' بطريقة ممتعة وتفاعلية. من خلال الفيديو والأنشطة، سيتعلم الطفل شكل الحرف، كيفية نطقه، وكلمات تبدأ به. يهدف الدرس إلى بناء أساس قوي للغة العربية لدى الأطفال في مرحلة مبكرة.`;
-          descriptionTextarea.value = generatedDescription;
-
-          // Restore button
-          generateDescBtn.innerHTML = originalBtnText;
-          generateDescBtn.disabled = false;
-        }, 1500); // Simulate API call delay
-      });
+      // تم إزالة وظيفة التوليد الآلي لوصف الدرس — اكتب الوصف يدوياً في حقل الوصف
 
       // 3. Handle file inputs and video duration
       const fileInputs = document.querySelectorAll('.file-input');
@@ -504,25 +459,7 @@
         });
       });
 
-      // 4. Handle auto-transcription
-      autoTranscribeSwitch.addEventListener('change', function () {
-        if (this.checked && videoInput.files.length > 0) {
-          transcribeVideo();
-        }
-      });
-
-      function transcribeVideo() {
-        const originalDesc = descriptionTextarea.value;
-        descriptionTextarea.value = "جاري استخراج النص من الفيديو بواسطة الذكاء الاصطناعي...";
-        setTimeout(() => {
-          const selectedLetter = letterSelect.options[letterSelect.selectedIndex].text;
-          const transcription = `(موسيقى بداية)\nالمعلم/ة: مرحباً يا أصدقائي الصغار! اليوم سنتعلم حرفاً جديداً وجميلاً. هل أنتم مستعدون؟\nالأطفال: نعم!\nالمعلم/ة: حرفنا اليوم هو حرف... '${selectedLetter}'! رددوا معي... '${selectedLetter}'.\n(يتم عرض الحرف على الشاشة مع رسوم متحركة)\nالمعلم/ة: رائع! الآن لنتعلم بعض الكلمات التي تبدأ بحرف '${selectedLetter}'.\n(يتم عرض صور وكلمات)\n(موسيقى نهاية)`;
-          const transcriptionHeader = '\n\n--- النص المستخرج من الفيديو ---';
-          const existingTranscriptionIndex = originalDesc.indexOf(transcriptionHeader);
-          const baseDescription = existingTranscriptionIndex !== -1 ? originalDesc.substring(0, existingTranscriptionIndex).trim() : originalDesc.trim();
-          descriptionTextarea.value = (baseDescription ? `${baseDescription}${transcriptionHeader}\n` : '') + transcription;
-        }, 2500);
-      }
+      // تمت إزالة وظيفة النسخ الآلي من الفيديو؛ يمكن لصاحب المحتوى إدخال نص الدرس يدوياً بعد رفع الفيديو
     });
   </script>
 </body>
