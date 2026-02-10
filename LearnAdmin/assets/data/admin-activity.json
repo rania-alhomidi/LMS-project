@@ -1,0 +1,10 @@
+[
+  {"id":1,"user":"رانيا","action":"إضافة","entity":"درس","description":"أضافت درس بعنوان 'مقدمة'","timestamp":"2026-02-08T09:15:00Z"},
+  {"id":2,"user":"محمد","action":"تعديل","entity":"وحدة","description":"عدل اسم الوحدة","timestamp":"2026-02-08T10:22:00Z"},
+  {"id":3,"user":"علي","action":"حذف","entity":"قصة","description":"حذف القصة رقم 12","timestamp":"2026-02-08T11:05:00Z"},
+  {"id":4,"user":"سارة","action":"دخول","entity":"نظام","description":"تسجيل دخول ناجح","timestamp":"2026-02-08T12:00:00Z"},
+  {"id":5,"user":"رانيا","action":"تعديل","entity":"درس","description":"غير الوصف","timestamp":"2026-02-09T08:30:00Z"},
+  {"id":6,"user":"محمد","action":"إضافة","entity":"طالب","description":"أضاف طالب جديد","timestamp":"2026-02-09T09:10:00Z"},
+  {"id":7,"user":"علي","action":"دخول","entity":"نظام","description":"تسجيل دخول ناجح","timestamp":"2026-02-09T09:45:00Z"},
+  {"id":8,"user":"رانيا","action":"حذف","entity":"كلمة","description":"حذف كلمة غير مرغوبة","timestamp":"2026-02-09T10:20:00Z"}
+]

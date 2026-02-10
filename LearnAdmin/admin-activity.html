@@ -46,12 +46,6 @@
                 </a>
               </li>
               <li>
-                <a href="manage-units.html" class="submenu-link">
-                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">ادارة الوحدات</p>
-                </a>
-              </li>
-              <li>
                 <a href="manage-words.html" class="submenu-link">
                   <i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">ادارة الكلمات</p>
@@ -95,8 +89,8 @@
               <li><a href="summary.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">ملخص الوحدات و الدروس</p>
                 </a></li>
-              <li><a href="admin-activity.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">تقارير عن الادمن </p>
+              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">صفحة 500</p>
                 </a></li>
             </ul>
           </li>
@@ -154,7 +148,7 @@
     </div>
 
 
-    <!-- Content Wrapper -->
+ <!-- Content Wrapper -->
     <div class="content-wrapper ">
       <!-- Header -->
       <div class="header d-flex align-items-center justify-content-between">
@@ -203,34 +197,33 @@
               </div>
             </li>
             <!-- Notifications Dropdown -->
-            <li class="nav-item dropdown me-2-5">
-              <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <i class="fa-regular fa-bell font-size-24"></i>
-                <div class="marker"></div>
-              </a>
+          <li class="nav-item dropdown me-2-5">
+    <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-regular fa-bell font-size-24"></i>
+        <div class="marker"></div>
+    </a>
 
-              <div class="dropdown-menu dropdown-menu-end mt-4">
-                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
-                  <ul class="timeline">
-                    <li>
-                      <div class="timeline-panel">
+    <div class="dropdown-menu dropdown-menu-end mt-4">
+        <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-panel">
                         <div class="media me-2">
-                          <img alt="image" width="50" src="./assets/images/profile.png">
+                            <img alt="image" width="50" src="./assets/images/profile.png">
                         </div>
                         <div class="media-body">
-                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
-                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                            <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                            <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
                         </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <a class="all-notification" href="notifications.html">
-                  شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </li>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <a class="all-notification" href="notifications.html">
+            شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</li>
             <!-- User Profile -->
             <li class="nav-item dropdown user-profile">
               <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -255,3 +248,180 @@
           </ul>
         </div>
       </div>
+
+
+
+
+  <div class="container my-4">
+    <h1 class="mb-3">تقارير نشاطات الأدمن</h1>
+
+    <!-- KPI cards -->
+    <div class="row mb-3" id="kpiRow">
+      <div class="col-md-3 mb-2">
+        <div class="card text-center p-3 kpi-card">
+          <h6 class="mb-1">إجمالي النشاطات</h6>
+          <div id="kpiTotal" class="h4 m-0 kpi-value">8</div>
+          <div class="kpi-subtle">خلال آخر 7 أيام</div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card text-center p-3 kpi-card">
+          <h6 class="mb-1">أكثر مستخدم نشاطاً</h6>
+          <div id="kpiTopUser" class="h6 m-0">رانيا</div>
+          <div class="kpi-subtle">عدد النشاطات: 3</div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card text-center p-3 kpi-card">
+          <h6 class="mb-1">إضافات اليوم</h6>
+          <div id="kpiAddsToday" class="h4 m-0 kpi-value">2</div>
+          <div class="kpi-subtle">جديد</div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card text-center p-3 kpi-card">
+          <h6 class="mb-1">حذف اليوم</h6>
+          <div id="kpiDeletesToday" class="h4 m-0 kpi-value">1</div>
+          <div class="kpi-subtle">تمت إزالته</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row mb-3">
+      <div class="col-lg-8 mb-3">
+        <div class="card p-3">
+          <h6>نشاط حسب اليوم (آخر 7 أيام)</h6>
+          <div class="chart-area">
+            <canvas id="actionsBar"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-3">
+        <div class="card p-3">
+          <h6>نسبة أنواع الأحداث</h6>
+          <div class="chart-area">
+            <canvas id="typePie"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-3 mb-2">
+        <input id="search" class="form-control" placeholder="بحث" />
+      </div>
+      <div class="col-md-2 mb-2">
+        <select id="filterUser" class="form-control">
+          <option value="">كل المستخدمين</option>
+        </select>
+      </div>
+      <div class="col-md-2 mb-2">
+        <select id="filterType" class="form-control">
+          <option value="">كل الأنواع</option>
+          <option>إضافة</option>
+          <option>حذف</option>
+          <option>تعديل</option>
+          <option>دخول</option>
+        </select>
+      </div>
+      <div class="col-md-2 mb-2">
+        <input id="dateFrom" type="date" class="form-control" />
+      </div>
+      <div class="col-md-2 mb-2">
+        <input id="dateTo" type="date" class="form-control" />
+      </div>
+      <div class="col-md-1 mb-2">
+        <button id="exportCsv" class="btn btn-primary w-100">تصدير</button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped" id="activityTable">
+        <thead>
+          <tr>
+            <th>المستخدم</th>
+            <th>الحدث</th>
+            <th>الكيان</th>
+            <th>الوصف</th>
+            <th>الزمن</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>رانيا</td>
+            <td>إضافة</td>
+            <td>درس</td>
+            <td>أضافت درس بعنوان "مقدمة"</td>
+            <td>2026-02-08 09:15</td>
+          </tr>
+          <tr>
+            <td>ثريا</td>
+            <td>تعديل</td>
+            <td>وحدة</td>
+            <td>عدل اسم الوحدة</td>
+            <td>2026-02-08 10:22</td>
+          </tr>
+          <tr>
+            <td>انفال</td>
+            <td>حذف</td>
+            <td>قصة</td>
+            <td>حذف القصة رقم 12</td>
+            <td>2026-02-08 11:05</td>
+          </tr>
+          <tr>
+            <td>ايمان</td>
+            <td>دخول</td>
+            <td>نظام</td>
+            <td>تسجيل دخول ناجح</td>
+            <td>2026-02-08 12:00</td>
+          </tr>
+          <tr>
+            <td>رانيا</td>
+            <td>تعديل</td>
+            <td>درس</td>
+            <td>غيرت الوصف</td>
+            <td>2026-02-09 08:30</td>
+          </tr>
+          <tr>
+            <td>ساجدة</td>
+            <td>إضافة</td>
+            <td>طالب</td>
+            <td>أضاف طالب جديد</td>
+            <td>2026-02-09 09:10</td>
+          </tr>
+          <tr>
+            <td>علي</td>
+            <td>دخول</td>
+            <td>نظام</td>
+            <td>تسجيل دخول ناجح</td>
+            <td>2026-02-09 09:45</td>
+          </tr>
+          <tr>
+            <td>رانيا</td>
+            <td>حذف</td>
+            <td>كلمة</td>
+            <td>حذف كلمة غير مرغوبة</td>
+            <td>2026-02-09 10:20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+      <!-- Footer -->
+      <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+        <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/"
+            class="text-primary" target="_blank">قوالب بواسطة TemplateRise</a></p>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/plugin/chart/chart.js"></script>
+    <script src="./assets/js/chart.js"></script>
+    <script src="./assets/js/reports.js"></script>
+    <script src="./assets/js/admin-activity.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

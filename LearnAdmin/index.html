@@ -13,6 +13,175 @@
   <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
 </head>
+<style>
+
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .taiz-gradient {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+  }
+
+  .taiz-card {
+    background: white;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .taiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary);
+  }
+
+  .district-badge {
+    background: var(--accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .school-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .map-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .taiz-map {
+    background: #e8f4fc;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .district-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .district-marker:hover {
+    transform: scale(1.5);
+    z-index: 10;
+  }
+
+  .district-info {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    min-width: 200px;
+    display: none;
+  }
+
+  .stat-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    border-top: 4px solid var(--secondary);
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    text-decoration: none;
+    color: var(--dark);
+  }
+
+  .quick-link:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateX(-5px);
+    text-decoration: none;
+  }
+
+  .district-selector {
+    background: white;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-weight: bold;
+  }
+
+  .year-selector {
+    background: var(--light);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+  }
+
+  .alert-taiz {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    border-right: 4px solid var(--warning);
+    border-radius: 10px;
+  }
+
+  .progress-taiz {
+    height: 10px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    overflow: hidden;
+  }
+
+  .progress-taiz-bar {
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    height: 100%;
+    border-radius: 5px;
+  }
+</style>
 
 <body>
   <!-- Preloader -->
@@ -43,6 +212,12 @@
                 <a href="mange-lesson.html" class="submenu-link">
                   <i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">إدارة الدروس</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-units.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ادارة الوحدات</p>
                 </a>
               </li>
               <li>
@@ -89,8 +264,9 @@
               <li><a href="summary.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">ملخص الوحدات و الدروس</p>
                 </a></li>
-              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">صفحة 500</p>
+              <li><a href="admin-activity.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">تقارير عن الادمن </p>
                 </a></li>
             </ul>
           </li>
@@ -109,7 +285,7 @@
           <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
               <p>الرسوم</p>
             </a></li>
-            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
               <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
             </a>
             <ul class="sidebar-submenu">
@@ -250,330 +426,562 @@
         </div>
       </div>
 
-
-
       <!-- Main Content -->
-      <div class="main-content">
-        <div class="row">
-          <div class="col-12">
-            <div class="d-flex align-items-lg-center flex-column flex-md-row  flex-lg-row  mt-3">
-              <div class="flex-grow-1">
-                <h3 class="mb-2 text-color-2">لوحة التحكم</h3>
-              </div>
-              <div class="mt-3 mt-lg-0">
-
-              </div>
-            </div><!-- end card header -->
+      <div class="main-wrapper p-4">
+        <!-- عنوان الصفحة -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h2 class="fw-bold text-dark mb-2">نظام تعليمي - محافظة تعز 🎓</h2>
+            <p class="text-muted mb-0">إحصاءات التطبيق للعام الدراسي 2025-2026</p>
           </div>
-          <!--end col-->
+          <div>
+            <button class="btn btn-primary me-2">
+              <i class="fa-solid fa-download me-2"></i>تصدير التقرير
+            </button>
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-print me-2"></i>طباعة
+            </button>
+          </div>
         </div>
-        <div class="mt-4">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="row">
-                <!-- Total Students Card -->
-                <div class="col-12 col-md-6 col-lg-12 mb-4">
-                  <div class="stats-card">
-                    <div class="d-flex justify-content-between align-items-start">
-                      <div>
-                        <div class="stats-label">إجمالي الطلاب</div>
-                        <div class="stats-value">10,689</div>
-                        <div class="trend-wrapper">
-                          هذا الشهر
-                          <span class="trend-up">
-                            <i class="fas fa-arrow-up"></i> 8.5%
-                          </span>
-                        </div>
-                      </div>
-                      <div class="icon-wrapper icon-purple">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
+
+        <!-- الإحصائيات الرئيسية -->
+        <div class="row g-4 mb-4">
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">عدد المدارس</p>
+                  <h2 class="fw-bold mb-0 text-primary">1,247</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 24 مدرسة جديدة</span>
                   </div>
                 </div>
-
-
-              </div>
-            </div>
-            <div class="col-lg-5 mb-4 mb-lg-0">
-              <div class="instructors-section card pb-0">
-                <div class="card-header border-0 bg-white d-flex justify-content-between align-items-center py-3">
-                  <h5 class="mb-0 text-color-2">مصادر الزيارات</h5>
-                  <div>
-                    <select class="form-select form-select-sm w-auto border-0 text-color-3"
-                      aria-label="Select time period">
-                      <option value="30 days" selected>30 يومًا</option>
-                      <option value="15 days">15 يومًا</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="card-body p-0 mt-40">
-                  <div class="mb-2">
-                    <div class="chart-container">
-                      <canvas id="trafficChart"></canvas>
-                    </div>
-                    <div class="mx-5 mt-5 traffic-legend">
-                      <table class="table table-borderless">
-                        <tbody>
-                          <tr>
-                            <td><span class="organic text-color-1">بحث عضوي</span></td>
-                            <td><span class="text-color-2">4,305</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="referrals text-color-1">إحالات</span></td>
-                            <td><span class="text-color-2">482</span></td>
-                          </tr>
-                          <tr>
-                            <td><span class="social-media text-color-1">وسائل التواصل الاجتماعي</span></td>
-                            <td><span class="text-color-2">859</span></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                <div class="school-logo">
+                  <i class="fa-solid fa-school"></i>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4 mb-4 mb-lg-0">
-              <div class="instructors-section card pb-1">
-                <div class="card-header bg-white d-flex justify-content-between align-items-center py-4">
-                  <h5 class="mb-0 text-color-2">أفضل المدربين</h5>
-                  <a href="#" class="text-color-3">عرض الكل</a>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 85%"></div>
                 </div>
-                <div class="card-body p-0">
-                  <ul class="list-group list-group-flush">
+                <small class="text-muted d-block mt-2">معدل الامتلاء: 85%</small>
+              </div>
+            </div>
+          </div>
 
-                    <li class="list-group-item d-flex align-items-center py-3">
-                      <div class="avatar rounded-circle bg-secondary text-white me-3">LH</div>
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0 text-color-2">Larry Henry</h6>
-                        <small class="text-color-3">larry108@example.com</small>
-                      </div>
-                      <div class="text-end">
-                        <div class="rating-stars text-size-13">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <small class="d-block text-color-3">24 مراجعة</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center py-3">
-                      <div class="avatar rounded-circle bg-secondary text-white me-3">LH</div>
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0 text-color-2">Larry Henry</h6>
-                        <small class="text-color-3">larry108@example.com</small>
-                      </div>
-                      <div class="text-end">
-                        <div class="rating-stars text-size-13">
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <small class="d-block text-color-3">24 مراجعة</small>
-                      </div>
-                    </li>
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">عدد الطلاب</p>
+                  <h2 class="fw-bold mb-0 text-success">287,540</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 8.5% زيادة</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-success">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 92%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">معدل الحضور: 92%</small>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">عدد الدروس</p>
+                  <h2 class="fw-bold mb-0 text-success">287</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 8.5% زيادة</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-success">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 92%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">معدل 92%</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">القصص </p>
+                  <h2 class="fw-bold mb-0 text-success">40</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 8.5% زيادة</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-success">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 92%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">معدل: 92%</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">عدد الكلمات</p>
+                  <h2 class="fw-bold mb-0 text-success">540</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 8.5% زيادة</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-success">
+                  <i class="fa-solid fa-user-graduate"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 92%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">معدل : 92%</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">عدد الوحدات</p>
+                  <h2 class="fw-bold mb-0 text-warning">50</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-danger small"><i class="fa-solid fa-arrow-down"></i> 2% نقصان</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-warning">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 78%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">نسبة الاكتفاء: 78%</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <p class="text-muted mb-1 small">معدل النجاح</p>
+                  <h2 class="fw-bold mb-0 text-danger">76.8%</h2>
+                  <div class="d-flex align-items-center mt-2">
+                    <span class="text-success small"><i class="fa-solid fa-arrow-up"></i> 3.2% زيادة</span>
+                  </div>
+                </div>
+                <div class="school-logo bg-danger">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 76.8%"></div>
+                </div>
+                <small class="text-muted d-block mt-2">للعام الدراسي الماضي</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- الخريطة والإحصائيات -->
+        <div class="row g-4">
+          <!-- خريطة تعز -->
+          <div class="col-lg-8">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">التوزيع الجغرافي للمدارس في محافظة تعز</h5>
+                <div class="dropdown">
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown">
+                    جميع المديريات
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">تعز المدينة</a></li>
+                    <li><a class="dropdown-item" href="#">صالة</a></li>
+                    <li><a class="dropdown-item" href="#">الموظف</a></li>
+                    <li><a class="dropdown-item" href="#">موزع</a></li>
+                    <li><a class="dropdown-item" href="#">جبل حبشي</a></li>
                   </ul>
                 </div>
               </div>
+
+              <div class="map-container">
+                <div class="taiz-map" id="taizMap">
+                  <!-- Markers for districts -->
+                  <div class="district-marker" style="top: 35%; left: 45%;" data-district="تعز" data-schools="320"
+                    data-students="65,000"></div>
+                  <div class="district-marker" style="top: 40%; left: 35%;" data-district="صالة" data-schools="185"
+                    data-students="42,000"></div>
+                  <div class="district-marker" style="top: 55%; left: 40%;" data-district="الموظف" data-schools="156"
+                    data-students="38,500"></div>
+                  <div class="district-marker" style="top: 60%; left: 55%;" data-district="موزع" data-schools="142"
+                    data-students="35,000"></div>
+                  <div class="district-marker" style="top: 30%; left: 60%;" data-district="جبل حبشي" data-schools="98"
+                    data-students="28,000"></div>
+                  <div class="district-marker" style="top: 45%; left: 65%;" data-district="صبر الموادم"
+                    data-schools="120" data-students="32,000"></div>
+                  <div class="district-marker" style="top: 50%; left: 25%;" data-district="الأشرفية" data-schools="85"
+                    data-students="22,000"></div>
+                  <div class="district-marker" style="top: 25%; left: 40%;" data-district="القاهرة" data-schools="95"
+                    data-students="25,000"></div>
+                </div>
+                <div class="district-info" id="districtInfo"></div>
+              </div>
+
+              <div class="row mt-3 text-center">
+                <div class="col">
+                  <div class="stat-box">
+                    <h6 class="fw-bold">المدارس النشطة</h6>
+                    <h3 class="text-primary">1,247</h3>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="stat-box">
+                    <h6 class="fw-bold">المدارس تحت الإنشاء</h6>
+                    <h3 class="text-warning">24</h3>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="stat-box">
+                    <h6 class="fw-bold">المدارس المتضررة</h6>
+                    <h3 class="text-danger">18</h3>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-lg-8 mb-4 mb-lg-0">
-              <div class="instructors-section card">
-                <div class="card-header border-0 bg-white d-flex justify-content-between align-items-center py-3">
-                  <h5 class="mb-0 text-color-2">التحويلات</h5>
+          </div>
+
+          <!-- الروابط السريعة -->
+          <div class="col-lg-4">
+            <div class="taiz-card p-4 mb-4">
+              <h5 class="fw-bold mb-4">روابط سريعة</h5>
+              <div>
+                <a href="add-student.html" class="quick-link">
+                  <i class="fa-solid fa-user-plus me-3"></i>
+                  <span>تسجيل طالب جديد</span>
+                </a>
+                <a href="attendance-today.html" class="quick-link">
+                  <i class="fa-solid fa-clipboard-check me-3"></i>
+                  <span>تسجيل الحضور اليومي</span>
+                </a>
+                <a href="exam-schedule.html" class="quick-link">
+                  <i class="fa-solid fa-calendar-alt me-3"></i>
+                  <span>جدول الاختبارات</span>
+                </a>
+                <a href="teacher-assign.html" class="quick-link">
+                  <i class="fa-solid fa-chalkboard-teacher me-3"></i>
+                  <span>توزيع المدرسين</span>
+                </a>
+                <a href="report-generator.html" class="quick-link">
+                  <i class="fa-solid fa-file-pdf me-3"></i>
+                  <span>إنشاء تقرير</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- المدارس المتميزة -->
+            <div class="taiz-card p-4">
+              <h5 class="fw-bold mb-4">المدارس المتميزة</h5>
+              <div class="list-group list-group-flush">
+                <div class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 py-3">
+                  <div class="d-flex align-items-center">
+                    <div class="school-logo bg-primary me-3">م</div>
+                    <div>
+                      <h6 class="mb-0 fw-bold">مدرسة تعز النموذجية</h6>
+                      <small class="text-muted">مديرية تعز | معدل نجاح: 94%</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-success">متميزة</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 py-3">
+                  <div class="d-flex align-items-center">
+                    <div class="school-logo bg-success me-3">ش</div>
+                    <div>
+                      <h6 class="mb-0 fw-bold">مدرسة الشهيد عبدالله</h6>
+                      <small class="text-muted">مديرية صالة | معدل نجاح: 92%</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-success">متميزة</span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 py-3">
+                  <div class="d-flex align-items-center">
+                    <div class="school-logo bg-warning me-3">ع</div>
+                    <div>
+                      <h6 class="mb-0 fw-bold">مدرسة عمر بن الخطاب</h6>
+                      <small class="text-muted">مديرية الموظف | معدل نجاح: 90%</small>
+                    </div>
+                  </div>
+                  <span class="badge bg-warning">جيد جداً</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- التنبيهات والإحصائيات -->
+        <div class="row g-4 mt-4">
+          <!-- التنبيهات المهمة -->
+          <div class="col-lg-6">
+            <div class="taiz-card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold mb-0">التنبيهات المهمة</h5>
+                <span class="badge bg-danger">3 عاجلة</span>
+              </div>
+
+              <div class="alert alert-taiz mb-3">
+                <div class="d-flex">
+                  <i class="fa-solid fa-exclamation-triangle text-warning me-3 fs-4"></i>
                   <div>
-                    <select class="form-select form-select-sm w-auto border-0 text-color-3"
-                      aria-label="Select time period">
-                      <option value="30 days" selected>30 يومًا</option>
-                      <option value="15 days">15 يومًا</option>
-                    </select>
+                    <h6 class="fw-bold mb-1">مدارس بحاجة لصيانة عاجلة</h6>
+                    <p class="mb-0 small">٣ مدارس في مديرية الموظف تحتاج لصيانة عاجلة للمرافق الصحية</p>
+                    <small class="text-muted">منذ يومين</small>
                   </div>
                 </div>
-                <div class="card-body">
-                  <canvas id="barChart" class="mt-5" height="96"></canvas>
+              </div>
+
+              <div class="alert alert-taiz mb-3">
+                <div class="d-flex">
+                  <i class="fa-solid fa-book text-primary me-3 fs-4"></i>
+                  <div>
+                    <h6 class="fw-bold mb-1">نقص في الكتب المدرسية</h6>
+                    <p class="mb-0 small">٥ مدارس في مديرية صبر الموادم تعاني من نقص في كتب الصف السادس</p>
+                    <small class="text-muted">منذ ٥ أيام</small>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="instructors-section card pb-1">
-                <div class="card-header bg-white d-flex justify-content-between align-items-center py-4">
-                  <h5 class="mb-0 text-color-2">أفضل الفئات</h5>
-                  <a href="#" class="text-color-3">عرض الكل</a>
-                </div>
-                <div class="card-body p-0">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex align-items-center py-3">
-                      <div class="avatar rounded-circle bg-primary text-white me-3">AB</div>
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0 text-color-2">التسويق الرقمي</h6>
-                        <small class="text-color-3">+16 دورة</small>
-                      </div>
-                      <div class="text-end">
-                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                      </div>
-                    </li>
 
-
-                  </ul>
+              <div class="alert alert-taiz mb-0">
+                <div class="d-flex">
+                  <i class="fa-solid fa-chalkboard-teacher text-success me-3 fs-4"></i>
+                  <div>
+                    <h6 class="fw-bold mb-1">حاجة لمدرسين متخصصين</h6>
+                    <p class="mb-0 small">نقص في مدرسي مادة الرياضيات بمديرية جبل حبشي</p>
+                    <small class="text-muted">منذ أسبوع</small>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
+          <!-- إحصائيات حسب المرحلة -->
+          <div class="col-lg-6">
+            <div class="taiz-card p-4">
+              <h5 class="fw-bold mb-4">التوزيع حسب المرحلة التعليمية</h5>
 
-
-
-
-
-      <!-- Site Reports -->
-      <section id="site-reports" class="mt-4">
-        <div class="card">
-          <div class="card-header bg-white d-flex justify-content-between align-items-center py-3">
-            <h5 class="mb-0 text-color-2">تقارير الموقع</h5>
-            <small class="text-color-3">(يُملأ تلقائيًا من ملف JSON أو من /api/reports)</small>
-          </div>
-          <div class="card-body">
-            <div class="row" id="report-cards">
-
-              <!-- Students -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">الطلاب</div>
-                      <div class="stats-value" data-key="students">--</div>
-                      <div class="trend-wrapper"><span data-key-change="students" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-purple"><i class="fas fa-users"></i></div>
-                  </div>
-                  <canvas id="spark-students" class="sparkline mt-3"></canvas>
-                  <a href="students.html" class="small d-block mt-2">عرض</a>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="small">المرحلة الابتدائية</span>
+                  <span class="small fw-bold">154,250 طالب</span>
+                </div>
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 54%"></div>
                 </div>
               </div>
 
-              <!-- Lessons -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">الدروس</div>
-                      <div class="stats-value" data-key="lessons">--</div>
-                      <div class="trend-wrapper"><span data-key-change="lessons" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-red"><i class="fas fa-book-open"></i></div>
-                  </div>
-                  <canvas id="spark-lessons" class="sparkline mt-3"></canvas>
-                  <a href="mange-lesson.html" class="small d-block mt-2">عرض</a>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="small">المرحلة الإعدادية</span>
+                  <span class="small fw-bold">86,450 طالب</span>
+                </div>
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 30%"></div>
                 </div>
               </div>
 
-              <!-- Stories -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">القصص</div>
-                      <div class="stats-value" data-key="stories">--</div>
-                      <div class="trend-wrapper"><span data-key-change="stories" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-green"><i class="fas fa-book"></i></div>
-                  </div>
-                  <canvas id="spark-stories" class="sparkline mt-3"></canvas>
-                  <a href="manage-stories.html" class="small d-block mt-2">عرض</a>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="small">المرحلة الثانوية</span>
+                  <span class="small fw-bold">46,840 طالب</span>
+                </div>
+                <div class="progress-taiz">
+                  <div class="progress-taiz-bar" style="width: 16%"></div>
                 </div>
               </div>
 
-              <!-- Words -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">الكلمات</div>
-                      <div class="stats-value" data-key="words">--</div>
-                      <div class="trend-wrapper"><span data-key-change="words" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-purple"><i class="fas fa-font"></i></div>
+              <div class="row text-center mt-4">
+                <div class="col">
+                  <div class="p-3 bg-light rounded">
+                    <h6 class="fw-bold mb-1">البنين</h6>
+                    <h4 class="text-primary mb-0">52%</h4>
                   </div>
-                  <canvas id="spark-words" class="sparkline mt-3"></canvas>
-                  <a href="manage-words.html" class="small d-block mt-2">عرض</a>
+                </div>
+                <div class="col">
+                  <div class="p-3 bg-light rounded">
+                    <h6 class="fw-bold mb-1">البنات</h6>
+                    <h4 class="text-danger mb-0">48%</h4>
+                  </div>
                 </div>
               </div>
-
-              <!-- Courses -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">الدورات</div>
-                      <div class="stats-value" data-key="courses">--</div>
-                      <div class="trend-wrapper"><span data-key-change="courses" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-red"><i class="fas fa-graduation-cap"></i></div>
-                  </div>
-                  <canvas id="spark-courses" class="sparkline mt-3"></canvas>
-                  <a href="#" class="small d-block mt-2">عرض</a>
-                </div>
-              </div>
-
-              <!-- Teachers -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">المعلمون</div>
-                      <div class="stats-value" data-key="teachers">--</div>
-                      <div class="trend-wrapper"><span data-key-change="teachers" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-green"><i class="fas fa-chalkboard-user"></i></div>
-                  </div>
-                  <canvas id="spark-teachers" class="sparkline mt-3"></canvas>
-                  <a href="teacher.html" class="small d-block mt-2">عرض</a>
-                </div>
-              </div>
-
-              <!-- Notifications -->
-              <div class="col-6 col-md-3 mb-3">
-                <div class="stats-card text-center py-3">
-                  <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                      <div class="stats-label">الإشعارات</div>
-                      <div class="stats-value" data-key="notifications">--</div>
-                      <div class="trend-wrapper"><span data-key-change="notifications" class="trend-up">--</span></div>
-                    </div>
-                    <div class="icon-wrapper icon-purple"><i class="fa-regular fa-bell"></i></div>
-                  </div>
-                  <canvas id="spark-notifications" class="sparkline mt-3"></canvas>
-                  <a href="notifications.html" class="small d-block mt-2">عرض</a>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
-      </section>
-
-
-
-      
-      <!-- Footer -->
-      <div class="footer text-center bg-white shadow-sm py-3 mt-5">
-        <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/"
-            class="text-primary" target="_blank">قوالب بواسطة TemplateRise</a></p>
       </div>
     </div>
-    <!-- Scripts -->
-    <script src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/plugin/chart/chart.js"></script>
-    <script src="./assets/js/chart.js"></script>
-    <script src="./assets/js/reports.js"></script>
-    <script src="./assets/js/main.js"></script>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.35.0/dist/apexcharts.min.js"></script>
+  <script>
+    // تحديث التاريخ والوقت
+    function updateDateTime() {
+      const now = new Date();
+      const hijriOptions = { day: 'numeric', month: 'long', year: 'numeric' };
+      const gregorianOptions = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' };
+
+      const hijriDate = now.toLocaleDateString('ar-SA', hijriOptions);
+      const gregorianDate = now.toLocaleDateString('ar-SA', gregorianOptions);
+
+      document.querySelector('.header span.fw-bold').textContent =
+        `${gregorianDate} (${hijriDate})`;
+    }
+    setInterval(updateDateTime, 60000); // تحديث كل دقيقة
+    updateDateTime();
+
+    // خريطة تعز التفاعلية
+    document.querySelectorAll('.district-marker').forEach(marker => {
+      marker.addEventListener('mouseenter', function (e) {
+        const district = this.getAttribute('data-district');
+        const schools = this.getAttribute('data-schools');
+        const students = this.getAttribute('data-students');
+
+        const infoDiv = document.getElementById('districtInfo');
+        infoDiv.innerHTML = `
+          <h6 class="fw-bold mb-2">${district}</h6>
+          <div class="mb-2">
+            <small class="text-muted">عدد المدارس:</small>
+            <div class="fw-bold">${schools} مدرسة</div>
+          </div>
+          <div class="mb-2">
+            <small class="text-muted">عدد الطلاب:</small>
+            <div class="fw-bold">${students} طالب</div>
+          </div>
+          <button class="btn btn-sm btn-primary w-100 mt-2">عرض التفاصيل</button>
+        `;
+
+        const rect = this.getBoundingClientRect();
+        infoDiv.style.top = `${rect.top - 100}px`;
+        infoDiv.style.left = `${rect.left + 20}px`;
+        infoDiv.style.display = 'block';
+      });
+
+      marker.addEventListener('mouseleave', function () {
+        document.getElementById('districtInfo').style.display = 'none';
+      });
+    });
+
+    // اختيار المديرية
+    document.querySelector('.district-selector').addEventListener('change', function (e) {
+      const district = e.target.value;
+      if (district) {
+        alert(`سيتم عرض بيانات مديرية: ${e.target.options[e.target.selectedIndex].text}`);
+        // هنا يمكنك إضافة كود لتحميل بيانات المديرية المحددة
+      }
+    });
+
+    // تحديث الإحصائيات تلقائياً
+    function updateStats() {
+      const stats = {
+        schools: Math.floor(Math.random() * 50) + 1240,
+        students: Math.floor(Math.random() * 5000) + 285000,
+        teachers: Math.floor(Math.random() * 200) + 14800,
+        successRate: (Math.random() * 5 + 75).toFixed(1)
+      };
+
+      document.querySelectorAll('.taiz-card .fw-bold.mb-0')[0].textContent = stats.schools.toLocaleString();
+      document.querySelectorAll('.taiz-card .fw-bold.mb-0')[1].textContent = stats.students.toLocaleString();
+      document.querySelectorAll('.taiz-card .fw-bold.mb-0')[2].textContent = stats.teachers.toLocaleString();
+      document.querySelectorAll('.taiz-card .fw-bold.mb-0')[3].textContent = `${stats.successRate}%`;
+
+      // تحديث شريط التقدم
+      document.querySelectorAll('.progress-taiz-bar')[0].style.width = `${Math.random() * 10 + 80}%`;
+      document.querySelectorAll('.progress-taiz-bar')[1].style.width = `${Math.random() * 10 + 85}%`;
+      document.querySelectorAll('.progress-taiz-bar')[2].style.width = `${Math.random() * 10 + 70}%`;
+      document.querySelectorAll('.progress-taiz-bar')[3].style.width = `${stats.successRate}%`;
+    }
+
+    // تحديث الإحصائيات كل 30 ثانية
+    setInterval(updateStats, 30000);
+
+    // الروابط السريعة
+    document.querySelectorAll('.quick-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const action = this.querySelector('span').textContent;
+        alert(`سيتم توجيهك إلى: ${action}`);
+      });
+    });
+
+    // إخفاء preloader عند تحميل الصفحة
+    window.addEventListener('load', function () {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // مخطط بياني بسيط
+    const options = {
+      series: [{
+        name: 'عدد المدارس',
+        data: [320, 185, 156, 142, 98, 120, 85, 95]
+      }],
+      chart: {
+        type: 'bar',
+        height: 350,
+        toolbar: { show: false }
+      },
+      colors: ['#3498db'],
+      plotOptions: {
+        bar: {
+          borderRadius: 4,
+          horizontal: false,
+        }
+      },
+      dataLabels: { enabled: false },
+      xaxis: {
+        categories: ['تعز', 'صالة', 'الموظف', 'موزع', 'جبل حبشي', 'صبر الموادم', 'الأشرفية', 'القاهرة']
+      }
+    };
+
+    // يمكنك تفعيل هذا الرسم البياني في مكان مناسب
+    // const chart = new ApexCharts(document.querySelector("#chart"), options);
+    // chart.render();
+  </script>
+
+
+
+  <!-- Scripts -->
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/plugin/chart/chart.js"></script>
+  <script src="./assets/plugin/quill/quill.js"></script>
+  <script src="./assets/plugin/datatable/datatables.min.js"></script>
+  <script src="./assets/js/chart.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
