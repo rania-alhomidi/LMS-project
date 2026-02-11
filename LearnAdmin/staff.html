@@ -1,61 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Staff</title>
-    <!-- Stylesheets -->
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-    <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
-    <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
-    <link href="./assets/plugin/quill/quill.snow.css" rel="stylesheet">
-    <link href="./assets/css/style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدروس</title>
+  <!-- Stylesheets -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
 </head>
+<style>
+
+  body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .taiz-gradient {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+  }
+
+  .taiz-card {
+    background: white;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .taiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--secondary);
+  }
+
+  .district-badge {
+    background: var(--accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .school-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .map-container {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .taiz-map {
+    background: #e8f4fc;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .district-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .district-marker:hover {
+    transform: scale(1.5);
+    z-index: 10;
+  }
+
+  .district-info {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    min-width: 200px;
+    display: none;
+  }
+
+  .stat-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    border-top: 4px solid var(--secondary);
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quick-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    text-decoration: none;
+    color: var(--dark);
+  }
+
+  .quick-link:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateX(-5px);
+    text-decoration: none;
+  }
+
+  .district-selector {
+    background: white;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    padding: 8px 15px;
+    font-weight: bold;
+  }
+
+  .year-selector {
+    background: var(--light);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+  }
+
+  .alert-taiz {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+    border-right: 4px solid var(--warning);
+    border-radius: 10px;
+  }
+
+  .progress-taiz {
+    height: 10px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    overflow: hidden;
+  }
+
+  .progress-taiz-bar {
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    height: 100%;
+    border-radius: 5px;
+  }
+</style>
+
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
-    <!-- Main Wrapper -->
-    <div id="main-wrapper" class="d-flex">
-        <div class="sidebar">
-                <!-- Sidebar -->
-                <div class="sidebar-header">
-                    <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
-                    <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
-                 </div>
-               <div class="sidebar-body  custom-scrollbar">
-                    <ul class="sidebar-menu">
-                      <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i><p>Dashboard</p></a></li>
-                      <li><a href="course.html" class="sidebar-link"><i class="fa-brands fa-discourse"></i><p>Courses</p></a></li>
-                      <li><a href="students.html" class="sidebar-link"><i class="fa-solid fa-user"></i><p>Students</p></a></li>
-                      <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i><p>Teachers</p></a></li>
-                      <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i><p>Library</p></a></li>
-                      <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i><p>Department</p></a></li>
-                      <li><a href="staff.html" class="sidebar-link active"><i class="fa-solid fa-users"></i><p>Staff</p></a></li>
-                      <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i><p>Fees</p></a></li>
-                      <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Pages <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
-                            <ul class="sidebar-submenu">
-                            <li><a href="404.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">404 page</p></a></li>
-                            <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">500 page</p></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Table <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
-                        <ul class="sidebar-submenu">
-                            <li><a href="table-bootstrap.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Bootstrap</p></a></li>
-                            <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">DataTable</p></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i><p>Components <i class="fa-solid fa-chevron-right right-icon"></i></p></a>
-                        <ul class="sidebar-submenu">
-                            <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">Form Element</p></a></li>
-                        </ul>
-                    </li>
-                    </ul>
-               </div>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div id="main-wrapper" class="d-flex">
+    <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="sidebar-header">
+        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
         </div>
+        <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
+      </div>
+      <div class="sidebar-body  custom-scrollbar">
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+              <p>لوحة التحكم</p>
+            </a></li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent">
+              <i class="fa-brands fa-discourse"></i>
+              <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li>
+                <a href="mange-lesson.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة الدروس</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-units.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ادارة الوحدات</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-words.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ادارة الكلمات</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-solid fa-book-open"></i>
+              <p>القصص <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="manage-stories.html" class="submenu-link active"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة القصص</p>
+                </a></li>
+              <li><a href="add-story.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إضافة قصة</p>
+                </a></li>
+            </ul>
+          </li>
+          <a href="#" class="sidebar-link submenu-parent active">
+            <i class="fa-solid fa-book-open"></i>
+            <p>الطلاب <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+          </a>
+          <ul class="sidebar-submenu open">
+            <li><a href="students.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> إدارة الطلاب</p>
+              </a></li>
+            <li><a href="student_progress.html" class="submenu-link"><i
+                  class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> تقارير الطلاب</p>
+              </a></li>
+          </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>التقارير<i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="summary.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ملخص الوحدات و الدروس</p>
+                </a></li>
+              <li><a href="admin-activity.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">تقارير عن الادمن </p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+              <p>المعلمون</p>
+            </a></li>
+          <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
+              <p>المكتبة</p>
+            </a></li>
+          <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
+              <p>القسم</p>
+            </a></li>
+          <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+              <p>الموظفون</p>
+            </a></li>
+          <li><a href="finance-management.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+              <p>الإدارة المالية</p>
+            </a></li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="settings.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">الاعدادات</p>
+                </a></li>
+              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">صفحة 500</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="table-bootstrap.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">بوتستراب</p>
+                </a></li>
+              <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">جدول البيانات</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">عنصر النموذج</p>
+                </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
        <!-- Content Wrapper -->
         <div class="content-wrapper">
             <!-- Header -->

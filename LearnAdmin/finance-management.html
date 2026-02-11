@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الدروس</title>
+  <!-- Stylesheets -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div id="main-wrapper" class="d-flex">
+    <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="sidebar-header">
+        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a>
+        </div>
+        <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
+      </div>
+      <div class="sidebar-body  custom-scrollbar">
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i>
+              <p>لوحة التحكم</p>
+            </a></li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent">
+              <i class="fa-brands fa-discourse"></i>
+              <p>الدروس <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li>
+                <a href="mange-lesson.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة الدروس</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-units.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ادارة الوحدات</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-words.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ادارة الكلمات</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-solid fa-book-open"></i>
+              <p>القصص <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="manage-stories.html" class="submenu-link active"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة القصص</p>
+                </a></li>
+              <li><a href="add-story.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إضافة قصة</p>
+                </a></li>
+            </ul>
+          </li>
+          <a href="#" class="sidebar-link submenu-parent active">
+            <i class="fa-solid fa-book-open"></i>
+            <p>الطلاب <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+          </a>
+          <ul class="sidebar-submenu open">
+            <li><a href="students.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> إدارة الطلاب</p>
+              </a></li>
+            <li><a href="student_progress.html" class="submenu-link"><i
+                  class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> تقارير الطلاب</p>
+              </a></li>
+          </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>التقارير<i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="summary.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">ملخص الوحدات و الدروس</p>
+                </a></li>
+              <li><a href="admin-activity.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">تقارير عن الادمن </p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+              <p>المعلمون</p>
+            </a></li>
+          <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
+              <p>المكتبة</p>
+            </a></li>
+          <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
+              <p>القسم</p>
+            </a></li>
+          <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
+              <p>الموظفون</p>
+            </a></li>
+          <li><a href="fees.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
+              <p>الرسوم</p>
+            </a></li>
+            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="settings.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">الاعدادات</p>
+                </a></li>
+              <li><a href="500.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">صفحة 500</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>جدول <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="table-bootstrap.html" class="submenu-link"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">بوتستراب</p>
+                </a></li>
+              <li><a href="data-table.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">جدول البيانات</p>
+                </a></li>
+            </ul>
+          </li>
+          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+              <p>المكونات <i class="fa-solid fa-chevron-right right-icon"></i></p>
+            </a>
+            <ul class="sidebar-submenu">
+              <li><a href="form.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">عنصر النموذج</p>
+                </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper ">
+      <!-- Header -->
+      <div class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i
+                class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="d-none d-md-block d-lg-block">
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text bg-white " id="addon-wrapping"><i
+                  class="fa-solid search-icon fa-magnifying-glass text-color-1"></i></span>
+              <input type="text" class="form-control search-input border-l-none ps-0" placeholder="ابحث عن أي شيء"
+                aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <ul class="nav d-flex align-items-center">
+            <!-- Messages Dropdown -->
+            <li class="nav-item me-2-5">
+              <a href="#" class="text-color-1 position-relative" role="button" data-bs-toggle="dropdown"
+                data-bs-offset="0,0" aria-expanded="false">
+                <i class="fa-regular fa-message font-size-24"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="chatmessage" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <!-- Chat Timeline -->
+                  <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/avatar-1.jpg">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">تحدثنا عن مشروع...</h6>
+                          <small class="d-block"><i class="fa-solid fa-clock"></i> منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a class="all-notification" href="#">شاهد كل الرسائل <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </li>
+            <!-- Notifications Dropdown -->
+            <li class="nav-item dropdown me-2-5">
+              <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa-regular fa-bell font-size-24"></i>
+                <div class="marker"></div>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-panel">
+                        <div class="media me-2">
+                          <img alt="image" width="50" src="./assets/images/profile.png">
+                        </div>
+                        <div class="media-body">
+                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a class="all-notification" href="notifications.html">
+                  شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </li>
+            <!-- User Profile -->
+            <li class="nav-item dropdown user-profile">
+              <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="user-avatar me-0 me-lg-3">A</span>
+                <div>
+                  <a href="#" class="d-none d-lg-block">
+                    <span class="d-block auth-role">مسؤول</span>
+                    <span class="auth-name">أدين لورين</span>
+                    <span class="ms-2 text-color-1 text-size-sm"><i class="fa-solid fa-angle-down"></i></span>
+                  </a>
+                  <ul class="dropdown-menu mt-3">
+                    <li><a class="dropdown-item" href="#">الملف الشخصي</a></li>
+                    <li><a class="dropdown-item" href="#">الإعدادات</a></li>
+                    <li>
+                      <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">تسجيل الخروج</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <h4 class="fw-bold text-color-2">الإدارة المالية للمنصة</h4>
+                    <p class="text-muted mb-0">متابعة إيرادات الدورات التعليمية وتعاقدات المدارس</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <select class="form-select form-select-sm" style="min-width: 150px;">
+                        <option selected>هذا الشهر (فبراير)</option>
+                        <option value="1">الشهر الماضي (يناير)</option>
+                        <option value="2">الربع الحالي</option>
+                        <option value="3">هذا العام</option>
+                    </select>
+                    <button class="btn btn-outline-secondary btn-sm"><i class="fa-solid fa-print"></i> طباعة تقرير</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="stats-card h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="stats-label mb-1">إجمالي الدخل</p>
+                            <h3 class="stats-value m-0">$15,420</h3>
+                        </div>
+                        <div class="icon-wrapper icon-green">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                    </div>
+                    <div style="height: 50px;">
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between align-items-center">
+                        <span class="trend-up small fw-bold"><i class="fa-solid fa-arrow-trend-up"></i> 15%</span>
+                        <span class="text-muted small">مقارنة بالشهر الماضي</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="stats-card h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="stats-label mb-1">تعاقدات المدارس</p>
+                            <h3 class="stats-value m-0">$9,500</h3>
+                        </div>
+                        <div class="icon-wrapper icon-purple">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                    </div>
+                    <div style="height: 50px;">
+                        <canvas id="contractsChart"></canvas>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between align-items-center">
+                        <span class="text-primary small fw-bold">6 مدارس</span>
+                        <span class="text-muted small">نشطة حالياً</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="stats-card h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="stats-label mb-1">المصروفات التشغيلية</p>
+                            <h3 class="stats-value m-0 text-danger">$3,200</h3>
+                        </div>
+                        <div class="icon-wrapper icon-red">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                    </div>
+                    <div style="height: 50px;">
+                        <canvas id="expensesChart"></canvas>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between align-items-center">
+                        <span class="text-danger small fw-bold"><i class="fa-solid fa-arrow-trend-up"></i> 5%</span>
+                        <span class="text-muted small">زيادة في التكاليف</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="stats-card h-100">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <p class="stats-label mb-1">صافي الربح</p>
+                            <h3 class="stats-value m-0 text-success">$12,220</h3>
+                        </div>
+                        <div class="icon-wrapper bg-light-primary text-primary">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div style="height: 50px;">
+                        <canvas id="profitChart"></canvas>
+                    </div>
+                    <div class="mt-2 d-flex justify-content-between align-items-center">
+                        <span class="text-success small fw-bold">+12%</span>
+                        <span class="text-muted small">هامش ربح ممتاز</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="row mb-4">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white border-0 d-flex justify-content-between align-items-center pt-4 px-4">
+                        <h5 class="fw-bold text-color-2 m-0">التحليل المالي (السنوي)</h5>
+                        <select class="form-select form-select-sm w-auto border-0 bg-light">
+                            <option>2026</option>
+                            <option>2025</option>
+                        </select>
+                    </div>
+                    <div class="card-body px-4 pb-4">
+                        <div style="height: 300px;">
+                            <canvas id="financeChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white border-0 pt-4 px-4">
+                        <h5 class="fw-bold text-color-2 m-0">توزيع المصروفات</h5>
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center px-4 pb-4">
+                        <div style="height: 250px; width: 100%;">
+                            <canvas id="expensesDoughnut"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold text-color-2 m-0">سجل المعاملات المالية</h5>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-success btn-sm"><i class="fa-solid fa-file-excel"></i> Excel</button>
+                    <button class="btn btn-primary btn-sm" onclick="showAddTransactionModal()"><i class="fa-solid fa-plus"></i> إضافة عملية</button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="row g-3 mb-4 bg-light p-3 rounded-3">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-search text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="بحث برقم المعاملة، الجهة...">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option value="">جميع التصنيفات</option>
+                        <option value="income">إيرادات</option>
+                        <option value="expense">مصروفات</option>
+                        <option value="contracts">عقود</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option value="">كل الحالات</option>
+                        <option value="completed">مكتمل</option>
+                        <option value="pending">قيد الانتظار</option>
+                        <option value="failed">ملغى</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-secondary w-100">تصفية</button>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="border-0">المعرف</th>
+                            <th class="border-0">العملية</th>
+                            <th class="border-0">التصنيف</th>
+                            <th class="border-0">المبلغ</th>
+                            <th class="border-0">التاريخ</th>
+                            <th class="border-0">الحالة</th>
+                            <th class="border-0 text-center">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionBody">
+                        <tr>
+                            <td>#FIN-8821</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-light-success text-success rounded-circle me-2 d-flex align-items-center justify-content-center" style="width:35px;height:35px"><i class="fa-solid fa-arrow-down"></i></div>
+                                    <span class="fw-bold">اشتراك "مدرسة النهضة"</span>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-light text-dark">عقود مدارس</span></td>
+                            <td class="text-success fw-bold">+ $2,500.00</td>
+                            <td>10 فبراير 2026</td>
+                            <td><span class="badge bg-success">مكتمل</span></td>
+                            <td class="text-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm border-0" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye me-2"></i> التفاصيل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square me-2"></i> تعديل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-print me-2"></i> طباعة إيصال</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#FIN-8822</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-light-success text-success rounded-circle me-2 d-flex align-items-center justify-content-center" style="width:35px;height:35px"><i class="fa-solid fa-arrow-down"></i></div>
+                                    <span class="fw-bold">باقة تعليمية (كبار السن)</span>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-light text-dark">اشتراكات أفراد</span></td>
+                            <td class="text-success fw-bold">+ $45.00</td>
+                            <td>11 فبراير 2026</td>
+                            <td><span class="badge bg-success">مكتمل</span></td>
+                            <td class="text-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm border-0" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye me-2"></i> التفاصيل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square me-2"></i> تعديل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-print me-2"></i> طباعة إيصال</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#FIN-8823</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-light-danger text-danger rounded-circle me-2 d-flex align-items-center justify-content-center" style="width:35px;height:35px"><i class="fa-solid fa-arrow-up"></i></div>
+                                    <span class="fw-bold">تجديد خوادم Cloud Storage</span>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-light text-danger">مصروفات تقنية</span></td>
+                            <td class="text-danger fw-bold">- $150.00</td>
+                            <td>11 فبراير 2026</td>
+                            <td><span class="badge bg-warning">قيد الدفع</span></td>
+                            <td class="text-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm border-0" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye me-2"></i> التفاصيل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-check me-2"></i> تأكيد الدفع</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square me-2"></i> تعديل</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-trash me-2"></i> حذف</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#FIN-8824</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-sm bg-light-danger text-danger rounded-circle me-2 d-flex align-items-center justify-content-center" style="width:35px;height:35px"><i class="fa-solid fa-arrow-up"></i></div>
+                                    <span class="fw-bold">رواتب معلمي قسم الأطفال</span>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-light text-dark">رواتب</span></td>
+                            <td class="text-danger fw-bold">- $1,200.00</td>
+                            <td>11 فبراير 2026</td>
+                            <td><span class="badge bg-success">مكتمل</span></td>
+                            <td class="text-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-light btn-sm border-0" type="button" data-bs-toggle="dropdown">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye me-2"></i> التفاصيل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square me-2"></i> تعديل</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-print me-2"></i> طباعة كشف</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+      
+             <!-- Footer -->
+             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
+            </div>
+    </div>
+
+    <!-- Add Transaction Modal -->
+    <div class="modal fade" id="addTransactionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-color-2">إضافة معاملة جديدة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTransactionForm">
+                        <div class="mb-3">
+                            <label class="form-label text-muted small">عنوان المعاملة</label>
+                            <input type="text" class="form-control" id="transactionTitle" placeholder="مثال: اشتراك طالب جديد" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">المبلغ</label>
+                                <input type="number" class="form-control" id="transactionAmount" placeholder="0.00" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">النوع</label>
+                                <select class="form-select" id="transactionType">
+                                    <option value="income">إيراد (+)</option>
+                                    <option value="expense">مصروف (-)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small">التصنيف</label>
+                            <select class="form-select" id="transactionCategory">
+                                <option>اشتراكات</option>
+                                <option>رواتب</option>
+                                <option>صيانة</option>
+                                <option>أخرى</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-muted small">ملاحظات</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">حفظ المعاملة</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Scripts -->
+      <script>
+        function showAddTransactionModal() {
+            var myModal = new bootstrap.Modal(document.getElementById('addTransactionModal'));
+            myModal.show();
+        }
+
+        // التعامل مع نموذج إضافة معاملة جديدة
+        document.getElementById('addTransactionForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            
+            // جلب البيانات من الحقول
+            const title = document.getElementById('transactionTitle').value;
+            const amount = document.getElementById('transactionAmount').value;
+            const type = document.getElementById('transactionType').value;
+            const category = document.getElementById('transactionCategory').value;
+            
+            // تنسيق البيانات
+            const amountFormatted = (type === 'income' ? '+ $' : '- $') + parseFloat(amount).toFixed(2);
+            const amountClass = type === 'income' ? 'text-success' : 'text-danger';
+            const iconClass = type === 'income' ? 'fa-arrow-down' : 'fa-arrow-up';
+            const bgClass = type === 'income' ? 'bg-light-success text-success' : 'bg-light-danger text-danger';
+            const date = new Date().toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // إنشاء صف الجدول الجديد
+            const newRow = `
+                <tr class="fade-update">
+                    <td>#NEW</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-sm ${bgClass} rounded-circle me-2 d-flex align-items-center justify-content-center" style="width:35px;height:35px"><i class="fa-solid ${iconClass}"></i></div>
+                            <span class="fw-bold">${title}</span>
+                        </div>
+                    </td>
+                    <td><span class="badge bg-light text-dark">${category}</span></td>
+                    <td class="${amountClass} fw-bold">${amountFormatted}</td>
+                    <td>${date}</td>
+                    <td><span class="badge bg-success">مكتمل</span></td>
+                    <td class="text-center">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm border-0" type="button" data-bs-toggle="dropdown">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye me-2"></i> التفاصيل</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square me-2"></i> تعديل</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-print me-2"></i> طباعة إيصال</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            `;
+
+            // إضافة الصف إلى الجدول وإغلاق النافذة
+            document.getElementById('transactionBody').insertAdjacentHTML('afterbegin', newRow);
+            const modalEl = document.getElementById('addTransactionModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            modal.hide();
+            this.reset(); // تفريغ الحقول
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Mini Charts
+            const commonOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                scales: { x: { display: false }, y: { display: false } },
+                elements: { point: { radius: 0 }, line: { borderWidth: 2, tension: 0.4 } }
+            };
+
+            // Income Chart
+            const ctxIncome = document.getElementById('incomeChart').getContext('2d');
+            new Chart(ctxIncome, {
+                type: 'line',
+                data: {
+                    labels: ['1', '2', '3', '4', '5', '6', '7'],
+                    datasets: [{
+                        data: [12000, 13500, 12800, 14200, 15000, 14800, 15420],
+                        borderColor: '#4BDE97',
+                        backgroundColor: 'rgba(75, 222, 151, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: commonOptions
+            });
+
+            // Contracts Chart
+            const ctxContracts = document.getElementById('contractsChart').getContext('2d');
+            new Chart(ctxContracts, {
+                type: 'bar',
+                data: {
+                    labels: ['1', '2', '3', '4', '5'],
+                    datasets: [{
+                        data: [5000, 7000, 6500, 8500, 9500],
+                        backgroundColor: '#7C5DFA',
+                        borderRadius: 4
+                    }]
+                },
+                options: commonOptions
+            });
+
+            // Expenses Chart
+            const ctxExpenses = document.getElementById('expensesChart').getContext('2d');
+            new Chart(ctxExpenses, {
+                type: 'line',
+                data: {
+                    labels: ['1', '2', '3', '4', '5'],
+                    datasets: [{
+                        data: [2800, 2900, 3100, 3000, 3200],
+                        borderColor: '#FF4C61',
+                        borderDash: [5, 5],
+                        fill: false
+                    }]
+                },
+                options: commonOptions
+            });
+
+            // Profit Chart
+            const ctxProfit = document.getElementById('profitChart').getContext('2d');
+            new Chart(ctxProfit, {
+                type: 'line',
+                data: {
+                    labels: ['1', '2', '3', '4', '5', '6', '7'],
+                    datasets: [{
+                        data: [9200, 10600, 9700, 11200, 11800, 11800, 12220],
+                        borderColor: '#0d6efd',
+                        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: commonOptions
+            });
+
+            // Finance Chart (Line) - Detailed
+            const ctxFinance = document.getElementById('financeChart').getContext('2d');
+            new Chart(ctxFinance, {
+                type: 'line',
+                data: {
+                    labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+                    datasets: [{
+                        label: 'الدخل',
+                        data: [12000, 19000, 15000, 17000, 14000, 22000, 24000, 25000, 20000, 28000, 26000, 30000],
+                        borderColor: '#4BDE97',
+                        backgroundColor: 'rgba(75, 222, 151, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'المصروفات',
+                        data: [8000, 9000, 8500, 10000, 9000, 11000, 12000, 13000, 11000, 14000, 13000, 15000],
+                        borderColor: '#FF4C61',
+                        backgroundColor: 'rgba(255, 76, 97, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { borderDash: [2, 4] } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Expenses Doughnut - Detailed
+            const ctxExpensesDoughnut = document.getElementById('expensesDoughnut').getContext('2d');
+            new Chart(ctxExpensesDoughnut, {
+                type: 'doughnut',
+                data: {
+                    labels: ['رواتب', 'خوادم', 'تسويق', 'صيانة'],
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: ['#5F63F2', '#FF4C61', '#FFB800', '#20C997'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+                    },
+                    cutout: '70%'
+                }
+            });
+        });
+      </script>
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
+</body>
+</html>
