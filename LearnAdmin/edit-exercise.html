@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تعديل سؤال</title>
+  <!-- Stylesheets -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/brands.min.css" rel="stylesheet">
+  <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Main Wrapper -->
+  <div id="main-wrapper" class="d-flex">
+    <!-- Sidebar (Same as other pages) -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="lg-logo"><a href="index.html"><img src="./assets/images/logo.png" alt="logo large"></a></div>
+        <div class="sm-logo"><a href="index.html"><img src="./assets/images/small-logo.png" alt="logo small"></a></div>
+      </div>
+      <div class="sidebar-body custom-scrollbar">
+        <ul class="sidebar-menu">
+          <li><a href="index.html" class="sidebar-link"><i class="fa-solid fa-house"></i><p>لوحة التحكم</p></a></li>
+          <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-brands fa-discourse"></i>
+              <p>الدروس <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="mange-lesson.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إدارة الدروس</p></a></li>
+              <li><a href="manage-units.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">ادارة الوحدات</p></a></li>
+              <li><a href="manage-words.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">ادارة الكلمات</p></a></li>
+              <li><a href="manage-exercises.html" class="submenu-link active"><i class="fa-solid fa-circle me-4 font-size-12"></i><p class="m-0">إدارة التمارين</p></a></li>
+            </ul>
+          </li>
+          <!-- Other menu items... -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <!-- Header -->
+      <div class="header d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="collapse-sidebar me-3 d-none d-lg-block text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+          <div class="menu-toggle me-3 d-block d-lg-none text-color-1"><span><i class="fa-solid fa-bars font-size-24"></i></span></div>
+        </div>
+        <div class="d-flex align-items-center">
+           <!-- User Profile -->
+           <li class="nav-item dropdown user-profile list-unstyled">
+            <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="user-avatar me-0 me-lg-3">A</span>
+              <div>
+                <a href="#" class="d-none d-lg-block">
+                  <span class="d-block auth-role">مسؤول</span>
+                  <span class="auth-name">أدين لورين</span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+
+      <div class="main-content p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div>
+                <h3 class="text-color-2">تعديل السؤال</h3>
+                <p class="text-muted small">تحديث بيانات السؤال أو الخيارات.</p>
+            </div>
+            <a href="manage-exercises.html" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-arrow-right me-2"></i> العودة للقائمة
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <form>
+                    <div class="row g-4">
+                        <!-- Basic Info -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">نص السؤال</label>
+                            <input type="text" class="form-control" value="أي الكلمات التالية تبدأ بحرف الألف؟">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">نوع السؤال</label>
+                            <select class="form-select">
+                                <option value="mcq" selected>اختيار من متعدد</option>
+                                <option value="truefalse">صواب / خطأ</option>
+                                <option value="match">توصيل</option>
+                                <option value="sort">ترتيب</option>
+                            </select>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">الدرس المرتبط</label>
+                            <select class="form-select">
+                                <option value="lesson1" selected>حرف الألف</option>
+                                <option value="lesson2">حرف الباء</option>
+                                <option value="lesson3">الكلمات الثلاثية</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">الدرجة (Points)</label>
+                            <input type="number" class="form-control" value="5">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">مستوى الصعوبة</label>
+                            <select class="form-select">
+                                <option value="easy" selected>سهل</option>
+                                <option value="medium">متوسط</option>
+                                <option value="hard">صعب</option>
+                            </select>
+                        </div>
+
+                        <!-- Options (For MCQ) -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold">الخيارات (للأسئلة متعددة الاختيارات)</label>
+                            <div class="row g-2">
+                                <div class="col-md-6"><input type="text" class="form-control" value="أسد"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" value="بطة"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" value="تفاحة"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" value="جمل"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">الإجابة الصحيحة</label>
+                            <input type="text" class="form-control" value="أسد">
+                        </div>
+
+                        <!-- Media -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">صورة أو ملف صوتي للسؤال</label>
+                            <div class="file-input-container">
+                                <input type="file" class="file-input" accept="image/*">
+                                <label class="file-label">
+                                    <span class="file-name">lion.jpg</span>
+                                    <span class="file-button">تغيير</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold d-block">الحالة</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="active" checked>
+                                <label class="form-check-label" for="active">نشط</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="inactive">
+                                <label class="form-check-label" for="inactive">غير نشط</label>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="col-12 text-end mt-4">
+                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
+                            <button type="submit" class="btn btn-primary px-5">حفظ التعديلات</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+      <div class="footer text-center bg-white shadow-sm py-3 mt-auto">
+        <p class="m-0">Copyright © 2024. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

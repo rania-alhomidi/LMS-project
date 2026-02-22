@@ -261,3 +261,175 @@
           </ul>
         </div>
       </div>
+
+
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold">إدارة التمارين والاختبارات</h3>
+    <a href="add-exercise.html" class="btn btn-primary">
+        <i class="fa-solid fa-plus me-2"></i>إضافة سؤال جديد
+    </a>
+</div>
+
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-search text-muted"></i></span>
+                    <input type="text" class="form-control border-start-0 ps-0" id="searchExercise" placeholder="بحث في نص السؤال...">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="filterCategory">
+                    <option value="">نوع السؤال</option>
+                    <option value="اختيار من متعدد">اختيار من متعدد</option>
+                    <option value="صواب/خطأ">صواب/خطأ</option>
+                    <option value="توصيل">توصيل</option>
+                    <option value="ترتيب">ترتيب</option>
+                    <option value="ملء الفراغ">ملء الفراغ</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="filterLevel">
+                    <option value="">الدرس المرتبط</option>
+                    <option value="حرف الألف">حرف الألف</option>
+                    <option value="حرف الباء">حرف الباء</option>
+                    <option value="الكلمات الثلاثية">الكلمات الثلاثية</option>
+                </select>
+            </div>
+             <div class="col-md-2">
+                <button class="btn btn-outline-primary w-100" onclick="filterExercises()">تصفية</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>نص السؤال</th>
+                        <th>النوع</th>
+                        <th>الدرس</th>
+                        <th>الدرجة</th>
+                        <th>الحالة</th>
+                        <th class="text-center">إجراءات</th>
+                    </tr>
+                </thead>
+                <tbody id="exerciseBody">
+                    <tr>
+                        <td>#Q-101</td>
+                        <td><span class="fw-bold ex-name">أي الكلمات التالية تبدأ بحرف الألف؟</span></td>
+                        <td><span class="badge bg-light text-dark border ex-cat">اختيار من متعدد</span></td>
+                        <td><span class="badge bg-info ex-level">حرف الألف</span></td>
+                        <td class="ex-sets">5</td>
+                        <td><span class="badge bg-success bg-opacity-10 text-success">نشط</span></td>
+                        <td class="text-center">
+                            <div class="dropdown">
+                                <button class="btn btn-light btn-sm" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item edit-ex" href="edit-exercise.html"><i class="fa-solid fa-pen-to-square me-2"></i>تعديل</a></li>
+                                    <li><a class="dropdown-item details-ex" href="#"><i class="fa-regular fa-eye me-2"></i>تفاصيل</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item delete-ex text-danger" href="#"><i class="fa-solid fa-trash me-2"></i>حذف</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#Q-102</td>
+                        <td><span class="fw-bold ex-name">صورة "بطة" تبدأ بحرف الباء</span></td>
+                        <td><span class="badge bg-light text-dark border ex-cat">صواب/خطأ</span></td>
+                        <td><span class="badge bg-warning text-dark ex-level">حرف الباء</span></td>
+                        <td class="ex-sets">2</td>
+                        <td><span class="badge bg-success bg-opacity-10 text-success">نشط</span></td>
+                        <td class="text-center">
+                            <div class="dropdown">
+                                <button class="btn btn-light btn-sm" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item edit-ex" href="edit-exercise.html"><i class="fa-solid fa-pen-to-square me-2"></i>تعديل</a></li>
+                                    <li><a class="dropdown-item details-ex" href="#"><i class="fa-regular fa-eye me-2"></i>تفاصيل</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item delete-ex text-danger" href="#"><i class="fa-solid fa-trash me-2"></i>حذف</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    // مراقب الأحداث لأزرار الجدول
+    document.getElementById('exerciseBody').addEventListener('click', function(e) {
+        const btn = e.target.closest('.dropdown-item');
+        if (!btn) return;
+        e.preventDefault();
+
+        const row = btn.closest('tr');
+
+        if (btn.classList.contains('edit-ex')) {
+             window.location.href = 'edit-exercise.html';
+
+        } else if (btn.classList.contains('details-ex')) {
+            const name = row.querySelector('.ex-name').innerText;
+            alert(`عرض تفاصيل التمرين: ${name}\n(يمكنك هنا ربط فيديو توضيحي للتمرين)`);
+
+        } else if (btn.classList.contains('delete-ex')) {
+            if (confirm('هل أنت متأكد من حذف هذا التمرين من القائمة؟')) {
+                row.style.opacity = '0';
+                setTimeout(() => row.remove(), 300);
+            }
+        }
+    });
+
+    // دالة التصفية
+    function filterExercises() {
+        const searchText = document.getElementById('searchExercise').value.toLowerCase();
+        const category = document.getElementById('filterCategory').value;
+        const level = document.getElementById('filterLevel').value;
+        
+        const rows = document.querySelectorAll('#exerciseBody tr');
+        
+        rows.forEach(row => {
+            const nameText = row.querySelector('.ex-name').innerText.toLowerCase();
+            const catText = row.querySelector('.ex-cat').innerText;
+            const levelText = row.querySelector('.ex-level').innerText;
+            
+            const matchesSearch = nameText.includes(searchText);
+            const matchesCat = category === '' || catText === category;
+            const matchesLevel = level === '' || levelText === level;
+            
+            if (matchesSearch && matchesCat && matchesLevel) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+
+             <!-- Footer -->
+             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
+            </div>
+    </div>
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
+</body>
+</html>

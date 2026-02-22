@@ -261,3 +261,124 @@
           </ul>
         </div>
       </div>
+
+
+ 
+      <div class="main-content p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <div>
+                <h3 class="text-color-2">إضافة سؤال جديد</h3>
+                <p class="text-muted small">أدخل تفاصيل السؤال للاختبارات والتمارين التفاعلية.</p>
+            </div>
+            <a href="manage-exercises.html" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-arrow-right me-2"></i> العودة للقائمة
+            </a>
+        </div>
+
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <form>
+                    <div class="row g-4">
+                        <!-- Basic Info -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">نص السؤال</label>
+                            <input type="text" class="form-control" placeholder="مثال: اختر الكلمة التي تبدأ بحرف الألف">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">نوع السؤال</label>
+                            <select class="form-select">
+                                <option selected disabled>اختر النوع...</option>
+                                <option value="mcq">اختيار من متعدد</option>
+                                <option value="truefalse">صواب / خطأ</option>
+                                <option value="match">توصيل</option>
+                                <option value="sort">ترتيب</option>
+                            </select>
+                        </div>
+
+                        <!-- Details -->
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">الدرس المرتبط</label>
+                            <select class="form-select">
+                                <option value="">اختر الدرس...</option>
+                                <option value="lesson1">حرف الألف</option>
+                                <option value="lesson2">حرف الباء</option>
+                                <option value="lesson3">الكلمات الثلاثية</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">الدرجة (Points)</label>
+                            <input type="number" class="form-control" placeholder="5">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">مستوى الصعوبة</label>
+                            <select class="form-select">
+                                <option value="easy">سهل</option>
+                                <option value="medium">متوسط</option>
+                                <option value="hard">صعب</option>
+                            </select>
+                        </div>
+
+                        <!-- Options (For MCQ) -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold">الخيارات (للأسئلة متعددة الاختيارات)</label>
+                            <div class="row g-2">
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="الخيار الأول"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="الخيار الثاني"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="الخيار الثالث"></div>
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="الخيار الرابع"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">الإجابة الصحيحة</label>
+                            <input type="text" class="form-control" placeholder="اكتب نص الإجابة الصحيحة تماماً">
+                        </div>
+
+                        <!-- Media -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">صورة أو ملف صوتي للسؤال</label>
+                            <div class="file-input-container">
+                                <input type="file" class="file-input" accept="image/*">
+                                <label class="file-label">
+                                    <span class="file-name">اختر صورة</span>
+                                    <span class="file-button">تصفح</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold d-block">الحالة</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="active" checked>
+                                <label class="form-check-label" for="active">نشط</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="status" id="inactive">
+                                <label class="form-check-label" for="inactive">غير نشط</label>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="col-12 text-end mt-4">
+                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
+                            <button type="submit" class="btn btn-primary px-5">حفظ السؤال</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+
+             <!-- Footer -->
+             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
+            </div>
+    </div>
+     <!-- Scripts -->
+    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script  src="./assets/plugin/chart/chart.js"></script>
+    <script  src="./assets/js/chart.js"></script>
+    <script  src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -180,6 +180,16 @@
     height: 100%;
     border-radius: 5px;
   }
+  /* Style the table */
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scroll if the table is too wide */
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are not doubled */
+    margin-bottom: 1rem; /* Adds some space below the table */
+  }
 </style>
 
 <body>
@@ -223,6 +233,12 @@
                 <a href="manage-words.html" class="submenu-link">
                   <i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">ادارة الكلمات</p>
+                </a>
+              </li>
+              <li>
+                <a href="manage-exercises.html" class="submenu-link">
+                  <i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة التمارين</p>
                 </a>
               </li>
             </ul>
@@ -336,22 +352,48 @@
           </div>
         </div>
 
-        <div class="card shadow-sm border-0">
+       <div class="card shadow-sm border-0">
           <div class="card-body">
-            <div class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                  <strong>الدرس الأول</strong>
-                  <div class="small text-muted">المدة: 10 دقائق</div>
-                </div>
-                <div>
-                  <a href="edit-lesson.html" class="btn btn-sm btn-outline-primary">تعديل</a>
-                  <button class="btn btn-sm btn-outline-danger">حذف</button>
-                </div>
-              </div>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>اسم الدرس</th>
+                    <th>المدة</th>
+                    <th>الوصف</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>الدرس الأول</td>
+                    <td>15 دقيقة</td>
+                    <td>مقدمة في أساسيات اللغة العربية</td>
+                    <td>
+                      <a href="edit-lesson.html" class="btn btn-sm btn-outline-primary">تعديل</a>
+                      <button class="btn btn-sm btn-outline-danger" onclick="return confirm('هل أنت متأكد أنك تريد حذف هذا الدرس؟')">حذف</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>الدرس الثاني</td>
+                    <td>20 دقيقة</td>
+                    <td>تعلم الحروف الأبجدية</td>
+                    <td>
+                      <a href="edit-lesson.html" class="btn btn-sm btn-outline-primary">تعديل</a>
+                      <button class="btn btn-sm btn-outline-danger" onclick="return confirm('هل أنت متأكد أنك تريد حذف هذا الدرس؟')">حذف</button>
+                    </td>
+                  </tr>
+                  <!-- يمكنك إضافة المزيد من الصفوف هنا -->
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
+
+
+
+
+
 
       </div>
 
@@ -364,6 +406,11 @@
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </div>
+  <script>
+    // يمكنك هنا إضافة أي جافاسكربت إضافي تحتاجها
+    // مثال: دوال للحذف أو التعديل الفوري
+  </script>
+
 
   </body>
 

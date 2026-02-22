@@ -395,6 +395,99 @@
             </div>
         </div>
 
+        <!-- Withdrawals Section -->
+        <div class="card border-0 shadow-sm p-4 mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h5 class="fw-bold text-color-2 m-0">مسحوبات المعلمين والموظفين</h5>
+                    <p class="text-muted small mb-0">إدارة الأرصدة والتحويلات المالية للأعضاء</p>
+                </div>
+                <div class="d-flex gap-2">
+                     <div class="input-group input-group-sm" style="width: 200px;">
+                        <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-search text-muted"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="بحث عن عضو...">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th class="border-0 ps-4">العضو</th>
+                            <th class="border-0">الدور</th>
+                            <th class="border-0">إجمالي الأرباح</th>
+                            <th class="border-0">تم سحبه</th>
+                            <th class="border-0">الرصيد المتاح</th>
+                            <th class="border-0 text-center">إجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ps-4">
+                                <div class="d-flex align-items-center">
+                                    <img src="./assets/images/avatar-2.jpg" class="rounded-circle me-2" width="35" height="35" alt="user">
+                                    <div>
+                                        <span class="d-block fw-bold text-dark">سارة أحمد</span>
+                                        <small class="text-muted">sara@example.com</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-primary-subtle text-primary">معلم</span></td>
+                            <td class="fw-bold">$5,400.00</td>
+                            <td class="text-muted">$4,200.00</td>
+                            <td class="text-success fw-bold">$1,200.00</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-primary px-3" onclick="openWithdrawModal('سارة أحمد', 1200)">
+                                    <i class="fa-solid fa-money-bill-transfer me-1"></i> سحب
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ps-4">
+                                <div class="d-flex align-items-center">
+                                    <img src="./assets/images/avatar-3.jpg" class="rounded-circle me-2" width="35" height="35" alt="user">
+                                    <div>
+                                        <span class="d-block fw-bold text-dark">محمد علي</span>
+                                        <small class="text-muted">mohammed@example.com</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-info-subtle text-info">موظف</span></td>
+                            <td class="fw-bold">$3,200.00</td>
+                            <td class="text-muted">$3,150.00</td>
+                            <td class="text-success fw-bold">$50.00</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-primary px-3" onclick="openWithdrawModal('محمد علي', 50)" disabled>
+                                    <i class="fa-solid fa-money-bill-transfer me-1"></i> سحب
+                                </button>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="ps-4">
+                                <div class="d-flex align-items-center">
+                                    <img src="./assets/images/avatar-4.jpg" class="rounded-circle me-2" width="35" height="35" alt="user">
+                                    <div>
+                                        <span class="d-block fw-bold text-dark">خالد عمر</span>
+                                        <small class="text-muted">khaled@example.com</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="badge bg-primary-subtle text-primary">معلم</span></td>
+                            <td class="fw-bold">$8,750.00</td>
+                            <td class="text-muted">$6,000.00</td>
+                            <td class="text-success fw-bold">$2,750.00</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-primary px-3" onclick="openWithdrawModal('خالد عمر', 2750)">
+                                    <i class="fa-solid fa-money-bill-transfer me-1"></i> سحب
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="card border-0 shadow-sm p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h5 class="fw-bold text-color-2 m-0">سجل المعاملات المالية</h5>
@@ -614,6 +707,100 @@
         </div>
     </div>
 
+    <!-- Withdraw Modal -->
+    <div class="modal fade" id="withdrawModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-color-2">تنفيذ عملية سحب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="withdrawForm">
+                        <div class="text-center mb-4">
+                            <div class="avatar-md bg-light-primary text-primary rounded-circle mx-auto mb-2 d-flex align-items-center justify-content-center" style="width:60px;height:60px">
+                                <i class="fa-solid fa-hand-holding-dollar fs-3"></i>
+                            </div>
+                            <h6 class="fw-bold" id="withdrawUserName">اسم العضو</h6>
+                            <p class="text-muted small mb-0">الرصيد المتاح: <span class="text-success fw-bold" id="withdrawUserBalance">$0.00</span></p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label text-muted small">المبلغ المراد سحبه</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">$</span>
+                                <input type="number" class="form-control border-start-0" id="withdrawAmount" placeholder="0.00" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label text-muted small">طريقة التحويل</label>
+                            <select class="form-select">
+                                <option>تحويل بنكي</option>
+                                <option>PayPal</option>
+                                <option>Vodafone Cash</option>
+                                <option>نقداً</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label text-muted small">ملاحظات</label>
+                            <textarea class="form-control" rows="2" placeholder="رقم الحوالة أو ملاحظات إضافية..."></textarea>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">تأكيد السحب</button>
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Details Modal -->
+    <div class="modal fade" id="transactionDetailsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-color-2">تفاصيل المعاملة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">المعرف</span>
+                            <span class="fw-bold" id="detailId"></span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">العنوان</span>
+                            <span class="fw-bold" id="detailTitle"></span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">التصنيف</span>
+                            <span class="fw-bold" id="detailCategory"></span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">المبلغ</span>
+                            <span class="fw-bold" id="detailAmount"></span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">التاريخ</span>
+                            <span class="fw-bold" id="detailDate"></span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span class="text-muted">الحالة</span>
+                            <span class="fw-bold" id="detailStatus"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
      <!-- Scripts -->
       <script>
         function showAddTransactionModal() {
@@ -673,6 +860,84 @@
             const modal = bootstrap.Modal.getInstance(modalEl);
             modal.hide();
             this.reset(); // تفريغ الحقول
+        });
+
+        function openWithdrawModal(name, balance) {
+            document.getElementById('withdrawUserName').textContent = name;
+            document.getElementById('withdrawUserBalance').textContent = '$' + balance.toFixed(2);
+            document.getElementById('withdrawAmount').max = balance;
+            document.getElementById('withdrawAmount').value = '';
+            var myModal = new bootstrap.Modal(document.getElementById('withdrawModal'));
+            myModal.show();
+        }
+        
+        document.getElementById('withdrawForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the data to the server
+            alert('تم تنفيذ عملية السحب بنجاح!');
+            bootstrap.Modal.getInstance(document.getElementById('withdrawModal')).hide();
+        });
+
+        // Event delegation for table actions (Edit & Details)
+        document.getElementById('transactionBody').addEventListener('click', function(e) {
+            const target = e.target;
+            const row = target.closest('tr');
+            if (!row) return;
+
+            // Handle Edit
+            if (target.closest('.dropdown-item') && (target.textContent.includes('تعديل') || target.querySelector('.fa-pen-to-square'))) {
+                e.preventDefault();
+                openEditModal(row);
+            }
+            
+            // Handle Details
+            if (target.closest('.dropdown-item') && (target.textContent.includes('التفاصيل') || target.querySelector('.fa-eye'))) {
+                e.preventDefault();
+                openDetailsModal(row);
+            }
+        });
+
+        function openEditModal(row) {
+            const title = row.querySelector('td:nth-child(2) span').textContent.trim();
+            const category = row.querySelector('td:nth-child(3) span').textContent.trim();
+            const amountText = row.querySelector('td:nth-child(4)').textContent.trim();
+            const amount = parseFloat(amountText.replace(/[^0-9.]/g, ''));
+            const isIncome = amountText.includes('+');
+
+            document.getElementById('transactionTitle').value = title;
+            document.getElementById('transactionAmount').value = amount;
+            document.getElementById('transactionType').value = isIncome ? 'income' : 'expense';
+            
+            // Change modal title
+            document.querySelector('#addTransactionModal .modal-title').textContent = 'تعديل المعاملة';
+            
+            var myModal = new bootstrap.Modal(document.getElementById('addTransactionModal'));
+            myModal.show();
+        }
+
+        function openDetailsModal(row) {
+             const id = row.querySelector('td:nth-child(1)').textContent.trim();
+             const title = row.querySelector('td:nth-child(2) span').textContent.trim();
+             const category = row.querySelector('td:nth-child(3) span').textContent.trim();
+             const amount = row.querySelector('td:nth-child(4)').textContent.trim();
+             const date = row.querySelector('td:nth-child(5)').textContent.trim();
+             const status = row.querySelector('td:nth-child(6) span').textContent.trim();
+
+             document.getElementById('detailId').textContent = id;
+             document.getElementById('detailTitle').textContent = title;
+             document.getElementById('detailCategory').textContent = category;
+             document.getElementById('detailAmount').textContent = amount;
+             document.getElementById('detailDate').textContent = date;
+             document.getElementById('detailStatus').textContent = status;
+
+             var myModal = new bootstrap.Modal(document.getElementById('transactionDetailsModal'));
+             myModal.show();
+        }
+
+        // Reset modal title when closed
+        document.getElementById('addTransactionModal').addEventListener('hidden.bs.modal', function () {
+            document.querySelector('#addTransactionModal .modal-title').textContent = 'إضافة معاملة جديدة';
+            document.getElementById('addTransactionForm').reset();
         });
 
         document.addEventListener('DOMContentLoaded', function() {
