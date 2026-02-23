@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,175 +13,6 @@
   <link href="./assets/icons/fontawesome/css/solid.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet">
 </head>
-<style>
-
-  body {
-    background-color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .taiz-gradient {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-  }
-
-  .taiz-card {
-    background: white;
-    border-radius: 15px;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .taiz-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--secondary);
-  }
-
-  .district-badge {
-    background: var(--accent);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  .school-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--secondary);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-  }
-
-  .map-container {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .taiz-map {
-    background: #e8f4fc;
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .district-marker {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .district-marker:hover {
-    transform: scale(1.5);
-    z-index: 10;
-  }
-
-  .district-info {
-    position: absolute;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-lg);
-    z-index: 100;
-    min-width: 200px;
-    display: none;
-  }
-
-  .stat-box {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-    border-top: 4px solid var(--secondary);
-  }
-
-  .notification-badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .quick-link {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-    border: 1px solid #e0e0e0;
-    text-decoration: none;
-    color: var(--dark);
-  }
-
-  .quick-link:hover {
-    background: var(--secondary);
-    color: white;
-    transform: translateX(-5px);
-    text-decoration: none;
-  }
-
-  .district-selector {
-    background: white;
-    border: 2px solid var(--secondary);
-    border-radius: 10px;
-    padding: 8px 15px;
-    font-weight: bold;
-  }
-
-  .year-selector {
-    background: var(--light);
-    border: none;
-    border-radius: 10px;
-    padding: 8px 15px;
-  }
-
-  .alert-taiz {
-    background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
-    border-right: 4px solid var(--warning);
-    border-radius: 10px;
-  }
-
-  .progress-taiz {
-    height: 10px;
-    border-radius: 5px;
-    background: #e0e0e0;
-    overflow: hidden;
-  }
-
-  .progress-taiz-bar {
-    background: linear-gradient(90deg, var(--secondary), var(--primary));
-    height: 100%;
-    border-radius: 5px;
-  }
-</style>
 
 <body>
   <!-- Preloader -->
@@ -225,12 +57,28 @@
                   <p class="m-0">ادارة الكلمات</p>
                 </a>
               </li>
-              <li>
-                <a href="manage-exercises.html" class="submenu-link">
+              
+               <li>
+                <a href="manage-levels.html" class="submenu-link">
                   <i class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">إدارة التمارين</p>
+                  <p class="m-0">إدارة المستويات</p>
                 </a>
               </li>
+            </ul>
+          </li>
+           <li>
+            <a href="#" class="sidebar-link submenu-parent active">
+              <i class="fa-solid fa-book-open"></i>
+              <p>التمارين <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+            </a>
+            <ul class="sidebar-submenu open">
+              <li><a href="manage-exercises.html" class="submenu-link active"><i
+                    class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">إدارة التمارين</p>
+                </a></li>
+              <li><a href="manage-challenges.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">التحديات اليوميه</p>
+                </a></li>
             </ul>
           </li>
           <li>
@@ -249,7 +97,7 @@
             </ul>
           </li>
           <a href="#" class="sidebar-link submenu-parent active">
-            <i class="fa-solid fa-book-open"></i>
+            <i class="fa-solid fa-user"></i>
             <p>الطلاب <i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
           </a>
           <ul class="sidebar-submenu open">
@@ -260,37 +108,40 @@
                   class="fa-solid fa-circle me-4 font-size-12"></i>
                 <p class="m-0"> تقارير الطلاب</p>
               </a></li>
+              <li><a href="manage-achievements.html" class="submenu-link"><i
+                  class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> إدارة الانجازات </p>
+              </a></li>
+              <li><a href="xp-settings.html" class="submenu-link"><i
+                  class="fa-solid fa-circle me-4 font-size-12"></i>
+                <p class="m-0"> النقاط  </p>
+              </a></li>
           </ul>
           </li>
-          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
-              <p>التقارير<i class="fa-solid fa-chevron-right right-icon"></i></p>
-            </a>
-            <ul class="sidebar-submenu">
+            <a href="#" class="sidebar-link submenu-parent active">
+            <i class="fa-solid fa-book-open"></i>
+            <p>التقارير<i class="fa-solid fa-chevron-right right-icon rotate"></i></p>
+          </a>
+          <ul class="sidebar-submenu open">
               <li><a href="summary.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
                   <p class="m-0">ملخص الوحدات و الدروس</p>
                 </a></li>
-              <li><a href="admin-activity.html" class="submenu-link"><i
-                    class="fa-solid fa-circle me-4 font-size-12"></i>
-                  <p class="m-0">تقارير عن الادمن </p>
+              <li><a href="admin-activity.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0"> عن الادمن </p>
                 </a></li>
+            
+             <li><a href="general-performance.html" class="submenu-link"><i class="fa-solid fa-circle me-4 font-size-12"></i>
+                  <p class="m-0">الاداء العام </p>
+                </a></li>
+            
+           
             </ul>
           </li>
-          <li><a href="teacher.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
-              <p>المعلمون</p>
+          <li><a href="manage-users.html" class="sidebar-link"><i class="fa-solid fa-chalkboard-user"></i>
+              <p>اعدادات المستخدم</p>
             </a></li>
-          <li><a href="library.html" class="sidebar-link"><i class="fa-solid fa-book"></i>
-              <p>المكتبة</p>
-            </a></li>
-          <li><a href="department.html" class="sidebar-link"><i class="fa-solid fa-building"></i>
-              <p>القسم</p>
-            </a></li>
-          <li><a href="staff.html" class="sidebar-link"><i class="fa-solid fa-users"></i>
-              <p>الموظفون</p>
-            </a></li>
-          <li><a href="finance-management.html" class="sidebar-link"><i class="fa-solid fa-dollar-sign"></i>
-              <p>الإدارة المالية</p>
-            </a></li>
-          <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
+          
+            <li><a href="#" class=" sidebar-link submenu-parent"><i class="fa-solid fa-list"></i>
               <p>الاعدادات<i class="fa-solid fa-chevron-right right-icon"></i></p>
             </a>
             <ul class="sidebar-submenu">
@@ -328,7 +179,7 @@
       </div>
     </div>
 
-        
+
     <!-- Content Wrapper -->
     <div class="content-wrapper ">
       <!-- Header -->
@@ -378,33 +229,34 @@
               </div>
             </li>
             <!-- Notifications Dropdown -->
-          <li class="nav-item dropdown me-2-5">
-    <a href="#" class="text-color-1 notification" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-regular fa-bell font-size-24"></i>
-        <div class="marker"></div>
-    </a>
+            <li class="nav-item dropdown me-2-5">
+              <a href="manage-notifications.html" class="text-color-1 notification" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fa-regular fa-bell font-size-24"></i>
+                <div class="marker"></div>
+              </a>
 
-    <div class="dropdown-menu dropdown-menu-end mt-4">
-        <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
-            <ul class="timeline">
-                <li>
-                    <div class="timeline-panel">
+              <div class="dropdown-menu dropdown-menu-end mt-4">
+                <div id="Notification" class="h-380 scroll-y p-3 custom-scrollbar">
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-panel">
                         <div class="media me-2">
-                            <img alt="image" width="50" src="./assets/images/profile.png">
+                          <img alt="image" width="50" src="./assets/images/profile.png">
                         </div>
                         <div class="media-body">
-                            <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
-                            <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
+                          <h6 class="mb-1">قام الدكتور سميث بتحميل تقرير جديد</h6>
+                          <small class="d-block">10 ديسمبر 2023 - 08:15 صباحًا</small>
                         </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <a class="all-notification" href="notifications.html">
-            شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
-        </a>
-    </div>
-</li>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <a class="all-notification" href="notifications.html">
+                  شاهد كل الإشعارات <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </li>
             <!-- User Profile -->
             <li class="nav-item dropdown user-profile">
               <div class="d-flex align-items-center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -429,6 +281,7 @@
           </ul>
         </div>
       </div>
+      
 
             <div class="main-content px-4">
                 <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
@@ -443,9 +296,9 @@
                                 <li><a class="dropdown-item" href="#">غير نشط</a></li>
                             </ul>
                         </div>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CreateModal">
+                        <a href="add-student.html" class="btn btn-primary">
                             <i class="fa-solid fa-plus me-2"></i> إضافة طالب
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -460,6 +313,8 @@
                         </th>
                         <th>العمليات</th>
                         <th>الحالة</th>
+                        <th>العمر</th>
+                        <th>الجنس</th>
                         <th>الجوال</th>
                         <th class="text-end pe-4">الاسم</th>
                     </tr>
@@ -471,23 +326,28 @@
                         </td>
                         <td>
                             <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
+                                <button onclick="deleteStudent('ساجدة', '123456789', 'نشط', './assets/images/profile.png', 'أنثى', 22, 'بكالوريوس', 'أحمد', '987654321', 'أب')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
                                 </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
+                                <a href="edit-student.html" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
+                                </a>
+                                <a href="javascript:void(0);" onclick="viewStudent('ساجدة', '123456789', 'نشط', './assets/images/profile.png', 'أنثى', 22, 'بكالوريوس', 'أحمد', '987654321', 'أب')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
+                                </a>
                                 <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
+                                </button>
+                                <button onclick="goToDeviceTransfer('ساجدة', '123456789')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #6f42c1; color: white; border-radius: 6px; border: none;" title="نقل جهاز">
+                                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 14px;"></i>
                                 </button>
                             </div>
                         </td>
                         <td>
                             <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
                         </td>
+                        <td class="text-muted">22</td>
+                        <td class="text-muted">أنثى</td>
                         <td class="text-muted">123456789</td>
                         <td class="text-end pe-4">
                             <div class="d-flex align-items-center justify-content-end">
@@ -505,23 +365,28 @@
                         </td>
                         <td>
                             <div class="d-flex justify-content-center gap-1">
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
+                                <button onclick="deleteStudent('رانيا', '123456', 'نشط', './assets/images/profile.png', 'أنثى', 24, 'ثانوية عامة', 'محمد', '555666777', 'أب')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #dc3545; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-trash" style="font-size: 14px;"></i>
                                 </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
+                                <a href="edit-student.html" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0d6efd; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-pen" style="font-size: 14px;"></i>
-                                </button>
-                                <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
+                                </a>
+                                <a href="javascript:void(0);" onclick="viewStudent('رانيا', '123456', 'نشط', './assets/images/profile.png', 'أنثى', 24, 'ثانوية عامة', 'محمد', '555666777', 'أب')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #0dcaf0; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-eye" style="font-size: 14px;"></i>
-                                </button>
+                                </a>
                                 <button class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #ffc107; color: white; border-radius: 6px; border: none;">
                                     <i class="fa-solid fa-lock" style="font-size: 14px;"></i>
+                                </button>
+                                <button onclick="goToDeviceTransfer('رانيا', '123456')" class="btn p-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: #6f42c1; color: white; border-radius: 6px; border: none;" title="نقل جهاز">
+                                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 14px;"></i>
                                 </button>
                             </div>
                         </td>
                         <td>
                             <span class="badge bg-success bg-opacity-10 text-success px-3 py-2" style="border-radius: 6px;">نشط</span>
                         </td>
+                        <td class="text-muted">24</td>
+                        <td class="text-muted">أنثى</td>
                         <td class="text-muted">123456</td>
                         <td class="text-end pe-4">
                             <div class="d-flex align-items-center justify-content-end">
@@ -541,48 +406,50 @@
         </div>
     </div>
 
-
-    <!-- add student -->
-    <div class="modal fade" id="CreateModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">إضافة طالب جديد</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <form id="addStudentForm">
-                    <div class="modal-body row g-3">
-                        <div class="col-12">
-                            <label class="form-label">الاسم الكامل</label>
-                            <input type="text" class="form-control" id="CreateUserName" required>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">الجنس</label>
-                            <select class="form-select" id="CreateUserGender">
-                                <option value="ذكر">ذكر</option>
-                                <option value="أنثى">أنثى</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">العمر</label>
-                            <input type="number" class="form-control" id="CreateUserAge" required>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">رقم الجوال</label>
-                            <input type="text" class="form-control" id="CreateUserMobile" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary w-100">حفظ البيانات</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        function viewStudent(name, mobile, status, avatar, gender, age, qualification, guardianName, guardianMobile, guardianRelation) {
+            const studentData = {
+                name: name,
+                mobile: mobile,
+                status: status,
+                avatar: avatar,
+                gender: gender,
+                age: age,
+                qualification: qualification,
+                guardianName: guardianName,
+                guardianMobile: guardianMobile,
+                guardianRelation: guardianRelation,
+                statusClass: status === 'نشط' ? 'badge bg-success' : 'badge bg-danger'
+            };
+            localStorage.setItem('viewingStudent', JSON.stringify(studentData));
+            window.location.href = 'student-details.html';
+        }
+
+        function deleteStudent(name, mobile, status, avatar, gender, age, qualification, guardianName, guardianMobile, guardianRelation) {
+            const studentData = {
+                name: name,
+                mobile: mobile,
+                status: status,
+                avatar: avatar,
+                gender: gender,
+                age: age,
+                qualification: qualification,
+                guardianName: guardianName,
+                guardianMobile: guardianMobile,
+                guardianRelation: guardianRelation,
+                statusClass: status === 'نشط' ? 'badge bg-success' : 'badge bg-danger'
+            };
+            localStorage.setItem('deletingStudent', JSON.stringify(studentData));
+            window.location.href = 'delete-student.html';
+        }
+
+        function goToDeviceTransfer(name, mobile) {
+            window.location.href = `device-transfer.html?name=${encodeURIComponent(name)}&mobile=${encodeURIComponent(mobile)}`;
+        }
+    </script>
 
  
 </body>

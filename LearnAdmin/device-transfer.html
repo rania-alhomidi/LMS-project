@@ -283,119 +283,94 @@
       </div>
       
 
+            <div class="main-content px-4">
+                <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
+                    <h3 class="text-color-2">نقل جهاز الطالب</h3>
+                    <a href="students.html" class="btn btn-outline-secondary">
+                        <i class="fa-solid fa-arrow-right me-2"></i> عودة للطلاب
+                    </a>
+                </div>
 
-
-      <div class="main-content mt-100">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-                <h4 class="text-color-2 fw-bold mb-1">تعديل الدرس</h4>
-                <p class="text-color-3 text-size-14 mb-0">يمكنك تحديث معلومات الدرس وتغيير الوسائط المرتبطة به</p>
-            </div>
-            <a href="mange-lesson.html" class="btn btn-outline-primary shadow-sm">
-                <i class="fa-solid fa-arrow-right me-1"></i> العودة للقائمة
-            </a>
-        </div>
-
-        <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-                <form id="editLessonForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">اسم الدرس</label>
-                            <input type="text" class="form-control" value="تعلم الحرف أ" placeholder="أدخل اسم الدرس">
+                <div class="card border-0 shadow-sm mt-4">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-5">
+                            <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                                <i class="fa-solid fa-mobile-screen-button fa-3x text-primary"></i>
+                            </div>
+                            <h5 class="fw-bold">طلب نقل إلى جهاز جديد</h5>
+                            <p class="text-muted">يرجى التحقق من رقم هاتف الطالب لإتمام عملية فك ارتباط الجهاز القديم.</p>
                         </div>
 
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">الحرف المرتبط</label>
-                            <select class="form-select">
-                                <option selected>أ</option>
-                                <option value="1">ب</option>
-                                <option value="2">ت</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="form-label text-color-2 fw-semibold">وصف الدرس</label>
-                            <textarea class="form-control" rows="3">هذا الدرس يشرح نطق الحرف أ مع أمثلة مصورة..</textarea>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الفئة العمرية</label>
-                            <select class="form-select">
-                                <option selected>3-5 سنوات</option>
-                                <option>6-8 سنوات</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">مستوى الصعوبة</label>
-                            <div class="d-flex gap-3 mt-2">
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="easy" checked>
-                                    <label class="form-check-label text-color-1" for="easy">مبتدئ</label>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 col-lg-6">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold text-color-2">اسم الطالب</label>
+                                    <input type="text" class="form-control bg-light" id="transferStudentName" readonly>
                                 </div>
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="medium">
-                                    <label class="form-check-label text-color-1" for="medium">متوسط</label>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold text-color-2">رقم الجوال المسجل</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light" id="transferStudentMobile" readonly>
+                                        <button class="btn btn-primary" type="button" onclick="sendVerificationCode()">
+                                            <i class="fa-regular fa-paper-plane me-2"></i> إرسال رمز
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 p-3 bg-light rounded border" id="otpSection" style="display:none;">
+                                    <label class="form-label fw-bold text-color-2">رمز التحقق (OTP)</label>
+                                    <input type="text" class="form-control text-center letter-spacing-26 fw-bold fs-5" id="verificationCode" placeholder="----" maxlength="4">
+                                    <small class="text-muted d-block mt-2"><i class="fa-solid fa-info-circle me-1"></i> أدخل الرمز الذي وصل إلى هاتف الطالب</small>
+                                </div>
+
+                                <div class="d-grid mt-4">
+                                    <button type="button" class="btn btn-success py-2" onclick="confirmDeviceTransfer()" disabled id="confirmTransferBtn">
+                                        <i class="fa-solid fa-check me-2"></i> تأكيد النقل
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الحالة</label>
-                            <div class="form-check form-switch custom-switch mt-2">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label text-color-1">نشط</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">صورة الدرس الحالية</label>
-                            <div class="dropzone rounded mb-2">
-                                <div class="preview-item m-auto" style="width: 80px; height: 80px;">
-                                    <img src="./assets/images/lesson-thumb.jpg" class="rounded shadow-sm w-100 h-100 object-fit-cover">
-                                </div>
-                                <p class="text-size-13 text-color-3 mt-2">اسحب صورة جديدة لتغيير الحالية</p>
-                                <button type="button" class="btn btn-sm btn-primary">تغيير الصورة</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">ملف الفيديو/الصوت</label>
-                            <div class="file-input-container">
-                                <div class="file-label">
-                                    <span class="file-name">lesson_video_01.mp4</span>
-                                    <span class="file-button">تصفح</span>
-                                </div>
-                                <input type="file" class="file-input">
-                            </div>
-                            <small class="text-color-3 d-block mt-2">الحد الأقصى لحجم الملف 20 ميجابايت</small>
-                        </div>
-
-                        <div class="col-12 text-end mt-5">
-                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
-                            <button type="submit" class="btn btn-primary px-5 shadow">حفظ التعديلات</button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-
-
-
              <!-- Footer -->
              <div class="footer text-center bg-white shadow-sm py-3 mt-5">
                 <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
             </div>
     </div>
-     <!-- Scripts -->
-    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script  src="./assets/plugin/chart/chart.js"></script>
-    <script  src="./assets/js/chart.js"></script>
-    <script  src="./assets/js/main.js"></script>
+    </div>
+
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const mobile = urlParams.get('mobile');
+            
+            if(name) $('#transferStudentName').val(name);
+            if(mobile) $('#transferStudentMobile').val(mobile);
+        });
+
+        function sendVerificationCode() {
+            // محاكاة إرسال الرمز
+            alert('تم إرسال رمز التحقق (1234) إلى الرقم: ' + $('#transferStudentMobile').val());
+            $('#otpSection').slideDown();
+            $('#confirmTransferBtn').prop('disabled', false);
+        }
+
+        function confirmDeviceTransfer() {
+            var code = $('#verificationCode').val();
+            if(code.trim() === '') {
+                alert('الرجاء إدخال رمز التحقق');
+                return;
+            }
+            // هنا يتم استدعاء API للتحقق
+            alert('تم التحقق بنجاح! تم فك ارتباط الجهاز القديم والسماح بالنقل.');
+            window.location.href = 'students.html';
+        }
+    </script>
 </body>
 </html>

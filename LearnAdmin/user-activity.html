@@ -283,119 +283,73 @@
       </div>
       
 
+            <div class="main-content px-4">
+                <div class="d-flex justify-content-between align-items-center mt-4 mb-4">
+                    <h3>سجل النشاطات <span id="activityUser" class="text-muted fs-5"></span></h3>
+                    <a href="manage-users.html" class="btn btn-outline-secondary">عودة للقائمة</a>
+                </div>
 
-
-      <div class="main-content mt-100">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-                <h4 class="text-color-2 fw-bold mb-1">تعديل الدرس</h4>
-                <p class="text-color-3 text-size-14 mb-0">يمكنك تحديث معلومات الدرس وتغيير الوسائط المرتبطة به</p>
-            </div>
-            <a href="mange-lesson.html" class="btn btn-outline-primary shadow-sm">
-                <i class="fa-solid fa-arrow-right me-1"></i> العودة للقائمة
-            </a>
-        </div>
-
-        <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-                <form id="editLessonForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">اسم الدرس</label>
-                            <input type="text" class="form-control" value="تعلم الحرف أ" placeholder="أدخل اسم الدرس">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">الحرف المرتبط</label>
-                            <select class="form-select">
-                                <option selected>أ</option>
-                                <option value="1">ب</option>
-                                <option value="2">ت</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="form-label text-color-2 fw-semibold">وصف الدرس</label>
-                            <textarea class="form-control" rows="3">هذا الدرس يشرح نطق الحرف أ مع أمثلة مصورة..</textarea>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الفئة العمرية</label>
-                            <select class="form-select">
-                                <option selected>3-5 سنوات</option>
-                                <option>6-8 سنوات</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">مستوى الصعوبة</label>
-                            <div class="d-flex gap-3 mt-2">
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="easy" checked>
-                                    <label class="form-check-label text-color-1" for="easy">مبتدئ</label>
-                                </div>
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="medium">
-                                    <label class="form-check-label text-color-1" for="medium">متوسط</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الحالة</label>
-                            <div class="form-check form-switch custom-switch mt-2">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label text-color-1">نشط</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">صورة الدرس الحالية</label>
-                            <div class="dropzone rounded mb-2">
-                                <div class="preview-item m-auto" style="width: 80px; height: 80px;">
-                                    <img src="./assets/images/lesson-thumb.jpg" class="rounded shadow-sm w-100 h-100 object-fit-cover">
-                                </div>
-                                <p class="text-size-13 text-color-3 mt-2">اسحب صورة جديدة لتغيير الحالية</p>
-                                <button type="button" class="btn btn-sm btn-primary">تغيير الصورة</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">ملف الفيديو/الصوت</label>
-                            <div class="file-input-container">
-                                <div class="file-label">
-                                    <span class="file-name">lesson_video_01.mp4</span>
-                                    <span class="file-button">تصفح</span>
-                                </div>
-                                <input type="file" class="file-input">
-                            </div>
-                            <small class="text-color-3 d-block mt-2">الحد الأقصى لحجم الملف 20 ميجابايت</small>
-                        </div>
-
-                        <div class="col-12 text-end mt-5">
-                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
-                            <button type="submit" class="btn btn-primary px-5 shadow">حفظ التعديلات</button>
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0 align-middle">
+                                <thead class="bg-light">
+                                    <tr>
+                                        <th class="ps-4">التاريخ والوقت</th>
+                                        <th>نوع النشاط</th>
+                                        <th>التفاصيل</th>
+                                        <th>عنوان IP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ps-4">2024-02-10 09:30 AM</td>
+                                        <td><span class="badge bg-success">تسجيل دخول</span></td>
+                                        <td>تم تسجيل الدخول بنجاح</td>
+                                        <td>192.168.1.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">2024-02-10 10:15 AM</td>
+                                        <td><span class="badge bg-primary">تعديل</span></td>
+                                        <td>تعديل بيانات الطالب "سعيد"</td>
+                                        <td>192.168.1.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">2024-02-09 02:00 PM</td>
+                                        <td><span class="badge bg-warning text-dark">تغيير كلمة مرور</span></td>
+                                        <td>تم تغيير كلمة المرور بواسطة المسؤول</td>
+                                        <td>10.0.0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">2024-02-08 11:45 AM</td>
+                                        <td><span class="badge bg-danger">محاولة دخول فاشلة</span></td>
+                                        <td>كلمة المرور غير صحيحة</td>
+                                        <td>192.168.1.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ps-4">2024-02-01 08:00 AM</td>
+                                        <td><span class="badge bg-info text-dark">إضافة</span></td>
+                                        <td>إضافة درس جديد "مقدمة في العلوم"</td>
+                                        <td>192.168.1.1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </form>
+                    <div class="card-footer bg-white">
+                        <small class="text-muted">عرض آخر 5 نشاطات</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+                <p class="m-0">حقوق النشر © 2024.</p>
             </div>
         </div>
     </div>
-</div>
-
-
-
-             <!-- Footer -->
-             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
-                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
-            </div>
-    </div>
-     <!-- Scripts -->
-    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script  src="./assets/plugin/chart/chart.js"></script>
-    <script  src="./assets/js/chart.js"></script>
-    <script  src="./assets/js/main.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
+```

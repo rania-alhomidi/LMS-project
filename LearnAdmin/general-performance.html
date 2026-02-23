@@ -283,119 +283,123 @@
       </div>
       
 
-
-
-      <div class="main-content mt-100">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <div>
-                <h4 class="text-color-2 fw-bold mb-1">تعديل الدرس</h4>
-                <p class="text-color-3 text-size-14 mb-0">يمكنك تحديث معلومات الدرس وتغيير الوسائط المرتبطة به</p>
-            </div>
-            <a href="mange-lesson.html" class="btn btn-outline-primary shadow-sm">
-                <i class="fa-solid fa-arrow-right me-1"></i> العودة للقائمة
-            </a>
+      <div class="main-content p-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="text-color-2">تقارير الأداء العام</h3>
+          <button class="btn btn-outline-primary"><i class="fa-solid fa-download me-2"></i>تصدير PDF</button>
         </div>
 
-        <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-                <form id="editLessonForm">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">اسم الدرس</label>
-                            <input type="text" class="form-control" value="تعلم الحرف أ" placeholder="أدخل اسم الدرس">
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">الحرف المرتبط</label>
-                            <select class="form-select">
-                                <option selected>أ</option>
-                                <option value="1">ب</option>
-                                <option value="2">ت</option>
-                            </select>
-                        </div>
-
-                        <div class="col-12">
-                            <label class="form-label text-color-2 fw-semibold">وصف الدرس</label>
-                            <textarea class="form-control" rows="3">هذا الدرس يشرح نطق الحرف أ مع أمثلة مصورة..</textarea>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الفئة العمرية</label>
-                            <select class="form-select">
-                                <option selected>3-5 سنوات</option>
-                                <option>6-8 سنوات</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">مستوى الصعوبة</label>
-                            <div class="d-flex gap-3 mt-2">
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="easy" checked>
-                                    <label class="form-check-label text-color-1" for="easy">مبتدئ</label>
-                                </div>
-                                <div class="form-check custom-radio">
-                                    <input class="form-check-input" type="radio" name="level" id="medium">
-                                    <label class="form-check-label text-color-1" for="medium">متوسط</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <label class="form-label text-color-2 fw-semibold">الحالة</label>
-                            <div class="form-check form-switch custom-switch mt-2">
-                                <input class="form-check-input" type="checkbox" checked>
-                                <label class="form-check-label text-color-1">نشط</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">صورة الدرس الحالية</label>
-                            <div class="dropzone rounded mb-2">
-                                <div class="preview-item m-auto" style="width: 80px; height: 80px;">
-                                    <img src="./assets/images/lesson-thumb.jpg" class="rounded shadow-sm w-100 h-100 object-fit-cover">
-                                </div>
-                                <p class="text-size-13 text-color-3 mt-2">اسحب صورة جديدة لتغيير الحالية</p>
-                                <button type="button" class="btn btn-sm btn-primary">تغيير الصورة</button>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label class="form-label text-color-2 fw-semibold">ملف الفيديو/الصوت</label>
-                            <div class="file-input-container">
-                                <div class="file-label">
-                                    <span class="file-name">lesson_video_01.mp4</span>
-                                    <span class="file-button">تصفح</span>
-                                </div>
-                                <input type="file" class="file-input">
-                            </div>
-                            <small class="text-color-3 d-block mt-2">الحد الأقصى لحجم الملف 20 ميجابايت</small>
-                        </div>
-
-                        <div class="col-12 text-end mt-5">
-                            <button type="button" class="btn btn-light px-4 me-2">إلغاء</button>
-                            <button type="submit" class="btn btn-primary px-5 shadow">حفظ التعديلات</button>
-                        </div>
-                    </div>
-                </form>
+        <!-- KPI Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm p-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="text-muted mb-1">الطلاب النشطين</p>
+                  <h3 class="fw-bold">1,250</h3>
+                </div>
+                <div class="text-success bg-success bg-opacity-10 rounded p-2 h-100"><i class="fa-solid fa-users"></i></div>
+              </div>
+              <small class="text-success"><i class="fa-solid fa-arrow-up"></i> 12% زيادة</small>
             </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm p-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="text-muted mb-1">معدل الإكمال</p>
+                  <h3 class="fw-bold">78%</h3>
+                </div>
+                <div class="text-primary bg-primary bg-opacity-10 rounded p-2 h-100"><i class="fa-solid fa-chart-line"></i></div>
+              </div>
+              <small class="text-success"><i class="fa-solid fa-arrow-up"></i> 5% تحسن</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm p-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="text-muted mb-1">متوسط الوقت/جلسة</p>
+                  <h3 class="fw-bold">25 د</h3>
+                </div>
+                <div class="text-warning bg-warning bg-opacity-10 rounded p-2 h-100"><i class="fa-solid fa-clock"></i></div>
+              </div>
+              <small class="text-danger"><i class="fa-solid fa-arrow-down"></i> 2% انخفاض</small>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card border-0 shadow-sm p-3">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="text-muted mb-1">الشهادات الممنوحة</p>
+                  <h3 class="fw-bold">340</h3>
+                </div>
+                <div class="text-info bg-info bg-opacity-10 rounded p-2 h-100"><i class="fa-solid fa-certificate"></i></div>
+              </div>
+              <small class="text-success">هذا الشهر</small>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
 
-
-
-             <!-- Footer -->
-             <div class="footer text-center bg-white shadow-sm py-3 mt-5">
-                <p class="m-0">حقوق النشر © 2024. جميع الحقوق محفوظة. <a href="https://www.templaterise.com/" class="text-primary" target="_blank" >قوالب بواسطة TemplateRise</a></p>
+        <!-- Charts -->
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-4 h-100">
+              <h5 class="mb-4">نشاط الطلاب الشهري</h5>
+              <canvas id="activityChart" height="300"></canvas>
             </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card border-0 shadow-sm p-4 h-100">
+              <h5 class="mb-4">توزيع المستويات</h5>
+              <canvas id="levelChart" height="250"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer text-center bg-white shadow-sm py-3 mt-5">
+        <p class="m-0">حقوق النشر © 2024.</p>
+      </div>
     </div>
-     <!-- Scripts -->
-    <script  src="./assets/js/jquery-3.6.0.min.js"></script>
-    <script  src="./assets/js/bootstrap.bundle.min.js"></script>
-    <script  src="./assets/plugin/chart/chart.js"></script>
-    <script  src="./assets/js/chart.js"></script>
-    <script  src="./assets/js/main.js"></script>
+  </div>
+
+  <script src="./assets/js/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/plugin/chart/chart.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    // Activity Chart
+    const ctxActivity = document.getElementById('activityChart').getContext('2d');
+    new Chart(ctxActivity, {
+      type: 'line',
+      data: {
+        labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو'],
+        datasets: [{
+          label: 'الطلاب النشطين',
+          data: [800, 950, 1100, 1050, 1200, 1250],
+          borderColor: '#41A141',
+          tension: 0.4,
+          fill: true,
+          backgroundColor: 'rgba(65, 161, 65, 0.1)'
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+
+    // Level Chart
+    const ctxLevel = document.getElementById('levelChart').getContext('2d');
+    new Chart(ctxLevel, {
+      type: 'doughnut',
+      data: {
+        labels: ['مبتدئ', 'متوسط', 'متقدم'],
+        datasets: [{
+          data: [45, 35, 20],
+          backgroundColor: ['#41A141', '#FFC107', '#0DCAF0']
+        }]
+      },
+      options: { responsive: true, maintainAspectRatio: false }
+    });
+  </script>
 </body>
 </html>
